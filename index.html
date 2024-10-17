@@ -3,70 +3,854 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReviewMaster Pro - Ultimate Review Management App</title>
+    <title>Responsive Landing Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icon-css@3.4.6/css/flag-icon.min.css"/>-->
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-100 font-sans">
-    <header class="bg-orange-500 text-white py-6">
-        <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-bold">ReviewMaster Pro</h1>
-            <p class="mt-2">The Ultimate Review Management Solution for E-commerce</p>
+<body class="font-sans">
+<!--<header class="bg-blue-600 text-white">-->
+<!--    <nav class="container mx-auto px-4 py-4 md:py-6 flex justify-between items-center">-->
+<!--        <a href="#" class="text-2xl md:text-3xl font-bold">Logo</a>-->
+<!--        <ul class="hidden md:flex space-x-6">-->
+<!--            <li><a href="#" class="hover:text-blue-200">Home</a></li>-->
+<!--            <li><a href="#" class="hover:text-blue-200">Features</a></li>-->
+<!--            <li><a href="#" class="hover:text-blue-200">Pricing</a></li>-->
+<!--            <li><a href="#" class="hover:text-blue-200">Contact</a></li>-->
+<!--        </ul>-->
+<!--        <button class="md:hidden">-->
+<!--            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">-->
+<!--                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>-->
+<!--            </svg>-->
+<!--        </button>-->
+<!--    </nav>-->
+<!--</header>-->
+
+<main>
+    <section class="bg-black py-12 px-4 md:py-36 md:px-8 overflow-x-hidden overflow-y-clip">
+        <div class="max-w-6xl mx-auto">
+            <div class="container perspective-container">
+                <div class="flex flex-row">
+                    <div class="w-full sm:w-1/3 pr-8 left-section space-y-12">
+                        <img src="show-me-the-reviews.png" alt="Description of the image" class="mx-auto">
+                        <p class="text-white text-lg max-sm:text-center">Installing the RevNova review section in your Shopify
+                            store is as easy as one click! Enhance your product pages, collection pages, and homepage
+                            effortlessly. No coding skills required!</p>
+                        <div class="space-y-3">
+                            <button class="w-full border-2 border-yellow-400 text-yellow-400 font-bold py-3 px-6 rounded-full hover:bg-yellow-400 hover:text-white transition duration-300 text-lg">
+                                Install Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right side: Product and Reviews -->
+                    <div class="w-full sm:w-2/3 md:scale-70 md:origin-top md:h-[85vh] max-sm:pt-20 relative">
+                        <div class="angled-section max-w-[36rem] md:pl-20 w-full" id="product-section">
+                            <div class="flex flex-row">
+                                <!-- Product Image -->
+                                <div class="w-2/5 mb-3 sm:mb-0">
+                                    <div class="w-full h-[180px] bg-gray-600 rounded-md flex items-center justify-center">
+                                        <i class="fas fa-tshirt text-6xl text-gray-200"></i>
+                                    </div>
+                                </div>
+
+                                <!-- Product Details -->
+                                <div class="w-3/5 pl-4 flex flex-col pt-0">
+                                        <h2 class="text-lg font-semibold text-gray-500 mb-2">Premium Wireless
+                                            Headphones</h2>
+                                        <div class="flex items-center mb-2">
+                                            <div class="falling-card text-yellow-400 text-lg mr-1">
+                                                <i class="fas fa-star text-yellow-400"></i>
+                                                <i class="fas fa-star text-yellow-400"></i>
+                                                <i class="fas fa-star text-yellow-400"></i>
+                                                <i class="fas fa-star text-yellow-400"></i>
+                                                <i class="fas fa-star-half-alt text-yellow-400"></i>
+                                            </div>
+                                            <span class="falling-card text-lg text-white">(4.5/5)</span>
+                                        </div>
+                                        <p class="text-gray-500 text-lg max-sm:text-center mb-3">Experience crystal-clear sound with our
+                                            premium wireless headphones.</p>
+
+                                        <button class="w-full bg-blue-500 text-white text-sm font-medium py-1 px-2 rounded-md hover:bg-blue-700 transition duration-300 flex items-center justify-center">
+                                            <i class="fas fa-shopping-cart mr-1 text-xs"></i>
+                                            Add to Cart
+                                        </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="scale-50 origin-top max-sm:max-h-52 max-sm:pt-20">
+                            <div class="angled-section">
+                                <div class="min-w-[74rem] grid grid-cols-4 gap-16">
+
+                                    <!--reviews elements starts-->
+                                    <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto">
+                                        <img src="3.png" alt="Image description" class="w-72 h-72 object-cover rounded-md">
+                                        <div class="w-72 p-3">
+                                            <div class="mb-2">
+                                                <div class="flex mb-4 space-x-1">
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                </div>
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i>
+                                                        Noah Johnson</p>
+                                                    <span class="flag-icon flag-icon-us"></span>
+                                                </div>
+                                                <p class="text-sm mt-2">These wireless headphones are amazing! The sound
+                                                    quality is crystal clear, and the battery life is impressive. I can
+                                                    wear them all day comfortably. Highly recommended!</p>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between items-center">
+                                                    <div class="text-sm">2 weeks ago</div>
+                                                    <div class="space-x-2">
+                                                        <i class="fas fa-thumbs-up"></i> 42
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Additional review elements (copy and paste for each review) -->
+
+                                    <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto">
+                                        <img src="4.png" alt="Image description" class="w-72 h-72 object-cover rounded-md">
+                                        <div class="w-72 p-3">
+                                            <div class="mb-2">
+                                                <div class="flex mb-4 space-x-1">
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="far fa-star text-yellow-400"></i>
+                                                </div>
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i>
+                                                        Marco Rossi</p>
+                                                    <span class="flag-icon flag-icon-it"></span>
+                                                </div>
+                                                <p class="text-sm mt-2">Great headphones overall. The noise cancellation
+                                                    is top-notch, and they're very comfortable. The only downside is
+                                                    that the app can be a bit finicky at times.</p>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between items-center">
+                                                    <div class="text-sm">1 month ago</div>
+                                                    <div class="space-x-2">
+                                                        <i class="fas fa-thumbs-up"></i> 28
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto">
+                                        <img src="5.png" alt="Image description" class="w-72 h-72 object-cover rounded-md">
+                                        <div class="w-72 p-3">
+                                            <div class="mb-2">
+                                                <div class="flex mb-4 space-x-1">
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star-half-alt text-yellow-400"></i>
+                                                </div>
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i>
+                                                        Sophie Dubois</p>
+                                                    <span class="flag-icon flag-icon-br"></span>
+                                                </div>
+                                                <p class="text-sm mt-2">J'adore ces écouteurs sans fil ! La qualité
+                                                    sonore est exceptionnelle et la connexion Bluetooth est stable. Seul
+                                                    bémol : l'autonomie pourrait être un peu meilleure.</p>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between items-center">
+                                                    <div class="text-sm">3 months ago</div>
+                                                    <div class="space-x-2">
+                                                        <i class="fas fa-thumbs-up"></i> 36
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto">
+                                        <img src="6.png" alt="Image description" class="w-72 h-72 object-cover rounded-md">
+                                        <div class="w-72 p-3">
+                                            <div class="mb-2">
+                                                <div class="flex mb-4 space-x-1">
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star-half-alt text-yellow-400"></i>
+                                                </div>
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i>
+                                                        Alex Chen</p>
+                                                    <span class="flag-icon flag-icon-cn"></span>
+                                                </div>
+                                                <p class="text-sm mt-2">
+                                                    这些无线耳机真的很棒！音质清晰，电池续航时间令人印象深刻。我可以舒适地戴上一整天。强烈推荐！</p>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between items-center">
+                                                    <div class="text-sm">1 week ago</div>
+                                                    <div class="space-x-2">
+                                                        <i class="fas fa-thumbs-up"></i> 50
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto">
+                                        <img src="7.png" alt="Image description" class="w-72 h-72 object-cover rounded-md">
+                                        <div class="w-72 p-3">
+                                            <div class="mb-2">
+                                                <div class="flex mb-4 space-x-1">
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                </div>
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i>
+                                                        Maria Garcia</p>
+                                                    <span class="flag-icon flag-icon-es"></span>
+                                                </div>
+                                                <p class="text-sm mt-2">¡Estos auriculares inalámbricos son increíbles!
+                                                    La calidad del sonido es cristalina y la duración de la batería es
+                                                    impresionante. Puedo usarlos cómodamente todo el día. ¡Altamente
+                                                    recomendados!</p>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between items-center">
+                                                    <div class="text-sm">2 days ago</div>
+                                                    <div class="space-x-2">
+                                                        <i class="fas fa-thumbs-up"></i> 45
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto">
+                                        <img src="8.png" alt="Image description" class="w-72 h-72 object-cover rounded-md">
+                                        <div class="w-72 p-3">
+                                            <div class="mb-2">
+                                                <div class="flex mb-4 space-x-1">
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star-half-alt text-yellow-400"></i>
+                                                </div>
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i>
+                                                        حسن أحمد</p>
+                                                    <span class="flag-icon flag-icon-lb"></span>
+                                                </div>
+                                                <p class="text-sm mt-2 text-right" dir="rtl">
+                                                    هذه السماعات اللاسلكية رائعة حقًا! جودة الصوت نقية للغاية، وعمر
+                                                    البطارية مذهل. يمكنني ارتداؤها براحة طوال اليوم. خاصية إلغاء الضوضاء
+                                                    ممتازة، مما يجعلها مثالية للعمل أو السفر. السعر مرتفع قليلاً، ولكنها
+                                                    تستحق كل قرش.
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between items-center">
+                                                    <div class="text-sm">منذ 4 أيام</div>
+                                                    <div class="space-x-2">
+                                                        <i class="fas fa-thumbs-up"></i> 38
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto">
+                                        <img src="9.png" alt="Image description" class="w-72 h-72 object-cover rounded-md">
+                                        <div class="w-72 p-3">
+                                            <div class="mb-2">
+                                                <div class="flex mb-4 space-x-1">
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="far fa-star text-yellow-400"></i>
+                                                    <i class="far fa-star text-yellow-400"></i>
+                                                </div>
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i>
+                                                        Benjamin Petrova</p>
+                                                    <span class="flag-icon flag-icon-ru"></span>
+                                                </div>
+                                                <p class="text-sm mt-2">Эти наушники имеют хорошее качество звука, но
+                                                    комфорт при длительном использовании оставляет желать лучшего.
+                                                    Батарея держится не так долго, как заявлено. В целом, неплохо, но
+                                                    есть над чем поработать.</p>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between items-center">
+                                                    <div class="text-sm">2 weeks ago</div>
+                                                    <div class="space-x-2">
+                                                        <i class="fas fa-thumbs-up"></i> 15
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto">
+                                        <img src="10.png" alt="Image description" class="w-72 h-72 object-cover rounded-md">
+                                        <div class="w-72 p-3">
+                                            <div class="mb-2">
+                                                <div class="flex mb-4 space-x-1">
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                </div>
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i>
+                                                        Lucas Patel</p>
+                                                    <span class="flag-icon flag-icon-in"></span>
+                                                </div>
+                                                <p class="text-sm mt-2">These headphones are a game-changer! The sound
+                                                    quality is exceptional, and the active noise cancellation is perfect
+                                                    for my daily commute in busy Mumbai. The app integration adds great
+                                                    customization options. Absolutely worth every rupee!</p>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between items-center">
+                                                    <div class="text-sm">3 days ago</div>
+                                                    <div class="space-x-2">
+                                                        <i class="fas fa-thumbs-up"></i> 56
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </header>
+    </section>
 
-    <main class="container mx-auto px-4 py-8">
-        <section class="mb-12">
-            <h2 class="text-3xl font-semibold mb-4">Revolutionize Your Customer Feedback</h2>
-            <p class="text-lg mb-4">ReviewMaster Pro is designed to empower store owners with comprehensive tools for collecting, managing, and showcasing customer reviews.</p>
-        </section>
+</main>
 
-        <section class="grid md:grid-cols-2 gap-8 mb-12">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-2xl font-semibold mb-4 text-orange-600">Review Collection</h3>
-                <ul class="list-disc pl-5">
-                    <li>Native review submission system</li>
-                    <li>Automated email requests for feedback</li>
-                    <li>Import from major e-commerce platforms</li>
-                    <li>CSV file import functionality</li>
-                </ul>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-2xl font-semibold mb-4 text-orange-600">Management & Display</h3>
-                <ul class="list-disc pl-5">
-                    <li>Centralized dashboard for organization</li>
-                    <li>Customizable review section design</li>
-                    <li>Mobile-responsive layouts</li>
-                    <li>Filtering and sorting capabilities</li>
-                </ul>
-            </div>
-        </section>
 
-        <section class="grid md:grid-cols-2 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-2xl font-semibold mb-4 text-orange-600">Advanced Features</h3>
-                <ul class="list-disc pl-5">
-                    <li>Multi-language support with translation tools</li>
-                    <li>Review grouping for product variants</li>
-                    <li>Sentiment analysis and rating aggregation</li>
-                    <li>Automated moderation tools</li>
-                </ul>
+<section class="bg-white py-12 px-4 md:py-36 md:px-8 overflow-x-hidden overflow-y-clip">
+    <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col lg:flex-row">
+            <div class="w-full lg:w-1/3 sm:pr-8 space-y-12">
+                <img src="from-zero-to-her.png" alt="From Zero to Hero" class="max-w-full mx-auto h-auto">
+                <p class="text-gray-600 text-lg max-sm:text-center">
+                    Transform your product listings overnight! With RevuNova, you're just one click away from populating
+                    your store with hundreds of authentic reviews. Say goodbye to empty review sections and hello to
+                    social proof that sells!
+                </p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-2xl font-semibold mb-4 text-orange-600">Analytics & Insights</h3>
-                <ul class="list-disc pl-5">
-                    <li>Review trends and customer sentiment analysis</li>
-                    <li>Product performance metrics based on feedback</li>
-                    <li>Actionable insights for business growth</li>
-                    <li>Customizable reporting options</li>
-                </ul>
+            <div class="w-full lg:w-2/3 md:pl-8 space-y-8">
+                <div class="text-center">
+                    <div id="numberSection" class="p-6 rounded-lg">
+                        <div id="numberDisplay" class="text-6xl font-bold mb-6">0</div>
+                        <div class="star-rating text-5xl mb-6 flex justify-center space-x-2">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <button id="increaseButton" class="bg-black hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-lg text-xl">
+                                Import Reviews
+                            </button>
+                            <img src="say-hello.png" alt="Say Hello" class="mt-0 max-w-full w-auto h-auto">
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
-    </main>
-
-    <footer class="bg-black text-white py-6 mt-12">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2024 ReviewMaster Pro. All rights reserved.</p>
         </div>
-    </footer>
+    </div>
+</section>
+
+<section class="bg-black py-12 px-4 md:py-36 md:px-8 overflow-x-hidden overflow-y-clip">
+    <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col lg:flex-row">
+            <div class="w-full lg:w-1/3 sm:pr-8 space-y-12">
+                <img src="say-it-in-every.png" alt="Say it in every language" class="max-w-full mx-auto h-auto">
+                <p class="text-white text-lg max-sm:text-center">
+                    Break language barriers and connect with customers worldwide. RevuNova's powerful translation
+                    feature ensures your reviews resonate with every visitor, no matter where they're from.
+                </p>
+            </div>
+            <div class="w-full lg:w-2/3 md:pl-8">
+
+                <body class="body-swapping">
+                <div class="button-container-swapping mx-auto">
+                    <div class="language-button-swapping active-swapping" data-lang="en">
+                        <div class="w-72 p-3">
+                            <div class="mb-2">
+                                <div class="flex mb-2 space-x-1 text-yellow-500">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="far fa-star text-yellow-400"></i>
+                                </div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <p class="font-semibold text-lg">Marco Rossi <span class="text-sm text-gray-400">(EN)</span>
+                                    </p>
+                                </div>
+                                <p class="text-sm mt-2 text-gray-700">Great headphones overall. The noise cancellation
+                                    is top-notch, and they're very comfortable. The only downside is that the app can be
+                                    a bit finicky at times.</p>
+                            </div>
+                            <div class="flex justify-between items-center mt-4 text-gray-500">
+                                <div class="text-xs">1 month ago</div>
+                                <div class="space-x-1 flex items-center text-xs">
+                                    <i class="fas fa-thumbs-up"></i>
+                                    <span>28</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="language-button-swapping inactive-swapping" data-lang="es">
+                        <div class="w-72 p-3">
+                            <div class="mb-2">
+                                <div class="flex mb-2 space-x-1 text-yellow-500">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="far fa-star text-yellow-400"></i>
+                                </div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <p class="font-semibold text-lg">Marco Rossi <span class="text-sm text-gray-400">(ES)</span>
+                                    </p>
+                                </div>
+                                <p class="text-sm mt-2 text-gray-700">Excelentes auriculares en general. La cancelación
+                                    de ruido es de primera categoría y son muy cómodos. La única desventaja es que la
+                                    aplicación puede ser un poco complicada a veces.</p>
+                            </div>
+                            <div class="flex justify-between items-center mt-4 text-gray-500">
+                                <div class="text-xs">Hace 1 mes</div>
+                                <div class="space-x-1 flex items-center text-xs">
+                                    <i class="fas fa-thumbs-up"></i>
+                                    <span>28</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="language-button-swapping inactive-swapping" data-lang="fr">
+                        <div class="w-72 p-3">
+                            <div class="mb-2">
+                                <div class="flex mb-2 space-x-1 text-yellow-500">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="far fa-star text-yellow-400"></i>
+                                </div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <p class="font-semibold text-lg">Marco Rossi <span class="text-sm text-gray-400">(FR)</span>
+                                    </p>
+                                </div>
+                                <p class="text-sm mt-2 text-gray-700">Excellents écouteurs dans l'ensemble. La réduction
+                                    du bruit est de premier ordre et ils sont très confortables. Le seul inconvénient
+                                    est que l'application peut parfois être un peu capricieuse.</p>
+                            </div>
+                            <div class="flex justify-between items-center mt-4 text-gray-500">
+                                <div class="text-xs">Il y a 1 mois</div>
+                                <div class="space-x-1 flex items-center text-xs">
+                                    <i class="fas fa-thumbs-up"></i>
+                                    <span>28</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <script>
+                    const buttonsSwapping = document.querySelectorAll('.language-button-swapping');
+                    let currentIndexSwapping = 0;
+
+                    function rotateButtonsSwapping() {
+                        buttonsSwapping.forEach((button, index) => {
+                            button.classList.remove('active-swapping', 'inactive-swapping');
+                            if (index === currentIndexSwapping) {
+                                button.classList.add('active-swapping');
+                                button.style.transform = 'translate(-30%, -30%) scale(1.0) translateZ(100px)';
+                            } else {
+                                button.classList.add('inactive-swapping');
+                                const angle = ((index - currentIndexSwapping + buttonsSwapping.length) % buttonsSwapping.length) * (360 / buttonsSwapping.length);
+                                const x = Math.cos(angle * Math.PI / 180) * 150;
+                                const y = Math.sin(angle * Math.PI / 180) * 150;
+                                const z = -100; // Added Z-translation for inactive elements
+                                button.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(0.8) translateZ(${z}px)`;
+                            }
+                        });
+
+                        currentIndexSwapping = (currentIndexSwapping + 1) % buttonsSwapping.length;
+                    }
+
+                    setInterval(rotateButtonsSwapping, 4000);
+                    rotateButtonsSwapping(); // Initial positioning
+                </script>
+                </body>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="bg-white py-12 px-4 md:py-36 md:px-8 overflow-x-hidden overflow-y-clip">
+    <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col lg:flex-row">
+            <div class="w-full lg:w-1/3 sm:pr-8 space-y-6">
+                <img src="theme-like-a-breeze.png" alt="From Zero to Hero" class="max-w-full mx-auto h-auto">
+                <p class="text-gray-600 text-lg max-sm:text-center">
+                    Customizing your review section has never been easier. With RevuNova, transform your theme's look
+                    with just a few clicks! </p>
+
+    <div>
+        <div class="flex flex-col items-center space-y-4">
+            <div class="color-display hidden flex flex-col items-center space-y-2">
+                <div class="selected-color w-16 h-16 border"></div>
+                <input type="text" class="color-value text-center" value="#000000" readonly>
+            </div>
+            <canvas class="color-canvas border" width="200" height="80"></canvas>
+            <canvas class="color-slider border" width="200" height="20"></canvas>
+            <div class="color-controls flex flex-col items-center space-y-2">
+                <button id="autoChangeToggle" class="hidden">Auto Change: On</button>
+                <input type="color" id="colorPicker" value="#000000" style="display: none;">
+            </div>
+        </div>
+
+        <img src="your-layout.png" alt="From Zero to Hero" class="max-w-full mx-auto h-auto">
+    </div>
+            </div>
+            <div class="w-full lg:w-2/3 md:pl-8 space-y-8">
+                <div class="headerOverallContainer py-5 flex-row md:pt-16">
+                    <!-- star starts -->
+                    <div class="xsm-12 sm-4 lg-4 d-flex align-items-center justify-content-center">
+                        <div id="starOverallContainer">
+                            <svg id="starHeaderSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" zoomAndPan="magnify" viewBox="0 0 75 71.249999" preserveAspectRatio="xMidYMid meet" version="1.0">
+                                <defs>
+                                    <clipPath id="75671ff757">
+                                        <path d="M 0.390625 0 L 74.609375 0 L 74.609375 70.472656 L 0.390625 70.472656 Z M 0.390625 0 " clip-rule="nonzero"/>
+                                    </clipPath>
+                                </defs>
+                                <g clip-path="url(#75671ff757)">
+                                    <path fill="#f4c01e" d="M 37.5 -0.0351562 L 47.054688 21.429688 C 47.421875 22.253906 48 22.96875 48.730469 23.5 C 49.464844 24.03125 50.320312 24.359375 51.21875 24.453125 L 74.605469 26.898438 L 57.125 42.613281 C 56.453125 43.214844 55.953125 43.984375 55.675781 44.84375 C 55.394531 45.703125 55.347656 46.617188 55.535156 47.5 L 60.433594 70.480469 L 40.074219 58.726562 C 39.289062 58.273438 38.402344 58.035156 37.5 58.035156 C 36.597656 58.035156 35.710938 58.273438 34.925781 58.726562 L 14.566406 70.480469 L 19.464844 47.5 C 19.652344 46.617188 19.605469 45.703125 19.324219 44.84375 C 19.046875 43.984375 18.546875 43.214844 17.875 42.613281 L 0.394531 26.898438 L 23.78125 24.453125 C 24.679688 24.359375 25.535156 24.03125 26.269531 23.5 C 27 22.96875 27.578125 22.253906 27.945312 21.429688 Z M 37.5 -0.0351562 " fill-opacity="1" fill-rule="evenodd"/>
+                                </g>
+                                <text class="starScoreAverage" x="50%" y="57%" dominant-baseline="middle" text-anchor="middle">
+                                    4.8
+                                </text>
+                            </svg>
+                            <p class="starReviewsCount">888 Reviews</p>
+                            <button id="toggleButton" data-custom-open="modal-1" class="colorButton star-header-write-review-button bgTextDefaultThemeColors">
+                                Write Review
+                            </button>
+                        </div>
+                    </div>
+                    <!-- star ends -->
+
+                    <!-- bars starts -->
+                    <div class="xsm-12 sm-6 d-flex justify-content-center align-items-center">
+                        <div class="mainBarWrapper sm-11 md-12 lg-11">
+                            <div class="barItemContainer star-icons-sizing">
+            <span class="ratingScore star-icons-grey">
+                <span>5</span>
+                <svg class="icon">
+                    <use xlink:href="#filledStarSingleAvatar"></use>
+                </svg>
+            </span>
+                                <div class="barItem">
+                                    <div class="backBar bgTertiaryThemeColor"></div>
+                                    <div class="colorButton frontBar bgPrimaryThemeColor" style="width: 84.5%;"></div>
+                                </div>
+                                <span class="ratingCount star-icons-grey">
+                <svg class="icon">
+                    <use xlink:href="#filledStarSingleAvatar"></use>
+                </svg>
+                <span>750</span>
+            </span>
+                            </div>
+                            <div class="barItemContainer star-icons-sizing">
+            <span class="ratingScore star-icons-grey">
+                <span>4</span>
+                <svg class="icon">
+                    <use xlink:href="#filledStarSingleAvatar"></use>
+                </svg>
+            </span>
+                                <div class="barItem">
+                                    <div class="backBar bgTertiaryThemeColor"></div>
+                                    <div class="colorButton frontBar bgPrimaryThemeColor" style="width: 48.8%;"></div>
+                                </div>
+                                <span class="ratingCount star-icons-grey">
+                <svg class="icon">
+                    <use xlink:href="#filledStarSingleAvatar"></use>
+                </svg>
+                <span>114</span>
+            </span>
+                            </div>
+                            <div class="barItemContainer star-icons-sizing">
+            <span class="ratingScore star-icons-grey">
+                <span>3</span>
+                <svg class="icon">
+                    <use xlink:href="#filledStarSingleAvatar"></use>
+                </svg>
+            </span>
+                                <div class="barItem">
+                                    <div class="backBar bgTertiaryThemeColor"></div>
+                                    <div class="colorButton frontBar bgPrimaryThemeColor" style="width: 32%;"></div>
+                                </div>
+                                <span class="ratingCount star-icons-grey">
+                <svg class="icon">
+                    <use xlink:href="#filledStarSingleAvatar"></use>
+                </svg>
+                <span>18</span>
+            </span>
+                            </div>
+                            <div class="barItemContainer star-icons-sizing">
+            <span class="ratingScore star-icons-grey">
+                <span>2</span>
+                <svg class="icon">
+                    <use xlink:href="#filledStarSingleAvatar"></use>
+                </svg>
+            </span>
+                                <div class="barItem">
+                                    <div class="backBar bgTertiaryThemeColor"></div>
+                                    <div class="colorButton frontBar bgPrimaryThemeColor" style="width: 18%;"></div>
+                                </div>
+                                <span class="ratingCount star-icons-grey">
+                <svg class="icon">
+                    <use xlink:href="#filledStarSingleAvatar"></use>
+                </svg>
+                <span>4</span>
+            </span>
+                            </div>
+                            <div class="barItemContainer star-icons-sizing">
+            <span class="ratingScore star-icons-grey">
+                <span>1</span>
+                <svg class="icon">
+                    <use xlink:href="#filledStarSingleAvatar"></use>
+                </svg>
+            </span>
+                                <div class="barItem">
+                                    <div class="backBar bgTertiaryThemeColor"></div>
+                                    <div class="colorButton frontBar bgPrimaryThemeColor" style="width: 4%;"></div>
+                                </div>
+                                <span class="ratingCount star-icons-grey">
+                <svg class="icon">
+                    <use xlink:href="#filledStarSingleAvatar"></use>
+                </svg>
+                <span>2</span>
+            </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bars ends -->
+
+                    <!-- labels buttons starts -->
+                    <div class="xsm-10  d-flex align-items-center">
+                        <div class="labelsButtonOverallContainer d-flex align-items-center justify-content-evenly wrap w-100">
+                            <button class="colorButton reviewLabel bgTertiaryThemeColor textPrimaryThemeColor" data-sort="latest">
+                                Latest
+                            </button>
+                            <button class="colorButton reviewLabel bgTertiaryThemeColor textPrimaryThemeColor" data-sort="images">
+                                Media
+                            </button>
+                            <button class="colorButton reviewLabel bgTertiaryThemeColor textPrimaryThemeColor" data-sort="high_quality">
+                                Helpful
+                            </button>
+                        </div>
+                    </div>
+                    <!-- labels buttons ends -->
+                </div>
+
+                <!-- SVG Definitions -->
+                <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                    <symbol id="starIcon" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </symbol>
+                    <symbol id="filledStarSingleAvatar" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/>
+                    </symbol>
+                </svg>
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--5th section starts-->
+<section class="bg-black py-12 px-4 md:py-36 md:px-8 overflow-x-hidden overflow-y-clip">
+    <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col lg:flex-row">
+            <div class="w-full lg:w-1/3 sm:pr-8 space-y-12">
+                <img src="no-delay.png" alt="Say it in every language" class="max-w-full mx-auto h-auto">
+                <p class="text-white text-lg max-sm:text-center">RevuNova's instant star rating display ensures your products make a strong first impression, loading at the speed of customer expectations.</p>
+            </div>
+
+
+
+            <div class="w-full lg:w-2/3 md:pl-8">
+                <div id="5thSection">
+                    <div id="product-section-5" class="container mx-auto px-4 py-8">
+                        <div class="browser-mockup">
+                            <div class="browser-top-bar">
+                                <button id="refresh-button" class="bg-black text-white py-1 px-4 rounded-lg hover:bg-gray-800 transition duration-300 text-sm flex items-center">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                            </div>
+                            <div id="product-skeleton" class="bg-white rounded-lg shadow-lg p-6">
+                                <div class="flex flex-col md:flex-row gap-8">
+                                    <div class="md:w-2/5">
+                                        <div class="skeleton w-full h-64 rounded-lg"></div>
+                                    </div>
+                                    <div class="md:w-3/5 flex flex-col justify-between">
+                                        <div>
+                                            <div class="skeleton w-3/4 h-8 mb-4"></div>
+                                            <div class="skeleton w-1/2 h-4 mb-4"></div>
+                                            <div class="skeleton w-full h-4 mb-2"></div>
+                                            <div class="skeleton w-full h-4 mb-2"></div>
+                                            <div class="skeleton w-3/4 h-4 mb-4"></div>
+                                            <div class="skeleton w-1/4 h-6 mb-4"></div>
+                                        </div>
+                                        <div>
+                                            <div class="skeleton w-full h-10 mb-4"></div>
+                                            <div class="skeleton w-1/4 h-4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="product-content" class="bg-white rounded-lg shadow-lg p-6 hidden">
+                                <div class="flex flex-col md:flex-row gap-8">
+                                    <div class="md:w-2/5">
+                                        <div class="bg-gray-200 w-full h-64 rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-headphones-alt text-gray-500 text-6xl"></i>
+                                        </div>
+                                    </div>
+                                    <div class="md:w-3/5 flex flex-col justify-between">
+                                        <div>
+                                            <h1 class="text-3xl font-bold text-gray-600 mb-2">Premium Headphones</h1>
+                                            <div class="flex items-center mb-4">
+                                                <div id="product-stars" class="flex text-yellow-400 mr-2 text-xl">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                </div>
+                                                <span class="text-gray-600">(127 reviews)</span>
+                                            </div>
+                                            <p class="text-md text-gray-500 mb-4">Experience superior sound quality with our Premium Headphones. Designed for comfort and clarity, these headphones are perfect for music lovers and professionals alike.</p>
+                                            <div class="flex items-center mb-4">
+                                                <span class="text-2xl font-bold text-gray-400 mr-2">$99.99</span>
+                                                <span class="text-sm text-gray-400 line-through">$129.99</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <button class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300 mb-4 w-full">
+                                                Add to Cart
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--5th section ends-->
+
+<section class="bg-black text-white py-24">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Powerful Features for Enhanced Review Management</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Google Merchant Center Integration -->
+            <div class="bg-gray-900 rounded-lg p-6 shadow-lg border border-gray-700">
+                <div class="flex items-center justify-center mb-4">
+                    <i class="fab fa-google text-4xl text-blue-400"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-4 text-center">Google Merchant Center Integration</h3>
+                <p class="text-gray-300">
+                    Boost your product visibility by submitting reviews directly to Google Merchant Center. This feature enhances your product listings with authentic customer feedback, potentially improving click-through rates and conversions in Google Shopping results.
+                </p>
+            </div>
+
+            <!-- Automated Review Requests -->
+            <div class="bg-gray-900 rounded-lg p-6 shadow-lg border border-gray-700">
+                <div class="flex items-center justify-center mb-4">
+                    <i class="fas fa-envelope text-4xl text-green-400"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-4 text-center">Automated Review Requests</h3>
+                <p class="text-gray-300">
+                    Streamline your review collection process with automated email requests. Set up customizable triggers to send review invitations to customers post-purchase, increasing your review volume effortlessly and maintaining a steady flow of fresh feedback.
+                </p>
+            </div>
+
+            <!-- Comprehensive Review Analytics -->
+            <div class="bg-gray-900 rounded-lg p-6 shadow-lg border border-gray-700">
+                <div class="flex items-center justify-center mb-4">
+                    <i class="fas fa-chart-pie text-4xl text-purple-400"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-4 text-center">Comprehensive Review Analytics</h3>
+                <p class="text-gray-300">
+                    Gain valuable insights with detailed statistics on your reviews. Analyze data by country, language, and source to understand your customer base better. Use these insights to tailor your marketing strategies and improve product offerings.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <p class="text-lg font-semibold">© RevuNova. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="text-white hover:text-gray-300 transition duration-300" title="Visit our Shopify store">
+                    <i class="fab fa-shopify text-3xl"></i>
+                </a>
+                <a href="#" class="text-white hover:text-gray-300 transition duration-300" title="Check out our YouTube channel">
+                    <i class="fab fa-youtube text-3xl"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script src="script.js"></script>
+
 </body>
 </html>
