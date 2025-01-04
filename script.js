@@ -352,12 +352,18 @@ updateButtonColors(colorPicker.value);
 
 /* Scroll to the element smoothly starts */
 document.addEventListener('DOMContentLoaded', function() {
-    if (window.location.hash === '#subscriptionOptions') {
-        const element = document.getElementById('subscriptionOptions');
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+  // Check if URL has a hash
+  if (window.location.hash) {
+    // Get the target element using the hash
+    const element = document.querySelector(window.location.hash);
+    
+    if (element) {
+      // Scroll to the element smoothly
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
+  }
 });
-
 /* Scroll to the element smoothly ends */
