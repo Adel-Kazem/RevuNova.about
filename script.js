@@ -348,3 +348,16 @@ updateButtonColors(colorPicker.value);
     });
 })();
 /* 5th section ends */
+
+
+/* Scroll to the element smoothly starts */
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.hash === '#subscriptionOptions') {
+        const element = document.getElementById('subscriptionOptions');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+});
+
+/* Scroll to the element smoothly ends */
