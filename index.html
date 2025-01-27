@@ -207,7 +207,40 @@
                 <button class="md:hidden">
                     <i data-lucide="menu" class="h-6 w-6 text-white"></i>
                 </button>
+                <div id="mobileMenu" class="hidden fixed inset-0 bg-purple-950/95 z-50 transition-opacity duration-300 ease-in-out opacity-0">
+                    <div class="container mx-auto px-4 py-6">
+                        <div class="flex justify-end">
+                            <button id="closeMenu">
+                                <i data-lucide="x" class="h-6 w-6 text-white"></i>
+                            </button>
+                        </div>
+                        <div class="flex flex-col space-y-6 mt-8">
+                            <a href="https://revunova.myshopify.com/products/bose-soundlink-flex-bluetooth-speaker-stone-blue"
+                               target="_blank"
+                               class="text-white/80 hover:text-white transition-colors flex items-center gap-1">
+                                Demo Store
+                                <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=xqM0eRYo_r8"
+                               target="_blank"
+                               class="text-white/80 hover:text-white transition-colors flex items-center gap-1">
+                                How to
+                                <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+                            <span class="text-white/80 hover:text-white transition-colors cursor-pointer" onclick="scrollToSection(9)">Contact us</span>
+                            <span class="text-white/80 hover:text-white transition-colors cursor-pointer" onclick="scrollToSection(8)">Pricing</span>
+                        </div>
+                    </div>
+                </div>
+
             </nav>
+
 
             <div class="container mx-auto px-3 py-16">
                 <div class="flex flex-col md:flex-row items-center justify-between flex-col-lg">
@@ -1352,5 +1385,40 @@
     });
 </script>
 
+<!--burger-->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const burgerButton = document.querySelector('[data-lucide="menu"]').parentElement;
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeButton = document.getElementById('closeMenu');
+
+        // Open menu
+        burgerButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            // Wait a tiny bit for the display:none to be removed
+            setTimeout(() => {
+                mobileMenu.classList.remove('opacity-0');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Close menu
+        const closeMenu = () => {
+            mobileMenu.classList.add('opacity-0');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300); // Match this with the transition duration
+            document.body.style.overflow = 'auto';
+        };
+
+        closeButton.addEventListener('click', closeMenu);
+
+        // Close menu when clicking on a link
+        mobileMenu.querySelectorAll('a, span').forEach(item => {
+            item.addEventListener('click', closeMenu);
+        });
+    });
+
+</script>
 </body>
 </html>
