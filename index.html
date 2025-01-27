@@ -50,17 +50,45 @@
         /*    );*/
         /*}*/
 
-        .scroll-container {
-            height: 100vh;
-            overflow-y: scroll;
-            scroll-snap-type: y proximity;
-        }
+             /* Modify these existing rules */
+         .scroll-container {
+             height: 100vh;
+             overflow-y: scroll;
+             scroll-snap-type: y proximity; /* Changed from mandatory */
+         }
 
         .scroll-section {
             scroll-snap-align: start;
-            min-height: 90vh;
+            min-height: 100vh; /* Changed from 90vh */
             height: auto;
             overflow: visible;
+        }
+
+        /* Add these new media queries */
+        @media (max-width: 768px) {
+            .scroll-container {
+                scroll-snap-type: y proximity;
+            }
+
+            .scroll-section {
+                scroll-snap-align: none;
+                min-height: auto;
+                padding: 2rem 0;
+            }
+
+            /* Optional: Disable scroll snapping completely on mobile */
+            /* @media (pointer: coarse) {
+                .scroll-container {
+                    scroll-snap-type: none;
+                }
+            } */
+        }
+
+        /* Add this new rule to improve mobile behavior */
+        @media (hover: none) and (pointer: coarse) {
+            .scroll-section {
+                scroll-snap-stop: always;
+            }
         }
 
         .scroll-section > div {
