@@ -1,1 +1,1357 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>RevuNova - Powerful Review Management for Shopify Stores</title> <script src="https://cdn.tailwindcss.com"></script> <link rel="icon" type="image/png" href="favicon.png"> <link rel="apple-touch-icon" href="favicon.png"> <link rel="icon" type="image/png" href="favicon.png"> <meta name="description" content="Transform your Shopify store with RevuNova's powerful review management system. Import, translate, and customize product reviews effortlessly."> <meta name="keywords" content="shopify reviews, product reviews, review management, ecommerce, customer feedback"> <meta property="og:title" content="RevuNova - The #1 Review App Trusted by Top Shopify Stores"> <meta property="og:description" content="Increase sales by 47% with authentic customer reviews. Import, translate, and showcase reviews in minutes."> <meta property="og:title" content="RevuNova - Import 1000+ Reviews in 60 Seconds | Shopify's Review Expert"> <meta property="og:description" content="Boost your store's credibility instantly. Import unlimited reviews, translate to any language, and watch your sales soar. Start free now!"> <link rel="stylesheet" href="styles.css"> <script src="https://unpkg.com/lucide@latest"></script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icon-css@3.4.6/css/flag-icon.min.css"/> <style> :root { --min-font-size: 14px; --max-font-size: 18px; --min-viewport-width: 320px; --max-viewport-width: 1800px; } * { margin: 0; padding: 0; box-sizing: border-box; } html { scroll-behavior: smooth; } /*body {*/ /* font-size: clamp(*/ /* var(--min-font-size),*/ /* calc(14px + 4 * ((100vw - var(--min-viewport-width)) / (var(--max-viewport-width) - var(--min-viewport-width)))),*/ /* var(--max-font-size)*/ /* );*/ /*}*/ .scroll-container { height: 100vh; overflow-y: scroll; scroll-snap-type: y mandatory; } .scroll-section { scroll-snap-align: start; min-height: 90vh; height: auto; overflow: visible; } .scroll-section > div { padding: 3rem 1.5rem; } .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1rem; } img { max-width: 90%; height: auto; object-fit: contain; } .md\:w-1\/2 img { width: 90%; max-height: 70vh; } .navigation { position: fixed; right: 20px; top: 50%; transform: translateY(-50%); z-index: 100; } .nav-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255, 255, 255, 0.3); margin: 8px; cursor: pointer; transition: all 0.3s ease; border: 2px solid rgba(255, 255, 255, 0.5); box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); } .nav-dot:hover { transform: scale(1.2); background: rgba(255, 255, 255, 0.8); } .nav-dot.active { background: rgba(255, 255, 255, 0.8); transform: scale(1.2); } @media screen and (max-width: 1024px) { .flex-col-lg { flex-direction: column; } .md\:w-1\/2 { width: 100%; padding: 0.75rem; } h2 { font-size: 2rem; } } @media screen and (max-width: 768px) { .scroll-section > div { padding: 1.5rem 0.75rem; } h2 { font-size: 1.75rem; } .space-y-4 { margin-bottom: 0.75rem; } } </style> <svg style="display: none;"> <symbol id="shopify-icon" viewBox="0 0 48 48"> <path fill="#7cb342" d="M37.216,11.78c-0.023-0.211-0.211-0.305-0.351-0.305s-3.21-0.234-3.21-0.234s-2.132-2.132-2.39-2.343 c-0.234-0.234-0.68-0.164-0.867-0.117c-0.023,0-0.469,0.141-1.195,0.375c-0.726-2.086-1.968-3.984-4.194-3.984h-0.211 C24.187,4.375,23.391,4,22.735,4c-5.155,0-7.639,6.444-8.412,9.725c-2.015,0.633-3.445,1.054-3.609,1.125 c-1.125,0.351-1.148,0.375-1.289,1.429c-0.117,0.797-3.046,23.456-3.046,23.456L29.179,44l12.373-2.671 C41.575,41.282,37.24,11.991,37.216,11.78z M27.937,9.483c-0.562,0.164-1.242,0.375-1.921,0.609V9.671 c0-1.265-0.164-2.296-0.469-3.117C26.718,6.695,27.445,7.984,27.937,9.483L27.937,9.483z M24.117,6.812 c0.305,0.797,0.516,1.922,0.516,3.468v0.234c-1.265,0.398-2.601,0.797-3.984,1.242C21.422,8.804,22.899,7.351,24.117,6.812 L24.117,6.812z M22.617,5.359c0.234,0,0.469,0.094,0.656,0.234c-1.664,0.773-3.421,2.718-4.148,6.655 c-1.101,0.351-2.156,0.656-3.163,0.984C16.806,10.233,18.915,5.359,22.617,5.359z"></path> <path fill="#558b2f" d="M36.865,11.428c-0.141,0-3.21-0.234-3.21-0.234s-2.132-2.132-2.39-2.343 C31.17,8.757,31.053,8.71,30.96,8.71L29.249,44l12.373-2.671c0,0-4.335-29.338-4.359-29.549 C37.169,11.569,37.005,11.475,36.865,11.428z"></path> <path fill="#fff" d="M24.792,18.593l-1.475,4.449c0,0-1.337-0.715-2.927-0.715c-2.374,0-2.489,1.498-2.489,1.867 c0,2.028,5.301,2.812,5.301,7.583c0,3.757-2.374,6.177-5.578,6.177c-3.872,0-5.808-2.397-5.808-2.397l1.037-3.411 c0,0,2.028,1.752,3.734,1.752c1.129,0,1.59-0.876,1.59-1.521c0-2.651-4.333-2.766-4.333-7.145c0-3.665,2.628-7.214,7.952-7.214 C23.777,17.994,24.792,18.593,24.792,18.593z"></path> </symbol> </svg> </head> <body> <div class="scroll-container"> <div class="scroll-section min-h-screen bg-gradient-to-br from-purple-950 via-purple-900 to-pink-900"> <div class="container mx-auto"> <nav class="w-full px-4 flex items-center justify-between"> <div class="flex items-center space-x-8"> <div class="flex items-center"> <img src="RevuNova-logo-wide-white.png" alt="RevuNova" class="h-8"> </div> <div class="hidden md:flex items-center space-x-6"> <a href="https://revunova.myshopify.com/products/bose-soundlink-flex-bluetooth-speaker-stone-blue" target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white transition-colors flex items-center gap-1"> Demo Store <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <line x1="7" y1="17" x2="17" y2="7"></line> <polyline points="7 7 17 7 17 17"></polyline> </svg> </a> <a href="https://www.youtube.com/watch?v=xqM0eRYo_r8" target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white transition-colors flex items-center gap-1"> How to <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <line x1="7" y1="17" x2="17" y2="7"></line> <polyline points="7 7 17 7 17 17"></polyline> </svg> </a> <span class="text-white/80 hover:text-white transition-colors cursor-pointer" onclick="scrollToSection(9)">Contact us</span> <span class="text-white/80 hover:text-white transition-colors cursor-pointer" onclick="scrollToSection(8)">Pricing</span> </div> </div> <div class="hidden md:flex items-center space-x-4"> <a href="https://apps.shopify.com/revunova" target="_blank" rel="noopener noreferrer" class="inline-flex items-center w-full md:w-auto bg-white text-purple-950 px-6 py-2 rounded-md font-medium hover:bg-white/90 transition-colors"> <svg class="w-5 h-5 mr-2"> <use href="#shopify-icon"/> </svg> Start free trial </a> </div> <button class="md:hidden"> <i data-lucide="menu" class="h-6 w-6 text-white"></i> </button> </nav> <div class="container mx-auto px-3 py-16"> <div class="flex flex-col md:flex-row items-center justify-between flex-col-lg"> <div class="md:w-1/2 mb-8 md:mb-0"> <div class="text-white/80 uppercase tracking-wide font-semibold mb-3"> TRUSTED COMMERCE </div> <h2 class="text-3xl md:text-5xl font-bold text-white mb-4"> Build Trust, <br>Boost Sales </h2> <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg"> Scale your business with confidence by showcasing authentic customer experiences </p> <div class="space-y-3 md:space-y-0 md:space-x-3"> <a href="https://apps.shopify.com/revunova" target="_blank" class="inline-flex items-center w-full md:w-auto bg-white text-purple-950 px-6 py-2.5 rounded-md font-medium hover:bg-white/90 transition-colors"> <svg class="w-5 h-5 mr-2"> <use href="#shopify-icon"/> </svg> Get Started </a> <!-- <button class="w-full md:w-auto text-white border border-white px-6 py-2.5 rounded-md font-medium hover:bg-white/10 transition-colors">--> <!-- Learn More--> <!-- </button>--> </div> </div> <div class="md:w-1/2 flex justify-center"> <img src="s1.png" alt="Description"/> </div> </div> </div> </div> </div> <div class="scroll-section min-h-screen bg-gradient-to-br from-[#0A0500] via-[#1A0800] to-[#2A1500]"> <div class="container mx-auto px-3 py-16 min-h-screen flex flex-col"> <div class="flex flex-col md:flex-row items-center md:justify-between h-full space-y-[10vh] md:space-y-0"> <div class="md:w-1/2 mt-[10vh] md:mt-0"> <div class="text-[#FF9933] uppercase tracking-wide font-semibold mb-3"> GLOBAL REVIEWS </div> <h2 class="text-3xl md:text-5xl font-bold text-white mb-4"> Import 1000+ Global Reviews in Minutes </h2> <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg"> Multi-platform imports with photos & videos in one click. Build trust with verified reviews from global marketplaces. </p> <div class="space-y-3 md:space-y-0 md:space-x-3 flex flex-col md:flex-row"> <a href="https://apps.shopify.com/revunova" target="_blank" class="inline-flex items-center w-full md:w-auto bg-[#FF9933] text-white px-6 py-2.5 rounded-md font-medium hover:bg-[#FFB366] transition-colors"> <svg class="w-5 h-5 mr-2"> <use href="#shopify-icon"/> </svg> Start Importing </a> <a href="https://youtu.be/xqM0eRYo_r8?t=35" target="_blank" class="inline-flex items-center w-full md:w-auto text-white border border-[#FF9933] px-6 py-2.5 rounded-md font-medium hover:bg-[#FF9933]/10 transition-colors"> Watch Demo </a> </div> </div> <div class="md:w-1/2 flex justify-center mb-[10vh] md:mb-0"> <img src="s2.png" alt="Description" class="w-full h-auto object-contain"/> </div> </div> </div> </div> <!-- Translation Section --> <div class="scroll-section min-h-screen bg-gradient-to-br from-[#1A0B4E] via-[#2B1B7E] to-[#0BC7F0]"> <div class="container mx-auto px-3 py-16 min-h-screen flex flex-col"> <div class="flex flex-col md:flex-row items-center md:justify-between h-full space-y-[10vh] md:space-y-0"> <div class="md:w-1/2 mt-[10vh] md:mt-0"> <div class="text-[#0BC7F0] uppercase tracking-wide font-semibold mb-3"> GLOBAL TRANSLATION </div> <h2 class="text-3xl md:text-5xl font-bold text-white mb-4"> Reviews That Speak Every Language </h2> <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg"> Automatic translation based on your markets and customers. Let customers read reviews in their preferred language, breaking down barriers for global engagement. </p> <div class="space-y-3 md:space-y-0 md:space-x-3 flex flex-col md:flex-row"> <a href="https://apps.shopify.com/revunova" target="_blank" class="inline-flex items-center w-full md:w-auto bg-[#0BC7F0] text-white px-6 py-2.5 rounded-md font-medium hover:bg-[#1AD7FF] transition-colors"> <svg class="w-5 h-5 mr-2"> <use href="#shopify-icon"/> </svg> Get Started </a> <a href="https://youtu.be/xqM0eRYo_r8?t=133" target="_blank" class="inline-flex items-center w-full md:w-auto text-white border border-[#0BC7F0] px-6 py-2.5 rounded-md font-medium hover:bg-[#0BC7F0]/10 transition-colors"> Watch Demo </a> </div> </div> <div class="md:w-1/2 flex justify-center mb-[10vh] md:mb-0"> <img src="s333333333.png" alt="Review Translation Dashboard" class="w-full h-auto object-contain max-h-[60vh]"/> </div> </div> </div> </div> <!-- Product Reviews Section --> <div class="scroll-section min-h-screen bg-gradient-to-br from-black via-[#1A0505] to-[#3B0808]"> <div class="container mx-auto px-3 py-16 min-h-screen flex flex-col"> <div class="flex flex-col md:flex-row items-center md:justify-between h-full space-y-[10vh] md:space-y-0"> <div class="md:w-1/2 mt-[10vh] md:mt-0"> <div class="text-[#FF6B6B] uppercase tracking-wide font-semibold mb-3"> PRODUCT REVIEWS </div> <h2 class="text-3xl md:text-5xl font-bold text-white mb-4"> Unite Your Product Reviews </h2> <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg"> Connect similar products, combine their reviews and boost your sales with unified product feedback. </p> <div class="space-y-3 md:space-y-0 md:space-x-3 flex flex-col md:flex-row"> <a href="https://apps.shopify.com/revunova" target="_blank" class="inline-flex items-center w-full md:w-auto bg-[#FF6B6B] text-white px-6 py-2.5 rounded-md font-medium hover:bg-[#FF8585] transition-colors"> <svg class="w-5 h-5 mr-2"> <use href="#shopify-icon"/> </svg> Get Started </a> <a href="https://www.youtube.com/watch?v=V3Vfe3aWOMQ" target="_blank" class="inline-flex items-center w-full md:w-auto text-white border border-[#FF6B6B] px-6 py-2.5 rounded-md font-medium hover:bg-[#FF6B6B]/10 transition-colors"> Watch Demo </a> </div> </div> <div class="md:w-1/2 flex justify-center mb-[10vh] md:mb-0"> <img src="s5.png" alt="Description"/> </div> </div> </div> </div> <!-- Instant Ratings Section --> <div class="scroll-section min-h-screen bg-gradient-to-br from-[#1A0B2E] via-[#2B1B4E] to-[#0B1B3E]"> <div class="container mx-auto px-3 py-16 min-h-screen flex flex-col"> <div class="flex flex-col md:flex-row items-center md:justify-between h-full space-y-[10vh] md:space-y-0"> <div class="md:w-1/2 mt-[10vh] md:mt-0"> <div class="text-[#FF1B8D] uppercase tracking-wide font-semibold mb-3"> INSTANT RATINGS </div> <h2 class="text-3xl md:text-5xl font-bold text-white mb-4"> Zero Delay,<br>Instant Ratings </h2> <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg"> Display product ratings instantly with no loading time. Stars appear immediately on your product, collection, and home pages. </p> <div class="space-y-3 md:space-y-0 md:space-x-3 flex flex-col md:flex-row"> <a href="https://apps.shopify.com/revunova" target="_blank" class="inline-flex items-center w-full md:w-auto bg-[#FF1B8D] text-white px-6 py-2.5 rounded-md font-medium hover:bg-[#FF4DA6] transition-colors"> <svg class="w-5 h-5 mr-2"> <use href="#shopify-icon"/> </svg> Get Started </a> <a href="https://revunova.myshopify.com/collections/all" target="_blank" class="inline-flex items-center w-full md:w-auto text-white border border-[#FF1B8D] px-6 py-2.5 rounded-md font-medium hover:bg-[#FF1B8D]/10 transition-colors"> Live Demo </a> </div> </div> <div class="md:w-1/2 flex justify-center mb-[10vh] md:mb-0"> <img src="s6.png" alt="Description" class="w-90 max-h-[70vh] object-contain"/> </div> </div> </div> </div> <div class="scroll-section min-h-screen bg-gradient-to-br from-[#050303] via-[#2E0B0B] to-[#4E1B2B]"> <div class="container mx-auto px-3 py-16 min-h-screen flex flex-col"> <div class="flex flex-col md:flex-row items-center md:justify-between h-full space-y-[10vh] md:space-y-0"> <div class="md:w-1/2 mt-[10vh] md:mt-0"> <div class="text-[#FF7676] uppercase tracking-wide font-semibold mb-3"> GOOGLE INTEGRATION </div> <h2 class="text-3xl md:text-5xl font-bold text-white mb-4"> Your Reviews, Now on Google </h2> <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg"> Get more clicks with review-rich Google listings. Boost your visibility and attract more customers by showcasing your reviews directly in search results. </p> <div class="space-y-3 md:space-y-0 md:space-x-3"> <a href="https://apps.shopify.com/revunova" target="_blank" class="inline-flex items-center w-full md:w-auto bg-[#FF7676] text-white px-6 py-2.5 rounded-md font-medium hover:bg-[#FF9494] transition-colors"> <svg class="w-5 h-5 mr-2"> <use href="#shopify-icon"/> </svg> Connect Google </a> </div> </div> <div class="md:w-1/2 flex justify-center mb-[10vh] md:mb-0"> <img src="s7777.png" alt="Google Reviews Integration" class="w-90 max-h-[70vh] object-contain"/> </div> </div> </div> </div> <div class="scroll-section min-h-screen bg-gradient-to-br from-[#1B0311] via-[#350C25] to-[#7F2276]"> <div class="container mx-auto px-3 py-16 min-h-screen flex flex-col"> <div class="flex flex-col md:flex-row items-center md:justify-between h-full space-y-[10vh] md:space-y-0"> <div class="md:w-1/2 mt-[10vh] md:mt-0"> <div class="text-[#FF69B4] uppercase tracking-wide font-semibold mb-3"> ANALYTICS </div> <h2 class="text-3xl md:text-5xl font-bold text-white mb-4"> Data-Driven Review Power </h2> <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg"> Track sources, languages, and impact in real-time. Make informed decisions with comprehensive analytics and insights from your customer reviews. </p> <div class="space-y-3 md:space-y-0 md:space-x-3"> <a href="https://apps.shopify.com/revunova" target="_blank" class="inline-flex items-center w-full md:w-auto bg-[#FF69B4] text-white px-6 py-2.5 rounded-md font-medium hover:bg-[#FF85C2] transition-colors"> <svg class="w-5 h-5 mr-2"> <use href="#shopify-icon"/> </svg> View Analytics </a> </div> </div> <div class="md:w-1/2 flex justify-center mb-[10vh] md:mb-0"> <img src="s4.png" alt="Analytics Dashboard" class="w-90 max-h-[70vh] object-contain"/> </div> </div> </div> </div> <div class="scroll-section min-h-screen bg-gradient-to-br from-[#020B1C] via-[#0A192F] to-[#1E3A8A] overflow-x-hidden overflow-y-clip"> <div class="container mx-auto px-4 py-20"> <div class="flex flex-col md:flex-row items-center justify-between"> <div class="md:w-1/2 mb-12 md:mb-0"> <div class="text-[#60A5FA] uppercase tracking-wide font-semibold mb-4"> EASY INTEGRATION </div> <h2 class="text-4xl md:text-6xl font-bold text-white mb-6"> One Click, All Templates </h2> <p class="text-lg md:text-xl text-white/80 mb-8 max-w-xl"> Reviews Everywhere in Seconds. Instant setup across product, collection & home pages with seamless template integration. </p> <div class="space-y-4 md:space-y-0 md:space-x-4"> <a href="https://apps.shopify.com/revunova" target="_blank" class="inline-flex items-center w-full md:w-auto bg-[#60A5FA] text-white px-8 py-3 rounded-md font-medium hover:bg-[#93C5FD] transition-colors"> <svg class="w-5 h-5 mr-2"> <use href="#shopify-icon"/> </svg> Install Now </a> <!-- <button class="w-full md:w-auto text-white border border-[#60A5FA] px-8 py-3 rounded-md font-medium hover:bg-[#60A5FA]/10 transition-colors">--> <!-- View Templates--> <!-- </button>--> </div> </div> <div class="md:w-1/2 perspective-container max-h-[90vh]"> <div class="w-full sm:w-2/3 md:scale-70 md:origin-top md:h-[85vh] max-sm:pt-20 relative"> <div class="scale-50 origin-top max-sm:max-h-52 max-sm:pt-20"> <div class="angled-section"> <div class="min-w-[74rem] grid grid-cols-4 gap-16"> <!--reviews elements starts--> <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto"> <img src="revImgs/6.png" alt="Image description" style="width:100%" class="w-72 h-72 object-cover rounded-md"> <div class="w-72 p-3"> <div class="mb-2"> <div class="flex mb-4 space-x-1"> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> </div> <div class="flex justify-between items-center"> <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i> Ziad Hayek</p> <span class="flag-icon flag-icon-lb"></span> </div> <p class="text-sm mt-2">هذا القميص رائع! الجودة ممتازة والتصميم أنيق جداً. مريح للغاية ومناسب لجميع المناسبات. أنصح به بشدة!</p> </div> <div> <div class="flex justify-between items-center"> <div class="text-sm">3 days ago</div> <div class="space-x-2"> <i class="fas fa-thumbs-up"></i> 55 </div> </div> </div> </div> </div> <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto"> <img src="revImgs/3.png" alt="Image description" style="width:100%" class="w-72 h-72 object-cover rounded-md"> <div class="w-72 p-3"> <div class="mb-2"> <div class="flex mb-4 space-x-1"> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> </div> <div class="flex justify-between items-center"> <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i> Noah Johnson</p> <span class="flag-icon flag-icon-us"></span> </div> <p class="text-sm mt-2">This t-shirt is amazing! The fabric quality is top-notch, and the fit is perfect. I can wear it all day comfortably. Highly recommended!</p> </div> <div> <div class="flex justify-between items-center"> <div class="text-sm">2 weeks ago</div> <div class="space-x-2"> <i class="fas fa-thumbs-up"></i> 42 </div> </div> </div> </div> </div> <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto"> <img src="revImgs/4.png" alt="Image description" style="width:100%" class="w-72 h-72 object-cover rounded-md"> <div class="w-72 p-3"> <div class="mb-2"> <div class="flex mb-4 space-x-1"> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="far fa-star text-yellow-400"></i> </div> <div class="flex justify-between items-center"> <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i> Marco Rossi</p> <span class="flag-icon flag-icon-it"></span> </div> <p class="text-sm mt-2">Great t-shirt overall. The fabric is breathable, and it's very comfortable. The only downside is that the color faded slightly after a few washes.</p> </div> <div> <div class="flex justify-between items-center"> <div class="text-sm">1 month ago</div> <div class="space-x-2"> <i class="fas fa-thumbs-up"></i> 28 </div> </div> </div> </div> </div> <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto"> <img src="revImgs/5.png" alt="Image description" style="width:100%" class="w-72 h-72 object-cover rounded-md"> <div class="w-72 p-3"> <div class="mb-2"> <div class="flex mb-4 space-x-1"> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star-half-alt text-yellow-400"></i> </div> <div class="flex justify-between items-center"> <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i> Sophie Dubois</p> <span class="flag-icon flag-icon-br"></span> </div> <p class="text-sm mt-2">J'adore ce t-shirt ! La qualité du tissu est exceptionnelle et le design est superbe. Seul bémol : le prix pourrait être un peu plus abordable.</p> </div> <div> <div class="flex justify-between items-center"> <div class="text-sm">3 months ago</div> <div class="space-x-2"> <i class="fas fa-thumbs-up"></i> 36 </div> </div> </div> </div> </div> <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto"> <img src="revImgs/17.png" alt="Image description" style="width:100%" class="w-72 h-72 object-cover rounded-md"> <div class="w-72 p-3"> <div class="mb-2"> <div class="flex mb-4 space-x-1"> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star-half-alt text-yellow-400"></i> </div> <div class="flex justify-between items-center"> <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i> 王丽华</p> <span class="flag-icon flag-icon-cn"></span> </div> <p class="text-sm mt-2"> 这件T恤真的很棒！面料质量好，穿着舒适。我可以整天穿着它感觉很舒服。强烈推荐！</p> </div> <div> <div class="flex justify-between items-center"> <div class="text-sm">1 week ago</div> <div class="space-x-2"> <i class="fas fa-thumbs-up"></i> 50 </div> </div> </div> </div> </div> <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto"> <img src="revImgs/7.png" alt="Image description" style="width:100%" class="w-72 h-72 object-cover rounded-md"> <div class="w-72 p-3"> <div class="mb-2"> <div class="flex mb-4 space-x-1"> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> </div> <div class="flex justify-between items-center"> <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i> Maria Garcia</p> <span class="flag-icon flag-icon-es"></span> </div> <p class="text-sm mt-2">¡Esta camiseta es increíble! La calidad de la tela es excelente y el diseño es impresionante.</p> </div> <div> <div class="flex justify-between items-center"> <div class="text-sm">2 days ago</div> <div class="space-x-2"> <i class="fas fa-thumbs-up"></i> 45 </div> </div> </div> </div> </div> <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto"> <img src="revImgs/15.png" alt="Image description" style="width:100%" class="w-72 h-72 object-cover rounded-md"> <div class="w-72 p-3"> <div class="mb-2"> <div class="flex mb-4 space-x-1"> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star-half-alt text-yellow-400"></i> </div> <div class="flex justify-between items-center"> <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i> Aisha Patel</p> <span class="flag-icon flag-icon-in"></span> </div> <p class="text-sm mt-2">This eco-friendly t-shirt exceeded my expectations! The organic cotton feels luxurious against the skin. </p> </div> <div> <div class="flex justify-between items-center"> <div class="text-sm">2 weeks ago</div> <div class="space-x-2"> <i class="fas fa-thumbs-up"></i> 89 </div> </div> </div> </div> </div> <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto"> <img src="revImgs/10.png" alt="Image description" style="width:100%" class="w-72 h-72 object-cover rounded-md"> <div class="w-72 p-3"> <div class="mb-2"> <div class="flex mb-4 space-x-1"> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="far fa-star text-yellow-400"></i> </div> <div class="flex justify-between items-center"> <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i> Lars Svensson</p> <span class="flag-icon flag-icon-se"></span> </div> <p class="text-sm mt-2">Imponerad av denna tekniska t-shirt! Materialet är otroligt andningsbart och håller mig torr under intensiva träningspass.</p> </div> <div> <div class="flex justify-between items-center"> <div class="text-sm">5 days ago</div> <div class="space-x-2"> <i class="fas fa-thumbs-up"></i> 62 </div> </div> </div> </div> </div> <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto"> <img src="revImgs/8.png" alt="Image description" style="width:100%" class="w-72 h-72 object-cover rounded-md"> <div class="w-72 p-3"> <div class="mb-2"> <div class="flex mb-4 space-x-1"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div> <div class="flex justify-between items-center"> <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i> Hans Schmidt</p> <span class="flag-icon flag-icon-de"></span> </div> <p class="text-sm mt-2">Das T-Shirt ist sehr gut verarbeitet und die Qualität ist ausgezeichnet. Der Stoff ist angenehm auf der Haut und atmungsaktiv. Nur der Preis ist etwas hoch.</p> </div> <div> <div class="flex justify-between items-center"> <div class="text-sm">5 weeks ago</div> <div class="space-x-2"> <i class="fas fa-thumbs-up"></i> 31 </div> </div> </div> </div> </div> <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto"> <img src="revImgs/18.png" alt="Image description" style="width:100%" class="w-72 h-72 object-cover rounded-md"> <div class="w-72 p-3"> <div class="mb-2"> <div class="flex mb-4 space-x-1"> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star-half-alt text-yellow-400"></i> </div> <div class="flex justify-between items-center"> <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i> مريم نصر</p> <span class="flag-icon flag-icon-lb"></span> </div> <p class="text-sm mt-2 text-right" dir="rtl"> هذا القميص رائع حقًا! جودة القماش ممتازة، والتصميم أنيق للغاية. يمكنني ارتداؤه براحة طوال اليوم. الألوان ثابتة حتى بعد الغسيل المتكرر، مما يجعله مثاليًا للاستخدام اليومي أو المناسبات الخاصة. السعر مرتفع قليلاً، ولكنه يستحق كل قرش. </p> </div> <div> <div class="flex justify-between items-center"> <div class="text-sm">منذ 4 أيام</div> <div class="space-x-2"> <i class="fas fa-thumbs-up"></i> 38 </div> </div> </div> </div> </div> <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto"> <img src="revImgs/9.png" alt="Image description" style="width:100%" class="w-72 h-72 object-cover rounded-md"> <div class="w-72 p-3"> <div class="mb-2"> <div class="flex mb-4 space-x-1"> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="far fa-star text-yellow-400"></i> <i class="far fa-star text-yellow-400"></i> </div> <div class="flex justify-between items-center"> <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i> Benjamin Petrova</p> <span class="flag-icon flag-icon-ru"></span> </div> <p class="text-sm mt-2">Эта футболка имеет хорошее качество ткани, но комфорт при длительном ношении оставляет желать лучшего. Цвет немного выцветает после стирки. В целом, неплохо, но есть над чем поработать.</p> </div> <div> <div class="flex justify-between items-center"> <div class="text-sm">2 weeks ago</div> <div class="space-x-2"> <i class="fas fa-thumbs-up"></i> 15 </div> </div> </div> </div> </div> <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto"> <img src="revImgs/16.png" alt="Image description" style="width:100%" class="w-72 h-72 object-cover rounded-md"> <div class="w-72 p-3"> <div class="mb-2"> <div class="flex mb-4 space-x-1"> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> <i class="fas fa-star text-yellow-400"></i> </div> <div class="flex justify-between items-center"> <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i> Lucas Patel</p> <span class="flag-icon flag-icon-in"></span> </div> <p class="text-sm mt-2">This t-shirt is a game-changer! The fabric quality is exceptional, and the fit is perfect for the hot and humid climate of Mumbai. The design options are great, and it's very comfortable for all-day wear. Absolutely worth every rupee!</p> </div> <div> <div class="flex justify-between items-center"> <div class="text-sm">3 days ago</div> <div class="space-x-2"> <i class="fas fa-thumbs-up"></i> 56 </div> </div> </div> </div> </div> <!--reviews elements ends--> </div> </div> </div> </div> </div> </div> </div> </div> <div id="pricing" class="scroll-section min-h-screen bg-gradient-to-br from-[#000814] via-[#001233] to-[#001845]"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> <div class="text-center mb-8 sm:mb-12 lg:mb-16"> <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-4"> Boost Your Store's Trust & Sales </h2> <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto"> Start your 16-day free premium trial today </p> </div> <!-- Pricing Cards --> <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 mb-12 px-4"> <!-- Explorer Plan (Free Plan) --> <div class="relative rounded-2xl p-[2px] transition-all hover:scale-105 bg-gradient-to-r from-cyan-500 to-blue-500" style="box-shadow: 0 0 20px -5px rgba(6, 182, 212, 0.5);"> <div class="relative rounded-2xl bg-gray-900 p-6 h-full backdrop-blur-xl"> <div class="text-center"> <h3 class="text-xl font-bold text-white mb-2">Explorer</h3> <div class="mb-4"> <span class="text-4xl font-bold text-white">$0</span> <span class="text-gray-300">/month</span> </div> </div> <ul class="space-y-3 mb-6"> <li class="flex items-center gap-2"> <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i> <span class="text-gray-300">AliExpress reviews</span> </li> <li class="flex items-center gap-2"> <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i> <span class="text-gray-300">Original language only</span> </li> <li class="flex items-center gap-2"> <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i> <span class="text-gray-300">Basic review moderation</span> </li> <li class="flex items-center gap-2"> <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i> <span class="text-gray-300">CSV import (10 published)</span> </li> <li class="flex items-center gap-2"> <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i> <span class="text-gray-300">Automatic + Manual review request</span> </li> </ul> <button class="w-full py-3 px-4 rounded-lg font-semibold text-white transition-all bg-gradient-to-r from-cyan-500 to-blue-500 hover:opacity-90"> Get Started </button> </div> </div> <!-- Starter Plan --> <div class="relative rounded-2xl p-[2px] transition-all hover:scale-105 bg-gradient-to-r from-purple-500 to-pink-500" style="box-shadow: 0 0 20px -5px rgba(168, 85, 247, 0.5);"> <div class="relative rounded-2xl bg-gray-900 p-6 h-full backdrop-blur-xl"> <div class="text-center"> <h3 class="text-xl font-bold text-white mb-2">Starter</h3> <div class="mb-4"> <span class="text-4xl font-bold text-white">$5</span> <span class="text-gray-300">/month</span> </div> </div> <ul class="space-y-3 mb-6"> <li class="flex items-center gap-2"> <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i> <span class="text-gray-300">AliExpress, Shopee, Amazon reviews</span> </li> <li class="flex items-center gap-2"> <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i> <span class="text-gray-300">1 extra language</span> </li> <li class="flex items-center gap-2"> <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i> <span class="text-gray-300">5 groups, 10 products each</span> </li> <li class="flex items-center gap-2"> <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i> <span class="text-gray-300">Review synchronization</span> </li> <li class="flex items-center gap-2"> <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i> <span class="text-gray-300">Unlimited CSV import</span> </li> </ul> <button class="w-full py-3 px-4 rounded-lg font-semibold text-white transition-all bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90"> Get Started - 16 Days Trial </button> </div> </div> <!-- Growth Plan --> <div class="relative rounded-2xl p-[2px] transition-all hover:scale-105 bg-gradient-to-r from-violet-600 to-indigo-600" style="box-shadow: 0 0 20px -5px rgba(139, 92, 246, 0.5);"> <div class="relative rounded-2xl bg-gray-900 p-6 h-full backdrop-blur-xl"> <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-sm rounded-full" style="box-shadow: 0 0 15px -5px rgba(139, 92, 246, 0.8);"> Most valuable </span> <div class="text-center"> <h3 class="text-xl font-bold text-white mb-2">Growth</h3> <div class="mb-4"> <span class="text-4xl font-bold text-white">$8</span> <span class="text-gray-300">/month</span> </div> </div> <ul class="space-y-3 mb-6"> <li class="flex items-center gap-2"> <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i> <span class="text-gray-300">All supported platforms</span> </li> <li class="flex items-center gap-2"> <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i> <span class="text-gray-300">2 extra languages + Live Translation</span> </li> <li class="flex items-center gap-2"> <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i> <span class="text-gray-300">10 groups, unlimited products</span> </li> <li class="flex items-center gap-2"> <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i> <span class="text-gray-300">100,000 review limit</span> </li> <li class="flex items-center gap-2"> <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i> <span class="text-gray-300">Review synchronization</span> </li> <!-- <li class="flex items-center gap-2">--> <!-- <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i>--> <!-- <span class="text-gray-300">Advanced features</span>--> <!-- </li>--> </ul> <button class="w-full py-3 px-4 rounded-lg font-semibold text-white transition-all bg-gradient-to-r from-violet-600 to-indigo-600 hover:opacity-90"> Get Started - 16 Days Trial </button> </div> </div> <!-- Global Seller Plan --> <div class="relative rounded-2xl p-[2px] transition-all hover:scale-105 bg-gradient-to-r from-yellow-500 to-orange-500" style="box-shadow: 0 0 20px -5px rgba(234, 179, 8, 0.5);"> <div class="relative rounded-2xl bg-gray-900 p-6 h-full backdrop-blur-xl"> <div class="text-center"> <h3 class="text-xl font-bold text-white mb-2">Global Seller</h3> <div class="mb-4"> <span class="text-4xl font-bold text-white">$18</span> <span class="text-gray-300">/month</span> </div> </div> <ul class="space-y-3 mb-6"> <li class="flex items-center gap-2"> <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i> <span class="text-gray-300">All supported platforms</span> </li> <li class="flex items-center gap-2"> <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i> <span class="text-gray-300">4 extra languages + Live Translation</span> </li> <li class="flex items-center gap-2"> <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i> <span class="text-gray-300">50 groups, unlimited products</span> </li> <li class="flex items-center gap-2"> <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i> <span class="text-gray-300">500,000 review limit</span> </li> <li class="flex items-center gap-2"> <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i> <span class="text-gray-300">Review synchronization</span> </li> <!-- <li class="flex items-center gap-2">--> <!-- <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i>--> <!-- <span class="text-gray-300">Enterprise-grade features</span>--> <!-- </li>--> </ul> <button class="w-full py-3 px-4 rounded-lg font-semibold text-white transition-all bg-gradient-to-r from-yellow-500 to-orange-500 hover:opacity-90"> Get Started - 16 Days Trial </button> </div> </div> </div> <!-- Comparison Button --> <div class="flex justify-center mb-8"> <button id="comparison-button" class="flex items-center gap-2 px-6 py-3 rounded-lg bg-gray-800 text-white hover:bg-gray-700 transition-all"> <i id="chevron-down" data-lucide="chevron-down" class="h-5 w-5"></i> <i id="chevron-up" data-lucide="chevron-up" class="h-5 w-5 hidden"></i> <span id="button-text">Show full comparison</span> </button> </div> <!-- Comparison Table --> <div id="comparison-table" class="transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0 "> <div class="bg-gray-900/50 rounded-2xl p-8 backdrop-blur-xl border border-gray-800 transform "> <div class="overflow-x-auto"> <table class="w-full"> <thead> <tr class="border-b border-gray-800"> <th class="py-4 px-6 text-left text-gray-300">Feature</th> <th class="py-4 px-6 text-center text-gray-300">Explorer</th> <th class="py-4 px-6 text-center text-gray-300">Starter</th> <th class="py-4 px-6 text-center text-gray-300">Growth</th> <th class="py-4 px-6 text-center text-gray-300">Global Seller</th> </tr> </thead> <tbody> <tr class="bg-gray-900/50"> <td class="py-4 px-6 text-gray-300 font-medium">Review Import</td> <td class="py-4 px-6 text-center text-gray-400">AliExpress</td> <td class="py-4 px-6 text-center text-gray-400">AliExpress, Shopee, Amazon</td> <td class="py-4 px-6 text-center text-gray-400">All supported platforms</td> <td class="py-4 px-6 text-center text-gray-400">All supported platforms</td> </tr> <tr> <td class="py-4 px-6 text-gray-300 font-medium">Review Translation</td> <td class="py-4 px-6 text-center text-gray-400">Translate original language only</td> <td class="py-4 px-6 text-center text-gray-400">1 extra language</td> <td class="py-4 px-6 text-center text-gray-400">2 extra languages + Live Translation</td> <td class="py-4 px-6 text-center text-gray-400">4 extra languages + Live Translation</td> </tr> <tr class="bg-gray-900/50"> <td class="py-4 px-6 text-gray-300 font-medium">Product Grouping</td> <td class="py-4 px-6 text-center text-gray-400">-</td> <td class="py-4 px-6 text-center text-gray-400">5 groups, 10 products each</td> <td class="py-4 px-6 text-center text-gray-400">10 groups, unlimited products</td> <td class="py-4 px-6 text-center text-gray-400">50 groups, unlimited products</td> </tr> <tr> <td class="py-4 px-6 text-gray-300 font-medium">Review Synchronization</td> <td class="py-4 px-6 text-center text-gray-400">-</td> <td class="py-4 px-6 text-center text-gray-400">✓</td> <td class="py-4 px-6 text-center text-gray-400">✓</td> <td class="py-4 px-6 text-center text-gray-400">✓</td> </tr> <tr class="bg-gray-900/50"> <td class="py-4 px-6 text-gray-300 font-medium">Review Moderation</td> <td class="py-4 px-6 text-center text-gray-400">✓</td> <td class="py-4 px-6 text-center text-gray-400">✓</td> <td class="py-4 px-6 text-center text-gray-400">✓</td> <td class="py-4 px-6 text-center text-gray-400">✓</td> </tr> <tr> <td class="py-4 px-6 text-gray-300 font-medium">CSV Import</td> <td class="py-4 px-6 text-center text-gray-400">Unlimited (10 published)</td> <td class="py-4 px-6 text-center text-gray-400">Unlimited</td> <td class="py-4 px-6 text-center text-gray-400">Unlimited</td> <td class="py-4 px-6 text-center text-gray-400">Unlimited</td> </tr> <tr class="bg-gray-900/50"> <td class="py-4 px-6 text-gray-300 font-medium">Review Request</td> <td class="py-4 px-6 text-center text-gray-400">Automatic + Manual</td> <td class="py-4 px-6 text-center text-gray-400">Automatic + Manual</td> <td class="py-4 px-6 text-center text-gray-400">Automatic + Manual</td> <td class="py-4 px-6 text-center text-gray-400">Automatic + Manual</td> </tr> <tr> <td class="py-4 px-6 text-gray-300 font-medium">Design Customization</td> <td class="py-4 px-6 text-center text-gray-400">✓</td> <td class="py-4 px-6 text-center text-gray-400">✓</td> <td class="py-4 px-6 text-center text-gray-400">✓</td> <td class="py-4 px-6 text-center text-gray-400">✓</td> </tr> <tr class="bg-gray-900/50"> <td class="py-4 px-6 text-gray-300 font-medium">Review Limit</td> <td class="py-4 px-6 text-center text-gray-400">500</td> <td class="py-4 px-6 text-center text-gray-400">40,000</td> <td class="py-4 px-6 text-center text-gray-400">100,000</td> <td class="py-4 px-6 text-center text-gray-400">500,000</td> </tr> <tr> <td class="py-4 px-6 text-gray-300 font-medium">Advanced Statistics</td> <td class="py-4 px-6 text-center text-gray-400">✓</td> <td class="py-4 px-6 text-center text-gray-400">✓</td> <td class="py-4 px-6 text-center text-gray-400">✓</td> <td class="py-4 px-6 text-center text-gray-400">✓</td> </tr> </tbody> </table> </div> </div> </div> </div> <script> lucide.createIcons(); </script> </div> <footer class="scroll-section bg-black min-h-screen relative w-full overflow-hidden flex items-center justify-center"> <!-- Gradient overlay --> <div class="absolute inset-0 bg-black"> <div class="absolute inset-0 bg-gradient-to-br from-transparent via-black/95 to-purple-900/20"></div> <div class="absolute bottom-0 right-0 w-1/2 h-1/2 translate-x-1/4 translate-y-1/4 bg-gradient-to-tl from-teal-500/10 via-teal-500/5 to-transparent blur-3xl"></div> </div> <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"> <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"> <!-- Logo and Description --> <div class="space-y-4"> <img src="RevuNova-logo-wide-colored.png" alt="RevuNova Logo" class="h-12 w-auto sm:h-14 md:h-16 lg:h-20 xl:h-24 text-white transition-all duration-300" /> <!-- <h2 class="text-white font-semibold">Review Management Solution</h2>--> <p class="text-gray-400 text-sm"> Amplify Your Store's Credibility and Sales </p> </div> <!-- Quick Links --> <div> <h3 class="text-white font-semibold mb-4">Quick Links</h3> <ul class="space-y-3"> <li> <a href="https://apps.shopify.com/revunova" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors"> <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" class="h-4 w-4 fill-gray-400" viewBox="0,0,256,256"> <g fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M22.74023,2.03711c-0.73381,0.00448 -1.46012,0.23703 -2.12109,0.61914c-0.8813,0.50948 -1.68518,1.27757 -2.43555,2.24219c-1.50074,1.92923 -2.78688,4.66144 -3.66211,7.85547l0.08984,0.02539l-5.47461,1.7832c-0.3668,0.11966 -0.63206,0.43964 -0.68164,0.82227l-3.44727,26.81055c-0.06712,0.52434 0.28542,1.01036 0.80469,1.10938l24.58398,4.67773c0.07276,0.01335 0.14678,0.0186 0.2207,0.01563c0.08715,0.0042 0.17448,-0.00302 0.25977,-0.02148l13.33984,-2.95312c0.51005,-0.1132 0.84702,-0.59993 0.77344,-1.11719c0,0 -1.16823,-8.10569 -2.33984,-16.24023c-0.58581,-4.06727 -1.17356,-8.14268 -1.61523,-11.21484c-0.22084,-1.53608 -0.40501,-2.82196 -0.53516,-3.73047c-0.06508,-0.45426 -0.11682,-0.81285 -0.15234,-1.0625c-0.01776,-0.12482 -0.0316,-0.22395 -0.04102,-0.29101c-0.0094,-0.06707 -0.02221,-0.17785 -0.01172,-0.08008c-0.011,-0.10106 -0.03735,-0.19985 -0.07812,-0.29297c-0.22742,-0.52173 -0.71052,-0.82917 -1.02148,-0.93555c-0.10432,-0.03599 -0.21387,-0.05447 -0.32422,-0.05469c0.123,0 -0.02351,-0.00097 -0.125,-0.00781c-0.10148,-0.00684 -0.24149,-0.01723 -0.40625,-0.0293c-0.32951,-0.02413 -0.75713,-0.05751 -1.17969,-0.08984c-0.6575,-0.05031 -1.04622,-0.07974 -1.30078,-0.09961c-0.17882,-0.18308 -0.44657,-0.45918 -0.92187,-0.94141c-0.30591,-0.31036 -0.62044,-0.62916 -0.87891,-0.88672c-0.23068,-0.22987 -0.363,-0.36142 -0.52148,-0.5c-0.21549,-0.21632 -0.46377,-0.36844 -0.77539,-0.42383c-0.00062,-0.00011 -0.00134,0.00011 -0.00195,0c-0.06589,-0.01657 -0.13329,-0.02639 -0.20117,-0.0293c-0.08529,-0.00305 -0.17062,0.00482 -0.25391,0.02344c-0.0323,0.00688 -0.06424,0.01535 -0.0957,0.02539c-0.00522,0.00126 -0.01043,0.00256 -0.01562,0.00391l-1.79492,0.58594c-0.27013,-1.03045 -0.64022,-1.94249 -1.15625,-2.68555c-0.59197,-0.85242 -1.40908,-1.50771 -2.40234,-1.7207c-0.47427,-0.10153 -0.94843,-0.06841 -1.4043,0.04688c-0.5397,-0.57704 -1.19222,-0.99931 -1.96094,-1.16406c-0.24403,-0.05221 -0.48977,-0.07571 -0.73437,-0.07422zM22.74023,4.0332c0.10883,-0.00016 0.21271,0.01155 0.31445,0.0332c0.17339,0.03716 0.34568,0.12126 0.51562,0.23047c-0.42966,0.36424 -0.83745,0.79063 -1.22852,1.2793c-1.18526,1.48109 -2.23667,3.4891 -3.12109,5.70117l-2.37891,0.77539c0.79381,-2.44012 1.82837,-4.52257 2.91992,-5.92578c0.63701,-0.81889 1.2872,-1.40946 1.85938,-1.74023c0.42857,-0.24776 0.79264,-0.35303 1.11914,-0.35352zM26.64453,5.25781c0.32508,0.12721 0.64013,0.37852 0.95508,0.83203c0.35092,0.5053 0.66368,1.25142 0.89453,2.16406l-1.02734,0.33594c-0.15386,-1.24588 -0.42309,-2.36592 -0.82227,-3.33203zM24.75586,5.92188c0.36448,0.85095 0.63926,1.97564 0.77344,3.29883l-3.77344,1.23047c0.67415,-1.43642 1.41115,-2.70614 2.14648,-3.625c0.29106,-0.36371 0.57751,-0.65701 0.85352,-0.9043zM31.4375,9.40039l-1.72266,36.41602l-22.60352,-4.30078l3.24609,-25.24805zM33.4043,10.12891c0.03863,0.03914 0.07087,0.07226 0.10938,0.11133c0.60718,0.61602 1.17969,1.20313 1.17969,1.20313c0.16955,0.17384 0.39656,0.28006 0.63867,0.29883c0,0 0.8284,0.06407 1.67578,0.12891c0.42369,0.03242 0.85187,0.06541 1.18555,0.08984c0.07093,0.0052 0.11626,0.0073 0.17773,0.01172c0.03554,0.24967 0.08534,0.5908 0.14844,1.03125c0.13024,0.90916 0.31625,2.19617 0.53711,3.73242c0.44173,3.0725 1.02746,7.14749 1.61328,11.21484c1.1054,7.67486 2.0859,14.48202 2.20703,15.32227l-11.15625,2.4668zM22.76172,17.00391c-3.09605,0.0016 -5.53984,1.08168 -7.16016,2.76758c-1.62149,1.68712 -2.41406,3.93377 -2.41406,6.18945c0,2.7385 1.45921,4.36362 2.6875,5.41602c0.61415,0.5262 1.16554,0.95453 1.50586,1.3418c0.34032,0.38726 0.48242,0.66208 0.48242,1.12695c0,0.12368 -0.06386,0.34047 -0.16797,0.46484c-0.10411,0.12438 -0.2042,0.21289 -0.54883,0.21289c-0.56982,0 -1.47393,-0.37794 -2.17578,-0.81445c-0.70185,-0.43651 -1.18945,-0.86719 -1.18945,-0.86719c-0.25594,-0.22621 -0.60963,-0.30615 -0.93798,-0.212c-0.32835,0.09415 -0.58594,0.34938 -0.68311,0.67684l-1.11914,3.76367c-0.09253,0.31177 -0.0277,0.64906 0.17383,0.9043c0,0 2.45171,3.02624 7.05078,3.02734c1.98595,0 3.78763,-0.79121 5.04688,-2.18359c1.25925,-1.39238 1.9707,-3.35391 1.9707,-5.63281c0,-2.99415 -1.71761,-4.87658 -3.23047,-6.09766c-0.75643,-0.61054 -1.4717,-1.09924 -1.92773,-1.50586c-0.45603,-0.40662 -0.56055,-0.63007 -0.56055,-0.76367c0,-0.10112 0.02597,-0.37703 0.17969,-0.58008c0.15372,-0.20304 0.44246,-0.48047 1.50781,-0.48047c1.40986,0 2.67773,0.66602 2.67773,0.66602c0.26131,0.14227 0.57241,0.1608 0.84876,0.05056c0.27636,-0.11024 0.48928,-0.33781 0.58092,-0.62087l1.5918,-4.9082c0.14317,-0.44163 -0.0364,-0.92371 -0.43359,-1.16406c0,0 -0.41365,-0.24032 -1.04492,-0.42969c-0.62943,-0.18881 -1.54118,-0.36079 -2.71094,-0.34766zM22.7793,19c0.8967,-0.0109 1.51867,0.12213 1.9707,0.24805l-0.95898,2.95898c-0.65431,-0.2243 -1.54251,-0.44922 -2.53906,-0.44922c-1.49565,0 -2.55253,0.54823 -3.10156,1.27344c-0.54903,0.72521 -0.58594,1.48123 -0.58594,1.78711c0,0.9854 0.61223,1.7083 1.22852,2.25781c0.61628,0.54951 1.33058,1.0249 2.00391,1.56836c1.34665,1.08692 2.48633,2.27116 2.48633,4.54102c0,1.8671 -0.56762,3.3119 -1.45312,4.29102c-0.8855,0.97912 -2.0934,1.52539 -3.56445,1.52539c-3.25656,-0.00078 -4.72486,-1.51457 -5.12695,-1.9668l0.53711,-1.80469c0.12491,0.08486 0.09854,0.08887 0.23828,0.17578c0.85215,0.52999 1.96224,1.11719 3.23242,1.11719c0.87337,0 1.63264,-0.39281 2.08203,-0.92969c0.44939,-0.53687 0.63477,-1.15873 0.63477,-1.74805c0,-0.99763 -0.44423,-1.83706 -0.98047,-2.44727c-0.53624,-0.6102 -1.15243,-1.06388 -1.70703,-1.53906c-1.10921,-0.95036 -1.98828,-1.80494 -1.98828,-3.89844c0,-1.78832 0.62541,-3.52086 1.85742,-4.80273c1.23201,-1.28188 3.07791,-2.15625 5.72266,-2.15625c0.00391,-0.00063 0.00782,-0.00128 0.01172,-0.00195z"></path></g></g> </svg> <span>RevuNova on Shopify</span> <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <line x1="7" y1="17" x2="17" y2="7"></line> <polyline points="7 7 17 7 17 17"></polyline> </svg> </a> </li> <li> <a href="https://www.youtube.com/watch?v=xqM0eRYo_r8" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors"> <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path> <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon> </svg> <span>YouTube Channel</span> <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <line x1="7" y1="17" x2="17" y2="7"></line> <polyline points="7 7 17 7 17 17"></polyline> </svg> </a> </li> <li> <a href="https://revunova.myshopify.com/products/bose-soundlink-flex-bluetooth-speaker-stone-blue" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors"> <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path> <polyline points="9 22 9 12 15 12 15 22"></polyline> </svg> <span>Demo Store</span> <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <line x1="7" y1="17" x2="17" y2="7"></line> <polyline points="7 7 17 7 17 17"></polyline> </svg> </a> </li> </ul> </div> <!-- Contact --> <div> <h3 class="text-white font-semibold mb-4">Contact</h3> <a href="mailto:support@revunova.com" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors"> <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path> <polyline points="22,6 12,13 2,6"></polyline> </svg> <span>support@revunova.com</span> </a> </div> <!-- Newsletter --> <div> <h3 class="text-white font-semibold mb-4">Stay Updated</h3> <form action="https://formspree.io/f/xrbgvrgk" method="POST" class="space-y-3"> <div class="relative"> <input type="email" name="email" id="email" required placeholder="Enter your email" class="w-full px-4 py-2 bg-black/50 border border-white/20 rounded-lg focus:outline-none focus:border-white/40 text-white placeholder-gray-400 relative z-10 transition-colors" /> </div> <input type="hidden" name="_subject" value="New RevuNova Waitlist Signup"> <button type="submit" class="w-full px-4 py-2 rounded-lg text-white relative overflow-hidden bg-gradient-to-r from-violet-600 via-purple-600 to-blue-600 hover:from-violet-500 hover:via-purple-500 hover:to-blue-500 transition-all duration-300 hover:scale-[1.02] shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_25px_rgba(139,92,246,0.5)]" > Subscribe </button> </form> </div> </div> <!-- Bottom Bar --> <div class="mt-16 pt-8 border-t border-white/10"> <p class="text-center text-gray-400 text-sm"> © <script>document.write(new Date().getFullYear())</script> RevuNova. All rights reserved. </p> </div> </div> </footer> </div> <!-- Navigation Dots --> <div class="navigation"> <div class="nav-dot" onclick="scrollToSection(0)"></div> <div class="nav-dot" onclick="scrollToSection(1)"></div> <div class="nav-dot" onclick="scrollToSection(2)"></div> <div class="nav-dot" onclick="scrollToSection(3)"></div> <div class="nav-dot" onclick="scrollToSection(4)"></div> <div class="nav-dot" onclick="scrollToSection(5)"></div> <div class="nav-dot" onclick="scrollToSection(6)"></div> <div class="nav-dot" onclick="scrollToSection(7)"></div> <div class="nav-dot" onclick="scrollToSection(8)"></div> <div class="nav-dot" onclick="scrollToSection(9)"></div> </div> <script src="script.js"></script> <script> // Initialize Lucide icons lucide.createIcons(); // Get all sections and navigation dots const sections = document.querySelectorAll('.scroll-section'); const dots = document.querySelectorAll('.nav-dot'); // Scroll to section function function scrollToSection(index) { sections[index].scrollIntoView({behavior: 'smooth'}); } // Update active dot based on scroll position function updateActiveDot() { const scrollPosition = document.querySelector('.scroll-container').scrollTop; const windowHeight = window.innerHeight; sections.forEach((section, index) => { const sectionTop = section.offsetTop; const sectionBottom = sectionTop + section.offsetHeight; if (scrollPosition >= sectionTop - windowHeight / 2 && scrollPosition < sectionBottom - windowHeight / 2) { dots.forEach(dot => dot.classList.remove('active')); dots[index].classList.add('active'); } }); } // Add scroll event listener document.querySelector('.scroll-container').addEventListener('scroll', updateActiveDot); // Initialize active state updateActiveDot(); </script> <script> document.addEventListener('DOMContentLoaded', function () { const comparisonButton = document.getElementById('comparison-button'); const comparisonTable = document.getElementById('comparison-table'); comparisonButton.addEventListener('click', function () { const isVisible = comparisonTable.classList.toggle('max-h-[2000px]'); comparisonTable.classList.toggle('opacity-100'); comparisonTable.classList.toggle('max-h-0'); comparisonTable.classList.toggle('opacity-0'); const chevronDown = document.getElementById('chevron-down'); const chevronUp = document.getElementById('chevron-up'); const buttonText = document.getElementById('button-text'); if (isVisible) { chevronDown.classList.add('hidden'); chevronUp.classList.remove('hidden'); buttonText.textContent = 'Hide full comparison'; } else { chevronDown.classList.remove('hidden'); chevronUp.classList.add('hidden'); buttonText.textContent = 'Show full comparison'; } }); }); </script> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RevuNova - Powerful Review Management for Shopify Stores</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <meta name="description" content="Transform your Shopify store with RevuNova's powerful review management system. Import, translate, and customize product reviews effortlessly.">
+    <meta name="keywords" content="shopify reviews, product reviews, review management, ecommerce, customer feedback">
+    <meta property="og:title" content="RevuNova - The #1 Review App Trusted by Top Shopify Stores">
+    <meta property="og:description" content="Increase sales by 47% with authentic customer reviews. Import, translate, and showcase reviews in minutes.">
+    <meta property="og:title" content="RevuNova - Import 1000+ Reviews in 60 Seconds | Shopify's Review Expert">
+    <meta property="og:description" content="Boost your store's credibility instantly. Import unlimited reviews, translate to any language, and watch your sales soar. Start free now!">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icon-css@3.4.6/css/flag-icon.min.css"/>
+
+
+    <style>
+        :root {
+            --min-font-size: 14px;
+            --max-font-size: 18px;
+            --min-viewport-width: 320px;
+            --max-viewport-width: 1800px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /*body {*/
+        /*    font-size: clamp(*/
+        /*            var(--min-font-size),*/
+        /*            calc(14px + 4 * ((100vw - var(--min-viewport-width)) / (var(--max-viewport-width) - var(--min-viewport-width)))),*/
+        /*            var(--max-font-size)*/
+        /*    );*/
+        /*}*/
+
+        .scroll-container {
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+        }
+
+        .scroll-section {
+            scroll-snap-align: start;
+            min-height: 90vh;
+            height: auto;
+            overflow: visible;
+        }
+
+        .scroll-section > div {
+            padding: 3rem 1.5rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        img {
+            max-width: 90%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .md\:w-1\/2 img {
+            width: 90%;
+            max-height: 70vh;
+        }
+
+        .navigation {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+        }
+
+        .nav-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            margin: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-dot:hover {
+            transform: scale(1.2);
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .nav-dot.active {
+            background: rgba(255, 255, 255, 0.8);
+            transform: scale(1.2);
+        }
+
+        @media screen and (max-width: 1024px) {
+            .flex-col-lg {
+                flex-direction: column;
+            }
+
+            .md\:w-1\/2 {
+                width: 100%;
+                padding: 0.75rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .scroll-section > div {
+                padding: 1.5rem 0.75rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            .space-y-4 {
+                margin-bottom: 0.75rem;
+            }
+        }
+    </style>
+
+    <svg style="display: none;">
+        <symbol id="shopify-icon" viewBox="0 0 48 48">
+            <path fill="#7cb342" d="M37.216,11.78c-0.023-0.211-0.211-0.305-0.351-0.305s-3.21-0.234-3.21-0.234s-2.132-2.132-2.39-2.343	c-0.234-0.234-0.68-0.164-0.867-0.117c-0.023,0-0.469,0.141-1.195,0.375c-0.726-2.086-1.968-3.984-4.194-3.984h-0.211	C24.187,4.375,23.391,4,22.735,4c-5.155,0-7.639,6.444-8.412,9.725c-2.015,0.633-3.445,1.054-3.609,1.125	c-1.125,0.351-1.148,0.375-1.289,1.429c-0.117,0.797-3.046,23.456-3.046,23.456L29.179,44l12.373-2.671	C41.575,41.282,37.24,11.991,37.216,11.78z M27.937,9.483c-0.562,0.164-1.242,0.375-1.921,0.609V9.671	c0-1.265-0.164-2.296-0.469-3.117C26.718,6.695,27.445,7.984,27.937,9.483L27.937,9.483z M24.117,6.812	c0.305,0.797,0.516,1.922,0.516,3.468v0.234c-1.265,0.398-2.601,0.797-3.984,1.242C21.422,8.804,22.899,7.351,24.117,6.812	L24.117,6.812z M22.617,5.359c0.234,0,0.469,0.094,0.656,0.234c-1.664,0.773-3.421,2.718-4.148,6.655	c-1.101,0.351-2.156,0.656-3.163,0.984C16.806,10.233,18.915,5.359,22.617,5.359z"></path>
+            <path fill="#558b2f" d="M36.865,11.428c-0.141,0-3.21-0.234-3.21-0.234s-2.132-2.132-2.39-2.343	C31.17,8.757,31.053,8.71,30.96,8.71L29.249,44l12.373-2.671c0,0-4.335-29.338-4.359-29.549	C37.169,11.569,37.005,11.475,36.865,11.428z"></path>
+            <path fill="#fff" d="M24.792,18.593l-1.475,4.449c0,0-1.337-0.715-2.927-0.715c-2.374,0-2.489,1.498-2.489,1.867	c0,2.028,5.301,2.812,5.301,7.583c0,3.757-2.374,6.177-5.578,6.177c-3.872,0-5.808-2.397-5.808-2.397l1.037-3.411	c0,0,2.028,1.752,3.734,1.752c1.129,0,1.59-0.876,1.59-1.521c0-2.651-4.333-2.766-4.333-7.145c0-3.665,2.628-7.214,7.952-7.214	C23.777,17.994,24.792,18.593,24.792,18.593z"></path>
+        </symbol>
+    </svg>
+
+
+</head>
+<body>
+
+
+<div class="scroll-container">
+
+
+    <div class="scroll-section min-h-screen bg-gradient-to-br from-purple-950 via-purple-900 to-pink-900">
+        <div class="container mx-auto">
+            <nav class="w-full px-4 flex items-center justify-between">
+                <div class="flex items-center space-x-8">
+                    <div class="flex items-center">
+                        <img src="RevuNova-logo-wide-white.png" alt="RevuNova" class="h-8">
+                    </div>
+                    <div class="hidden md:flex items-center space-x-6">
+                        <a href="https://revunova.myshopify.com/products/bose-soundlink-flex-bluetooth-speaker-stone-blue"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="text-white/80 hover:text-white transition-colors flex items-center gap-1">
+                            Demo Store
+                            <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=xqM0eRYo_r8"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="text-white/80 hover:text-white transition-colors flex items-center gap-1">
+                            How to
+                            <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </a>
+                        <span class="text-white/80 hover:text-white transition-colors cursor-pointer" onclick="scrollToSection(9)">Contact us</span>
+                        <span class="text-white/80 hover:text-white transition-colors cursor-pointer" onclick="scrollToSection(8)">Pricing</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="https://apps.shopify.com/revunova"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center w-full md:w-auto bg-white text-purple-950 px-6 py-2 rounded-md font-medium hover:bg-white/90 transition-colors">
+                        <svg class="w-5 h-5 mr-2">
+                            <use href="#shopify-icon"/>
+                        </svg>
+                        Start free trial
+                    </a>
+                </div>
+                <button class="md:hidden">
+                    <i data-lucide="menu" class="h-6 w-6 text-white"></i>
+                </button>
+            </nav>
+
+            <div class="container mx-auto px-3 py-16">
+                <div class="flex flex-col md:flex-row items-center justify-between flex-col-lg">
+                    <div class="md:w-1/2 mb-8 md:mb-0">
+                        <div class="text-white/80 uppercase tracking-wide font-semibold mb-3">
+                            TRUSTED COMMERCE
+                        </div>
+                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
+                            Build Trust,
+                            <br>Boost Sales
+                        </h2>
+                        <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg">
+                            Scale your business with confidence by showcasing authentic customer experiences
+                        </p>
+                        <div class="space-y-3 md:space-y-0 md:space-x-3">
+                            <a href="https://apps.shopify.com/revunova" target="_blank" class="inline-flex items-center w-full md:w-auto bg-white text-purple-950 px-6 py-2.5 rounded-md font-medium hover:bg-white/90 transition-colors">
+                                <svg class="w-5 h-5 mr-2">
+                                    <use href="#shopify-icon"/>
+                                </svg>
+                                Get Started
+                            </a>
+                            <!--                            <button class="w-full md:w-auto text-white border border-white px-6 py-2.5 rounded-md font-medium hover:bg-white/10 transition-colors">-->
+                            <!--                                Learn More-->
+                            <!--                            </button>-->
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <img src="s1.png" alt="Description"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-section min-h-screen bg-gradient-to-br from-[#0A0500] via-[#1A0800] to-[#2A1500]">
+        <div class="container mx-auto px-3 py-16 min-h-screen flex flex-col">
+            <div class="flex flex-col md:flex-row items-center md:justify-between h-full space-y-[10vh] md:space-y-0">
+                <div class="md:w-1/2 mt-[10vh] md:mt-0">
+                    <div class="text-[#FF9933] uppercase tracking-wide font-semibold mb-3">
+                        GLOBAL REVIEWS
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
+                        Import 1000+ Global Reviews in Minutes
+                    </h2>
+                    <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg">
+                        Multi-platform imports with photos & videos in one click. Build trust with verified reviews from
+                        global marketplaces.
+                    </p>
+                    <div class="space-y-3 md:space-y-0 md:space-x-3 flex flex-col md:flex-row">
+                        <a href="https://apps.shopify.com/revunova" target="_blank" class="inline-flex items-center w-full md:w-auto bg-[#FF9933] text-white px-6 py-2.5 rounded-md font-medium hover:bg-[#FFB366] transition-colors">
+                            <svg class="w-5 h-5 mr-2">
+                                <use href="#shopify-icon"/>
+                            </svg>
+                            Start Importing
+                        </a>
+                        <a href="https://youtu.be/xqM0eRYo_r8?t=35" target="_blank" class="inline-flex items-center w-full md:w-auto text-white border border-[#FF9933] px-6 py-2.5 rounded-md font-medium hover:bg-[#FF9933]/10 transition-colors">
+                            Watch Demo
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center mb-[10vh] md:mb-0">
+                    <img src="s2.png" alt="Description" class="w-full h-auto object-contain"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Translation Section -->
+    <div class="scroll-section min-h-screen bg-gradient-to-br from-[#1A0B4E] via-[#2B1B7E] to-[#0BC7F0]">
+        <div class="container mx-auto px-3 py-16 min-h-screen flex flex-col">
+            <div class="flex flex-col md:flex-row items-center md:justify-between h-full space-y-[10vh] md:space-y-0">
+                <div class="md:w-1/2 mt-[10vh] md:mt-0">
+                    <div class="text-[#0BC7F0] uppercase tracking-wide font-semibold mb-3">
+                        GLOBAL TRANSLATION
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
+                        Reviews That Speak Every Language
+                    </h2>
+                    <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg">
+                        Automatic translation based on your markets and customers. Let customers read reviews in their preferred language, breaking down barriers for global engagement.
+                    </p>
+                    <div class="space-y-3 md:space-y-0 md:space-x-3 flex flex-col md:flex-row">
+                        <a href="https://apps.shopify.com/revunova" target="_blank" class="inline-flex items-center w-full md:w-auto bg-[#0BC7F0] text-white px-6 py-2.5 rounded-md font-medium hover:bg-[#1AD7FF] transition-colors">
+                            <svg class="w-5 h-5 mr-2">
+                                <use href="#shopify-icon"/>
+                            </svg>
+                            Get Started
+                        </a>
+                        <a href="https://youtu.be/xqM0eRYo_r8?t=133" target="_blank" class="inline-flex items-center w-full md:w-auto text-white border border-[#0BC7F0] px-6 py-2.5 rounded-md font-medium hover:bg-[#0BC7F0]/10 transition-colors">
+                            Watch Demo
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center mb-[10vh] md:mb-0">
+                    <img src="s333333333.png" alt="Review Translation Dashboard" class="w-full h-auto object-contain max-h-[60vh]"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Reviews Section -->
+    <div class="scroll-section min-h-screen bg-gradient-to-br from-black via-[#1A0505] to-[#3B0808]">
+        <div class="container mx-auto px-3 py-16 min-h-screen flex flex-col">
+            <div class="flex flex-col md:flex-row items-center md:justify-between h-full space-y-[10vh] md:space-y-0">
+                <div class="md:w-1/2 mt-[10vh] md:mt-0">
+                    <div class="text-[#FF6B6B] uppercase tracking-wide font-semibold mb-3">
+                        PRODUCT REVIEWS
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
+                        Unite Your Product Reviews
+                    </h2>
+                    <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg">
+                        Connect similar products, combine their reviews and boost your sales with unified product feedback.
+                    </p>
+                    <div class="space-y-3 md:space-y-0 md:space-x-3 flex flex-col md:flex-row">
+                        <a href="https://apps.shopify.com/revunova" target="_blank" class="inline-flex items-center w-full md:w-auto bg-[#FF6B6B] text-white px-6 py-2.5 rounded-md font-medium hover:bg-[#FF8585] transition-colors">
+                            <svg class="w-5 h-5 mr-2">
+                                <use href="#shopify-icon"/>
+                            </svg>
+                            Get Started
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=V3Vfe3aWOMQ" target="_blank" class="inline-flex items-center w-full md:w-auto text-white border border-[#FF6B6B] px-6 py-2.5 rounded-md font-medium hover:bg-[#FF6B6B]/10 transition-colors">
+                            Watch Demo
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center mb-[10vh] md:mb-0">
+                    <img src="s5.png" alt="Description"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Instant Ratings Section -->
+    <div class="scroll-section min-h-screen bg-gradient-to-br from-[#1A0B2E] via-[#2B1B4E] to-[#0B1B3E]">
+        <div class="container mx-auto px-3 py-16 min-h-screen flex flex-col">
+            <div class="flex flex-col md:flex-row items-center md:justify-between h-full space-y-[10vh] md:space-y-0">
+                <div class="md:w-1/2 mt-[10vh] md:mt-0">
+                    <div class="text-[#FF1B8D] uppercase tracking-wide font-semibold mb-3">
+                        INSTANT RATINGS
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
+                        Zero Delay,<br>Instant Ratings
+                    </h2>
+                    <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg">
+                        Display product ratings instantly with no loading time. Stars appear immediately on your product, collection, and home pages.
+                    </p>
+                    <div class="space-y-3 md:space-y-0 md:space-x-3 flex flex-col md:flex-row">
+                        <a href="https://apps.shopify.com/revunova" target="_blank" class="inline-flex items-center w-full md:w-auto bg-[#FF1B8D] text-white px-6 py-2.5 rounded-md font-medium hover:bg-[#FF4DA6] transition-colors">
+                            <svg class="w-5 h-5 mr-2">
+                                <use href="#shopify-icon"/>
+                            </svg>
+                            Get Started
+                        </a>
+                        <a href="https://revunova.myshopify.com/collections/all" target="_blank" class="inline-flex items-center w-full md:w-auto text-white border border-[#FF1B8D] px-6 py-2.5 rounded-md font-medium hover:bg-[#FF1B8D]/10 transition-colors">
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center mb-[10vh] md:mb-0">
+                    <img src="s6.png" alt="Description" class="w-90 max-h-[70vh] object-contain"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="scroll-section min-h-screen bg-gradient-to-br from-[#050303] via-[#2E0B0B] to-[#4E1B2B]">
+        <div class="container mx-auto px-3 py-16 min-h-screen flex flex-col">
+            <div class="flex flex-col md:flex-row items-center md:justify-between h-full space-y-[10vh] md:space-y-0">
+                <div class="md:w-1/2 mt-[10vh] md:mt-0">
+                    <div class="text-[#FF7676] uppercase tracking-wide font-semibold mb-3">
+                        GOOGLE INTEGRATION
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
+                        Your Reviews, Now on Google
+                    </h2>
+                    <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg">
+                        Get more clicks with review-rich Google listings. Boost your visibility and attract more
+                        customers by showcasing your reviews directly in search results.
+                    </p>
+                    <div class="space-y-3 md:space-y-0 md:space-x-3">
+                        <a href="https://apps.shopify.com/revunova" target="_blank" class="inline-flex items-center w-full md:w-auto bg-[#FF7676] text-white px-6 py-2.5 rounded-md font-medium hover:bg-[#FF9494] transition-colors">
+                            <svg class="w-5 h-5 mr-2">
+                                <use href="#shopify-icon"/>
+                            </svg>
+                            Connect Google
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center mb-[10vh] md:mb-0">
+                    <img src="s7777.png" alt="Google Reviews Integration" class="w-90 max-h-[70vh] object-contain"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-section min-h-screen bg-gradient-to-br from-[#1B0311] via-[#350C25] to-[#7F2276]">
+        <div class="container mx-auto px-3 py-16 min-h-screen flex flex-col">
+            <div class="flex flex-col md:flex-row items-center md:justify-between h-full space-y-[10vh] md:space-y-0">
+                <div class="md:w-1/2 mt-[10vh] md:mt-0">
+                    <div class="text-[#FF69B4] uppercase tracking-wide font-semibold mb-3">
+                        ANALYTICS
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
+                        Data-Driven Review Power
+                    </h2>
+                    <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg">
+                        Track sources, languages, and impact in real-time. Make informed decisions with comprehensive
+                        analytics and insights from your customer reviews.
+                    </p>
+                    <div class="space-y-3 md:space-y-0 md:space-x-3">
+                        <a href="https://apps.shopify.com/revunova" target="_blank" class="inline-flex items-center w-full md:w-auto bg-[#FF69B4] text-white px-6 py-2.5 rounded-md font-medium hover:bg-[#FF85C2] transition-colors">
+                            <svg class="w-5 h-5 mr-2">
+                                <use href="#shopify-icon"/>
+                            </svg>
+                            View Analytics
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center mb-[10vh] md:mb-0">
+                    <img src="s4.png" alt="Analytics Dashboard" class="w-90 max-h-[70vh] object-contain"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-section min-h-screen bg-gradient-to-br from-[#020B1C] via-[#0A192F] to-[#1E3A8A] overflow-x-hidden overflow-y-clip">
+        <div class="container mx-auto px-4 py-20">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <div class="text-[#60A5FA] uppercase tracking-wide font-semibold mb-4">
+                        EASY INTEGRATION
+                    </div>
+                    <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                        One Click, All Templates
+                    </h2>
+                    <p class="text-lg md:text-xl text-white/80 mb-8 max-w-xl">
+                        Reviews Everywhere in Seconds. Instant setup across product, collection & home pages with
+                        seamless template integration.
+                    </p>
+                    <div class="space-y-4 md:space-y-0 md:space-x-4">
+                        <a href="https://apps.shopify.com/revunova" target="_blank" class="inline-flex items-center w-full md:w-auto bg-[#60A5FA] text-white px-8 py-3 rounded-md font-medium hover:bg-[#93C5FD] transition-colors">
+                            <svg class="w-5 h-5 mr-2">
+                                <use href="#shopify-icon"/>
+                            </svg>
+                            Install Now
+                        </a>
+                        <!--                        <button class="w-full md:w-auto text-white border border-[#60A5FA] px-8 py-3 rounded-md font-medium hover:bg-[#60A5FA]/10 transition-colors">-->
+                        <!--                            View Templates-->
+                        <!--                        </button>-->
+                    </div>
+                </div>
+
+                <div class="md:w-1/2 perspective-container  max-h-[90vh]">
+                    <div class="w-full sm:w-2/3 md:scale-70 md:origin-top md:h-[85vh] max-sm:pt-20 relative">
+
+                        <div class="scale-50 origin-top max-sm:max-h-52 max-sm:pt-20">
+                            <div class="angled-section">
+                                <div class="min-w-[74rem] grid grid-cols-4 gap-16">
+
+                                    <!--reviews elements starts-->
+                                    <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto">
+                                        <img src="revImgs/6.png" alt="Image description" style="width:100%" class="w-72 h-72 object-cover rounded-md">
+                                        <div class="w-72 p-3">
+                                            <div class="mb-2">
+                                                <div class="flex mb-4 space-x-1">
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                </div>
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i>
+                                                        Ziad Hayek</p>
+                                                    <span class="flag-icon flag-icon-lb"></span>
+                                                </div>
+                                                <p class="text-sm mt-2">هذا القميص رائع! الجودة ممتازة والتصميم أنيق
+                                                    جداً. مريح للغاية ومناسب لجميع المناسبات. أنصح به بشدة!</p>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between items-center">
+                                                    <div class="text-sm">3 days ago</div>
+                                                    <div class="space-x-2">
+                                                        <i class="fas fa-thumbs-up"></i> 55
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto">
+                                        <img src="revImgs/3.png" alt="Image description" style="width:100%" class="w-72 h-72 object-cover rounded-md">
+                                        <div class="w-72 p-3">
+                                            <div class="mb-2">
+                                                <div class="flex mb-4 space-x-1">
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                </div>
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i>
+                                                        Noah Johnson</p>
+                                                    <span class="flag-icon flag-icon-us"></span>
+                                                </div>
+                                                <p class="text-sm mt-2">This t-shirt is amazing! The fabric quality is
+                                                    top-notch, and the fit is perfect. I can wear it all day
+                                                    comfortably. Highly recommended!</p>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between items-center">
+                                                    <div class="text-sm">2 weeks ago</div>
+                                                    <div class="space-x-2">
+                                                        <i class="fas fa-thumbs-up"></i> 42
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto">
+                                        <img src="revImgs/4.png" alt="Image description" style="width:100%" class="w-72 h-72 object-cover rounded-md">
+                                        <div class="w-72 p-3">
+                                            <div class="mb-2">
+                                                <div class="flex mb-4 space-x-1">
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="far fa-star text-yellow-400"></i>
+                                                </div>
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i>
+                                                        Marco Rossi</p>
+                                                    <span class="flag-icon flag-icon-it"></span>
+                                                </div>
+                                                <p class="text-sm mt-2">Great t-shirt overall. The fabric is breathable,
+                                                    and it's very comfortable. The only downside is that the color faded
+                                                    slightly after a few washes.</p>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between items-center">
+                                                    <div class="text-sm">1 month ago</div>
+                                                    <div class="space-x-2">
+                                                        <i class="fas fa-thumbs-up"></i> 28
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto">
+                                        <img src="revImgs/5.png" alt="Image description" style="width:100%" class="w-72 h-72 object-cover rounded-md">
+                                        <div class="w-72 p-3">
+                                            <div class="mb-2">
+                                                <div class="flex mb-4 space-x-1">
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star-half-alt text-yellow-400"></i>
+                                                </div>
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i>
+                                                        Sophie Dubois</p>
+                                                    <span class="flag-icon flag-icon-br"></span>
+                                                </div>
+                                                <p class="text-sm mt-2">J'adore ce t-shirt ! La qualité du tissu est
+                                                    exceptionnelle et le design est superbe. Seul bémol : le prix
+                                                    pourrait être un peu plus abordable.</p>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between items-center">
+                                                    <div class="text-sm">3 months ago</div>
+                                                    <div class="space-x-2">
+                                                        <i class="fas fa-thumbs-up"></i> 36
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto">
+                                        <img src="revImgs/17.png" alt="Image description" style="width:100%" class="w-72 h-72 object-cover rounded-md">
+                                        <div class="w-72 p-3">
+                                            <div class="mb-2">
+                                                <div class="flex mb-4 space-x-1">
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star-half-alt text-yellow-400"></i>
+                                                </div>
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i>
+                                                        王丽华</p>
+                                                    <span class="flag-icon flag-icon-cn"></span>
+                                                </div>
+                                                <p class="text-sm mt-2">
+                                                    这件T恤真的很棒！面料质量好，穿着舒适。我可以整天穿着它感觉很舒服。强烈推荐！</p>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between items-center">
+                                                    <div class="text-sm">1 week ago</div>
+                                                    <div class="space-x-2">
+                                                        <i class="fas fa-thumbs-up"></i> 50
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto">
+                                        <img src="revImgs/7.png" alt="Image description" style="width:100%" class="w-72 h-72 object-cover rounded-md">
+                                        <div class="w-72 p-3">
+                                            <div class="mb-2">
+                                                <div class="flex mb-4 space-x-1">
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                </div>
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i>
+                                                        Maria Garcia</p>
+                                                    <span class="flag-icon flag-icon-es"></span>
+                                                </div>
+                                                <p class="text-sm mt-2">¡Esta camiseta es increíble! La calidad de la
+                                                    tela es excelente y el diseño es impresionante.</p>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between items-center">
+                                                    <div class="text-sm">2 days ago</div>
+                                                    <div class="space-x-2">
+                                                        <i class="fas fa-thumbs-up"></i> 45
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto">
+                                        <img src="revImgs/15.png" alt="Image description" style="width:100%" class="w-72 h-72 object-cover rounded-md">
+                                        <div class="w-72 p-3">
+                                            <div class="mb-2">
+                                                <div class="flex mb-4 space-x-1">
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star-half-alt text-yellow-400"></i>
+                                                </div>
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i>
+                                                        Aisha Patel</p>
+                                                    <span class="flag-icon flag-icon-in"></span>
+                                                </div>
+                                                <p class="text-sm mt-2">This eco-friendly t-shirt exceeded my
+                                                    expectations! The organic cotton feels luxurious against the
+                                                    skin. </p>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between items-center">
+                                                    <div class="text-sm">2 weeks ago</div>
+                                                    <div class="space-x-2">
+                                                        <i class="fas fa-thumbs-up"></i> 89
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto">
+                                        <img src="revImgs/10.png" alt="Image description" style="width:100%" class="w-72 h-72 object-cover rounded-md">
+                                        <div class="w-72 p-3">
+                                            <div class="mb-2">
+                                                <div class="flex mb-4 space-x-1">
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="far fa-star text-yellow-400"></i>
+                                                </div>
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i>
+                                                        Lars Svensson</p>
+                                                    <span class="flag-icon flag-icon-se"></span>
+                                                </div>
+                                                <p class="text-sm mt-2">Imponerad av denna tekniska t-shirt! Materialet
+                                                    är otroligt andningsbart och håller mig torr under intensiva
+                                                    träningspass.</p>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between items-center">
+                                                    <div class="text-sm">5 days ago</div>
+                                                    <div class="space-x-2">
+                                                        <i class="fas fa-thumbs-up"></i> 62
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto">
+                                        <img src="revImgs/8.png" alt="Image description" style="width:100%" class="w-72 h-72 object-cover rounded-md">
+                                        <div class="w-72 p-3">
+                                            <div class="mb-2">
+                                                <div class="flex mb-4 space-x-1">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                </div>
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i>
+                                                        Hans Schmidt</p>
+                                                    <span class="flag-icon flag-icon-de"></span>
+                                                </div>
+                                                <p class="text-sm mt-2">Das T-Shirt ist sehr gut verarbeitet und die
+                                                    Qualität ist ausgezeichnet. Der Stoff ist angenehm auf der Haut und
+                                                    atmungsaktiv. Nur der Preis ist etwas hoch.</p>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between items-center">
+                                                    <div class="text-sm">5 weeks ago</div>
+                                                    <div class="space-x-2">
+                                                        <i class="fas fa-thumbs-up"></i> 31
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto">
+                                        <img src="revImgs/18.png" alt="Image description" style="width:100%" class="w-72 h-72 object-cover rounded-md">
+                                        <div class="w-72 p-3">
+                                            <div class="mb-2">
+                                                <div class="flex mb-4 space-x-1">
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star-half-alt text-yellow-400"></i>
+                                                </div>
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i>
+                                                        مريم نصر</p>
+                                                    <span class="flag-icon flag-icon-lb"></span>
+                                                </div>
+                                                <p class="text-sm mt-2 text-right" dir="rtl">
+                                                    هذا القميص رائع حقًا! جودة القماش ممتازة، والتصميم أنيق للغاية.
+                                                    يمكنني ارتداؤه براحة طوال اليوم. الألوان ثابتة حتى بعد الغسيل
+                                                    المتكرر، مما يجعله مثاليًا للاستخدام اليومي أو المناسبات الخاصة.
+                                                    السعر مرتفع قليلاً، ولكنه يستحق كل قرش.
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between items-center">
+                                                    <div class="text-sm">منذ 4 أيام</div>
+                                                    <div class="space-x-2">
+                                                        <i class="fas fa-thumbs-up"></i> 38
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto">
+                                        <img src="revImgs/9.png" alt="Image description" style="width:100%" class="w-72 h-72 object-cover rounded-md">
+                                        <div class="w-72 p-3">
+                                            <div class="mb-2">
+                                                <div class="flex mb-4 space-x-1">
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="far fa-star text-yellow-400"></i>
+                                                    <i class="far fa-star text-yellow-400"></i>
+                                                </div>
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i>
+                                                        Benjamin Petrova</p>
+                                                    <span class="flag-icon flag-icon-ru"></span>
+                                                </div>
+                                                <p class="text-sm mt-2">Эта футболка имеет хорошее качество ткани, но
+                                                    комфорт при длительном ношении оставляет желать лучшего. Цвет
+                                                    немного выцветает после стирки. В целом, неплохо, но есть над чем
+                                                    поработать.</p>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between items-center">
+                                                    <div class="text-sm">2 weeks ago</div>
+                                                    <div class="space-x-2">
+                                                        <i class="fas fa-thumbs-up"></i> 15
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="reviewElementMas bg-white falling-card shadow-md rounded-lg w-72 mx-auto">
+                                        <img src="revImgs/16.png" alt="Image description" style="width:100%" class="w-72 h-72 object-cover rounded-md">
+                                        <div class="w-72 p-3">
+                                            <div class="mb-2">
+                                                <div class="flex mb-4 space-x-1">
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                    <i class="fas fa-star text-yellow-400"></i>
+                                                </div>
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-semibold"><i class="fas fa-circle text-blue-400"></i>
+                                                        Lucas Patel</p>
+                                                    <span class="flag-icon flag-icon-in"></span>
+                                                </div>
+                                                <p class="text-sm mt-2">This t-shirt is a game-changer! The fabric
+                                                    quality is exceptional, and the fit is perfect for the hot and humid
+                                                    climate of Mumbai. The design options are great, and it's very
+                                                    comfortable for all-day wear. Absolutely worth every rupee!</p>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between items-center">
+                                                    <div class="text-sm">3 days ago</div>
+                                                    <div class="space-x-2">
+                                                        <i class="fas fa-thumbs-up"></i> 56
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--reviews elements ends-->
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="pricing" class="scroll-section min-h-screen bg-gradient-to-br from-[#000814] via-[#001233] to-[#001845]">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8 sm:mb-12 lg:mb-16">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-4">
+                    Boost Your Store's Trust & Sales
+                </h2>
+                <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
+                    Start your 16-day free premium trial today
+                </p>
+            </div>
+
+            <!-- Pricing Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 mb-12 px-4">
+                <!-- Explorer Plan (Free Plan) -->
+                <div class="relative rounded-2xl p-[2px] transition-all hover:scale-105 bg-gradient-to-r from-cyan-500 to-blue-500" style="box-shadow: 0 0 20px -5px rgba(6, 182, 212, 0.5);">
+                    <div class="relative rounded-2xl bg-gray-900 p-6 h-full backdrop-blur-xl">
+                        <div class="text-center">
+                            <h3 class="text-xl font-bold text-white mb-2">Explorer</h3>
+                            <div class="mb-4">
+                                <span class="text-4xl font-bold text-white">$0</span>
+                                <span class="text-gray-300">/month</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i>
+                                <span class="text-gray-300">AliExpress reviews</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i>
+                                <span class="text-gray-300">Original language only</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i>
+                                <span class="text-gray-300">Basic review moderation</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i>
+                                <span class="text-gray-300">CSV import (10 published)</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i>
+                                <span class="text-gray-300">Automatic + Manual review request</span>
+                            </li>
+                        </ul>
+                        <button class="w-full py-3 px-4 rounded-lg font-semibold text-white transition-all bg-gradient-to-r from-cyan-500 to-blue-500 hover:opacity-90">
+                            Get Started
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Starter Plan -->
+                <div class="relative rounded-2xl p-[2px] transition-all hover:scale-105 bg-gradient-to-r from-purple-500 to-pink-500" style="box-shadow: 0 0 20px -5px rgba(168, 85, 247, 0.5);">
+                    <div class="relative rounded-2xl bg-gray-900 p-6 h-full backdrop-blur-xl">
+                        <div class="text-center">
+                            <h3 class="text-xl font-bold text-white mb-2">Starter</h3>
+                            <div class="mb-4">
+                                <span class="text-4xl font-bold text-white">$5</span>
+                                <span class="text-gray-300">/month</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i>
+                                <span class="text-gray-300">AliExpress, Shopee, Amazon reviews</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i>
+                                <span class="text-gray-300">1 extra language</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i>
+                                <span class="text-gray-300">5 groups, 10 products each</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i>
+                                <span class="text-gray-300">Review synchronization</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i>
+                                <span class="text-gray-300">Unlimited CSV import</span>
+                            </li>
+                        </ul>
+                        <button class="w-full py-3 px-4 rounded-lg font-semibold text-white transition-all bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90">
+                            Get Started - 16 Days Trial
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Growth Plan -->
+                <div class="relative rounded-2xl p-[2px] transition-all hover:scale-105 bg-gradient-to-r from-violet-600 to-indigo-600" style="box-shadow: 0 0 20px -5px rgba(139, 92, 246, 0.5);">
+                    <div class="relative rounded-2xl bg-gray-900 p-6 h-full backdrop-blur-xl">
+            <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-sm rounded-full" style="box-shadow: 0 0 15px -5px rgba(139, 92, 246, 0.8);">
+                Most valuable
+            </span>
+                        <div class="text-center">
+                            <h3 class="text-xl font-bold text-white mb-2">Growth</h3>
+                            <div class="mb-4">
+                                <span class="text-4xl font-bold text-white">$8</span>
+                                <span class="text-gray-300">/month</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i>
+                                <span class="text-gray-300">All supported platforms</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i>
+                                <span class="text-gray-300">2 extra languages + Live Translation</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i>
+                                <span class="text-gray-300">10 groups, unlimited products</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i>
+                                <span class="text-gray-300">100,000 review limit</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i>
+                                <span class="text-gray-300">Review synchronization</span>
+                            </li>
+                            <!--                            <li class="flex items-center gap-2">-->
+                            <!--                                <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i>-->
+                            <!--                                <span class="text-gray-300">Advanced features</span>-->
+                            <!--                            </li>-->
+                        </ul>
+                        <button class="w-full py-3 px-4 rounded-lg font-semibold text-white transition-all bg-gradient-to-r from-violet-600 to-indigo-600 hover:opacity-90">
+                            Get Started - 16 Days Trial
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Global Seller Plan -->
+                <div class="relative rounded-2xl p-[2px] transition-all hover:scale-105 bg-gradient-to-r from-yellow-500 to-orange-500" style="box-shadow: 0 0 20px -5px rgba(234, 179, 8, 0.5);">
+                    <div class="relative rounded-2xl bg-gray-900 p-6 h-full backdrop-blur-xl">
+                        <div class="text-center">
+                            <h3 class="text-xl font-bold text-white mb-2">Global Seller</h3>
+                            <div class="mb-4">
+                                <span class="text-4xl font-bold text-white">$18</span>
+                                <span class="text-gray-300">/month</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i>
+                                <span class="text-gray-300">All supported platforms</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i>
+                                <span class="text-gray-300">4 extra languages + Live Translation</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i>
+                                <span class="text-gray-300">50 groups, unlimited products</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i>
+                                <span class="text-gray-300">500,000 review limit</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i>
+                                <span class="text-gray-300">Review synchronization</span>
+                            </li>
+                            <!--                            <li class="flex items-center gap-2">-->
+                            <!--                                <i data-lucide="check" class="h-5 w-5 text-green-400 flex-shrink-0"></i>-->
+                            <!--                                <span class="text-gray-300">Enterprise-grade features</span>-->
+                            <!--                            </li>-->
+                        </ul>
+                        <button class="w-full py-3 px-4 rounded-lg font-semibold text-white transition-all bg-gradient-to-r from-yellow-500 to-orange-500 hover:opacity-90">
+                            Get Started - 16 Days Trial
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Comparison Button -->
+            <div class="flex justify-center mb-8">
+                <button id="comparison-button" class="flex items-center gap-2 px-6 py-3 rounded-lg bg-gray-800 text-white hover:bg-gray-700 transition-all">
+                    <i id="chevron-down" data-lucide="chevron-down" class="h-5 w-5"></i>
+                    <i id="chevron-up" data-lucide="chevron-up" class="h-5 w-5 hidden"></i>
+                    <span id="button-text">Show full comparison</span>
+                </button>
+            </div>
+
+            <!-- Comparison Table -->
+            <div id="comparison-table" class="transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0 ">
+                <div class="bg-gray-900/50 rounded-2xl p-8 backdrop-blur-xl border border-gray-800 transform ">
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                            <tr class="border-b border-gray-800">
+                                <th class="py-4 px-6 text-left text-gray-300">Feature</th>
+                                <th class="py-4 px-6 text-center text-gray-300">Explorer</th>
+                                <th class="py-4 px-6 text-center text-gray-300">Starter</th>
+                                <th class="py-4 px-6 text-center text-gray-300">Growth</th>
+                                <th class="py-4 px-6 text-center text-gray-300">Global Seller</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="bg-gray-900/50">
+                                <td class="py-4 px-6 text-gray-300 font-medium">Review Import</td>
+                                <td class="py-4 px-6 text-center text-gray-400">AliExpress</td>
+                                <td class="py-4 px-6 text-center text-gray-400">AliExpress, Shopee, Amazon</td>
+                                <td class="py-4 px-6 text-center text-gray-400">All supported platforms</td>
+                                <td class="py-4 px-6 text-center text-gray-400">All supported platforms</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-6 text-gray-300 font-medium">Review Translation</td>
+                                <td class="py-4 px-6 text-center text-gray-400">Translate original language only</td>
+                                <td class="py-4 px-6 text-center text-gray-400">1 extra language</td>
+                                <td class="py-4 px-6 text-center text-gray-400">2 extra languages + Live Translation</td>
+                                <td class="py-4 px-6 text-center text-gray-400">4 extra languages + Live Translation</td>
+                            </tr>
+                            <tr class="bg-gray-900/50">
+                                <td class="py-4 px-6 text-gray-300 font-medium">Product Grouping</td>
+                                <td class="py-4 px-6 text-center text-gray-400">-</td>
+                                <td class="py-4 px-6 text-center text-gray-400">5 groups, 10 products each</td>
+                                <td class="py-4 px-6 text-center text-gray-400">10 groups, unlimited products</td>
+                                <td class="py-4 px-6 text-center text-gray-400">50 groups, unlimited products</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-6 text-gray-300 font-medium">Review Synchronization</td>
+                                <td class="py-4 px-6 text-center text-gray-400">-</td>
+                                <td class="py-4 px-6 text-center text-gray-400">✓</td>
+                                <td class="py-4 px-6 text-center text-gray-400">✓</td>
+                                <td class="py-4 px-6 text-center text-gray-400">✓</td>
+                            </tr>
+                            <tr class="bg-gray-900/50">
+                                <td class="py-4 px-6 text-gray-300 font-medium">Review Moderation</td>
+                                <td class="py-4 px-6 text-center text-gray-400">✓</td>
+                                <td class="py-4 px-6 text-center text-gray-400">✓</td>
+                                <td class="py-4 px-6 text-center text-gray-400">✓</td>
+                                <td class="py-4 px-6 text-center text-gray-400">✓</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-6 text-gray-300 font-medium">CSV Import</td>
+                                <td class="py-4 px-6 text-center text-gray-400">Unlimited (10 published)</td>
+                                <td class="py-4 px-6 text-center text-gray-400">Unlimited</td>
+                                <td class="py-4 px-6 text-center text-gray-400">Unlimited</td>
+                                <td class="py-4 px-6 text-center text-gray-400">Unlimited</td>
+                            </tr>
+                            <tr class="bg-gray-900/50">
+                                <td class="py-4 px-6 text-gray-300 font-medium">Review Request</td>
+                                <td class="py-4 px-6 text-center text-gray-400">Automatic + Manual</td>
+                                <td class="py-4 px-6 text-center text-gray-400">Automatic + Manual</td>
+                                <td class="py-4 px-6 text-center text-gray-400">Automatic + Manual</td>
+                                <td class="py-4 px-6 text-center text-gray-400">Automatic + Manual</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-6 text-gray-300 font-medium">Design Customization</td>
+                                <td class="py-4 px-6 text-center text-gray-400">✓</td>
+                                <td class="py-4 px-6 text-center text-gray-400">✓</td>
+                                <td class="py-4 px-6 text-center text-gray-400">✓</td>
+                                <td class="py-4 px-6 text-center text-gray-400">✓</td>
+                            </tr>
+                            <tr class="bg-gray-900/50">
+                                <td class="py-4 px-6 text-gray-300 font-medium">Review Limit</td>
+                                <td class="py-4 px-6 text-center text-gray-400">500</td>
+                                <td class="py-4 px-6 text-center text-gray-400">40,000</td>
+                                <td class="py-4 px-6 text-center text-gray-400">100,000</td>
+                                <td class="py-4 px-6 text-center text-gray-400">500,000</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-6 text-gray-300 font-medium">Advanced Statistics</td>
+                                <td class="py-4 px-6 text-center text-gray-400">✓</td>
+                                <td class="py-4 px-6 text-center text-gray-400">✓</td>
+                                <td class="py-4 px-6 text-center text-gray-400">✓</td>
+                                <td class="py-4 px-6 text-center text-gray-400">✓</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+            lucide.createIcons();
+        </script>
+    </div>
+
+    <footer class="scroll-section bg-black min-h-screen relative w-full overflow-hidden flex items-center justify-center">
+        <!-- Gradient overlay -->
+        <div class="absolute inset-0 bg-black">
+            <div class="absolute inset-0 bg-gradient-to-br from-transparent via-black/95 to-purple-900/20"></div>
+            <div class="absolute bottom-0 right-0 w-1/2 h-1/2 translate-x-1/4 translate-y-1/4 bg-gradient-to-tl from-teal-500/10 via-teal-500/5 to-transparent blur-3xl"></div>
+        </div>
+
+        <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Logo and Description -->
+                <div class="space-y-4">
+                    <img src="RevuNova-logo-wide-colored.png" alt="RevuNova Logo" class="h-12 w-auto sm:h-14 md:h-16 lg:h-20 xl:h-24 text-white transition-all duration-300" />
+                    <!--                    <h2 class="text-white font-semibold">Review Management Solution</h2>-->
+                    <p class="text-gray-400 text-sm">
+                        Amplify Your Store's Credibility and Sales
+                    </p>
+                </div>
+
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="https://apps.shopify.com/revunova"  target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"  class="h-4 w-4 fill-gray-400" viewBox="0,0,256,256">
+                                    <g fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M22.74023,2.03711c-0.73381,0.00448 -1.46012,0.23703 -2.12109,0.61914c-0.8813,0.50948 -1.68518,1.27757 -2.43555,2.24219c-1.50074,1.92923 -2.78688,4.66144 -3.66211,7.85547l0.08984,0.02539l-5.47461,1.7832c-0.3668,0.11966 -0.63206,0.43964 -0.68164,0.82227l-3.44727,26.81055c-0.06712,0.52434 0.28542,1.01036 0.80469,1.10938l24.58398,4.67773c0.07276,0.01335 0.14678,0.0186 0.2207,0.01563c0.08715,0.0042 0.17448,-0.00302 0.25977,-0.02148l13.33984,-2.95312c0.51005,-0.1132 0.84702,-0.59993 0.77344,-1.11719c0,0 -1.16823,-8.10569 -2.33984,-16.24023c-0.58581,-4.06727 -1.17356,-8.14268 -1.61523,-11.21484c-0.22084,-1.53608 -0.40501,-2.82196 -0.53516,-3.73047c-0.06508,-0.45426 -0.11682,-0.81285 -0.15234,-1.0625c-0.01776,-0.12482 -0.0316,-0.22395 -0.04102,-0.29101c-0.0094,-0.06707 -0.02221,-0.17785 -0.01172,-0.08008c-0.011,-0.10106 -0.03735,-0.19985 -0.07812,-0.29297c-0.22742,-0.52173 -0.71052,-0.82917 -1.02148,-0.93555c-0.10432,-0.03599 -0.21387,-0.05447 -0.32422,-0.05469c0.123,0 -0.02351,-0.00097 -0.125,-0.00781c-0.10148,-0.00684 -0.24149,-0.01723 -0.40625,-0.0293c-0.32951,-0.02413 -0.75713,-0.05751 -1.17969,-0.08984c-0.6575,-0.05031 -1.04622,-0.07974 -1.30078,-0.09961c-0.17882,-0.18308 -0.44657,-0.45918 -0.92187,-0.94141c-0.30591,-0.31036 -0.62044,-0.62916 -0.87891,-0.88672c-0.23068,-0.22987 -0.363,-0.36142 -0.52148,-0.5c-0.21549,-0.21632 -0.46377,-0.36844 -0.77539,-0.42383c-0.00062,-0.00011 -0.00134,0.00011 -0.00195,0c-0.06589,-0.01657 -0.13329,-0.02639 -0.20117,-0.0293c-0.08529,-0.00305 -0.17062,0.00482 -0.25391,0.02344c-0.0323,0.00688 -0.06424,0.01535 -0.0957,0.02539c-0.00522,0.00126 -0.01043,0.00256 -0.01562,0.00391l-1.79492,0.58594c-0.27013,-1.03045 -0.64022,-1.94249 -1.15625,-2.68555c-0.59197,-0.85242 -1.40908,-1.50771 -2.40234,-1.7207c-0.47427,-0.10153 -0.94843,-0.06841 -1.4043,0.04688c-0.5397,-0.57704 -1.19222,-0.99931 -1.96094,-1.16406c-0.24403,-0.05221 -0.48977,-0.07571 -0.73437,-0.07422zM22.74023,4.0332c0.10883,-0.00016 0.21271,0.01155 0.31445,0.0332c0.17339,0.03716 0.34568,0.12126 0.51562,0.23047c-0.42966,0.36424 -0.83745,0.79063 -1.22852,1.2793c-1.18526,1.48109 -2.23667,3.4891 -3.12109,5.70117l-2.37891,0.77539c0.79381,-2.44012 1.82837,-4.52257 2.91992,-5.92578c0.63701,-0.81889 1.2872,-1.40946 1.85938,-1.74023c0.42857,-0.24776 0.79264,-0.35303 1.11914,-0.35352zM26.64453,5.25781c0.32508,0.12721 0.64013,0.37852 0.95508,0.83203c0.35092,0.5053 0.66368,1.25142 0.89453,2.16406l-1.02734,0.33594c-0.15386,-1.24588 -0.42309,-2.36592 -0.82227,-3.33203zM24.75586,5.92188c0.36448,0.85095 0.63926,1.97564 0.77344,3.29883l-3.77344,1.23047c0.67415,-1.43642 1.41115,-2.70614 2.14648,-3.625c0.29106,-0.36371 0.57751,-0.65701 0.85352,-0.9043zM31.4375,9.40039l-1.72266,36.41602l-22.60352,-4.30078l3.24609,-25.24805zM33.4043,10.12891c0.03863,0.03914 0.07087,0.07226 0.10938,0.11133c0.60718,0.61602 1.17969,1.20313 1.17969,1.20313c0.16955,0.17384 0.39656,0.28006 0.63867,0.29883c0,0 0.8284,0.06407 1.67578,0.12891c0.42369,0.03242 0.85187,0.06541 1.18555,0.08984c0.07093,0.0052 0.11626,0.0073 0.17773,0.01172c0.03554,0.24967 0.08534,0.5908 0.14844,1.03125c0.13024,0.90916 0.31625,2.19617 0.53711,3.73242c0.44173,3.0725 1.02746,7.14749 1.61328,11.21484c1.1054,7.67486 2.0859,14.48202 2.20703,15.32227l-11.15625,2.4668zM22.76172,17.00391c-3.09605,0.0016 -5.53984,1.08168 -7.16016,2.76758c-1.62149,1.68712 -2.41406,3.93377 -2.41406,6.18945c0,2.7385 1.45921,4.36362 2.6875,5.41602c0.61415,0.5262 1.16554,0.95453 1.50586,1.3418c0.34032,0.38726 0.48242,0.66208 0.48242,1.12695c0,0.12368 -0.06386,0.34047 -0.16797,0.46484c-0.10411,0.12438 -0.2042,0.21289 -0.54883,0.21289c-0.56982,0 -1.47393,-0.37794 -2.17578,-0.81445c-0.70185,-0.43651 -1.18945,-0.86719 -1.18945,-0.86719c-0.25594,-0.22621 -0.60963,-0.30615 -0.93798,-0.212c-0.32835,0.09415 -0.58594,0.34938 -0.68311,0.67684l-1.11914,3.76367c-0.09253,0.31177 -0.0277,0.64906 0.17383,0.9043c0,0 2.45171,3.02624 7.05078,3.02734c1.98595,0 3.78763,-0.79121 5.04688,-2.18359c1.25925,-1.39238 1.9707,-3.35391 1.9707,-5.63281c0,-2.99415 -1.71761,-4.87658 -3.23047,-6.09766c-0.75643,-0.61054 -1.4717,-1.09924 -1.92773,-1.50586c-0.45603,-0.40662 -0.56055,-0.63007 -0.56055,-0.76367c0,-0.10112 0.02597,-0.37703 0.17969,-0.58008c0.15372,-0.20304 0.44246,-0.48047 1.50781,-0.48047c1.40986,0 2.67773,0.66602 2.67773,0.66602c0.26131,0.14227 0.57241,0.1608 0.84876,0.05056c0.27636,-0.11024 0.48928,-0.33781 0.58092,-0.62087l1.5918,-4.9082c0.14317,-0.44163 -0.0364,-0.92371 -0.43359,-1.16406c0,0 -0.41365,-0.24032 -1.04492,-0.42969c-0.62943,-0.18881 -1.54118,-0.36079 -2.71094,-0.34766zM22.7793,19c0.8967,-0.0109 1.51867,0.12213 1.9707,0.24805l-0.95898,2.95898c-0.65431,-0.2243 -1.54251,-0.44922 -2.53906,-0.44922c-1.49565,0 -2.55253,0.54823 -3.10156,1.27344c-0.54903,0.72521 -0.58594,1.48123 -0.58594,1.78711c0,0.9854 0.61223,1.7083 1.22852,2.25781c0.61628,0.54951 1.33058,1.0249 2.00391,1.56836c1.34665,1.08692 2.48633,2.27116 2.48633,4.54102c0,1.8671 -0.56762,3.3119 -1.45312,4.29102c-0.8855,0.97912 -2.0934,1.52539 -3.56445,1.52539c-3.25656,-0.00078 -4.72486,-1.51457 -5.12695,-1.9668l0.53711,-1.80469c0.12491,0.08486 0.09854,0.08887 0.23828,0.17578c0.85215,0.52999 1.96224,1.11719 3.23242,1.11719c0.87337,0 1.63264,-0.39281 2.08203,-0.92969c0.44939,-0.53687 0.63477,-1.15873 0.63477,-1.74805c0,-0.99763 -0.44423,-1.83706 -0.98047,-2.44727c-0.53624,-0.6102 -1.15243,-1.06388 -1.70703,-1.53906c-1.10921,-0.95036 -1.98828,-1.80494 -1.98828,-3.89844c0,-1.78832 0.62541,-3.52086 1.85742,-4.80273c1.23201,-1.28188 3.07791,-2.15625 5.72266,-2.15625c0.00391,-0.00063 0.00782,-0.00128 0.01172,-0.00195z"></path></g></g>
+                                </svg>
+                                <span>RevuNova on Shopify</span>
+                                <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=xqM0eRYo_r8" target="_blank" rel="noopener noreferrer"
+                               class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                                </svg>
+                                <span>YouTube Channel</span>
+                                <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://revunova.myshopify.com/products/bose-soundlink-flex-bluetooth-speaker-stone-blue" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                                <span>Demo Store</span>
+                                <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Contact</h3>
+                    <a href="mailto:support@revunova.com"
+                       class="text-gray-400 hover:text-white flex items-center gap-2 transition-colors">
+                        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span>support@revunova.com</span>
+                    </a>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Stay Updated</h3>
+                    <form action="https://formspree.io/f/xrbgvrgk" method="POST" class="space-y-3">
+                        <div class="relative">
+                            <input
+                                    type="email"
+                                    name="email"
+                                    id="email"
+                                    required
+                                    placeholder="Enter your email"
+                                    class="w-full px-4 py-2 bg-black/50 border border-white/20 rounded-lg
+                     focus:outline-none focus:border-white/40 text-white placeholder-gray-400
+                     relative z-10 transition-colors"
+                            />
+                        </div>
+                        <input type="hidden" name="_subject" value="New RevuNova Waitlist Signup">
+                        <button
+                                type="submit"
+                                class="w-full px-4 py-2 rounded-lg text-white relative overflow-hidden
+                   bg-gradient-to-r from-violet-600 via-purple-600 to-blue-600
+                   hover:from-violet-500 hover:via-purple-500 hover:to-blue-500
+                   transition-all duration-300 hover:scale-[1.02]
+                   shadow-[0_0_20px_rgba(139,92,246,0.3)]
+                   hover:shadow-[0_0_25px_rgba(139,92,246,0.5)]"
+                        >
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+
+            <!-- Bottom Bar -->
+            <div class="mt-16 pt-8 border-t border-white/10">
+                <p class="text-center text-gray-400 text-sm">
+                    © <script>document.write(new Date().getFullYear())</script> RevuNova. All rights reserved.
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+</div>
+
+
+<!-- Navigation Dots -->
+<div class="navigation">
+    <div class="nav-dot" onclick="scrollToSection(0)"></div>
+    <div class="nav-dot" onclick="scrollToSection(1)"></div>
+    <div class="nav-dot" onclick="scrollToSection(2)"></div>
+    <div class="nav-dot" onclick="scrollToSection(3)"></div>
+    <div class="nav-dot" onclick="scrollToSection(4)"></div>
+    <div class="nav-dot" onclick="scrollToSection(5)"></div>
+    <div class="nav-dot" onclick="scrollToSection(6)"></div>
+    <div class="nav-dot" onclick="scrollToSection(7)"></div>
+    <div class="nav-dot" onclick="scrollToSection(8)"></div>
+    <div class="nav-dot" onclick="scrollToSection(9)"></div>
+</div>
+
+
+<script src="script.js"></script>
+
+<script>
+    /*    Initialize Lucide icons
+        lucide.createIcons();*/
+    // Get all sections and navigation dot
+    const sections = document.querySelectorAll('.scroll-section');
+    const dots = document.querySelectorAll('.nav-dot');
+
+    /*// Scroll to section function*/
+    function scrollToSection(index) {
+        sections[index].scrollIntoView({behavior: 'smooth'});
+    }
+
+    /*// Update active dot based on scroll position*/
+    function updateActiveDot() {
+        const scrollPosition = document.querySelector('.scroll-container').scrollTop;
+        const windowHeight = window.innerHeight;
+        sections.forEach((section, index) => {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
+            if (scrollPosition >= sectionTop - windowHeight / 2 && scrollPosition < sectionBottom - windowHeight / 2) {
+                dots.forEach(dot => dot.classList.remove('active'));
+                dots[index].classList.add('active');
+            }
+        });
+    }
+
+    /*// Add scroll event listener*/
+    document.querySelector('.scroll-container').addEventListener('scroll', updateActiveDot);
+
+    /*// Initialize active state*/
+    updateActiveDot();
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const comparisonButton = document.getElementById('comparison-button');
+        const comparisonTable = document.getElementById('comparison-table');
+
+        comparisonButton.addEventListener('click', function () {
+            const isVisible = comparisonTable.classList.toggle('max-h-[2000px]');
+            comparisonTable.classList.toggle('opacity-100');
+            comparisonTable.classList.toggle('max-h-0');
+            comparisonTable.classList.toggle('opacity-0');
+
+            const chevronDown = document.getElementById('chevron-down');
+            const chevronUp = document.getElementById('chevron-up');
+            const buttonText = document.getElementById('button-text');
+
+            if (isVisible) {
+                chevronDown.classList.add('hidden');
+                chevronUp.classList.remove('hidden');
+                buttonText.textContent = 'Hide full comparison';
+            } else {
+                chevronDown.classList.remove('hidden');
+                chevronUp.classList.add('hidden');
+                buttonText.textContent = 'Show full comparison';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
