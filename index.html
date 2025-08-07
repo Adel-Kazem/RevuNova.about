@@ -24,139 +24,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icon-css@3.4.6/css/flag-icon.min.css"/>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-
-    <style>
-        :root {
-            --min-font-size: 14px;
-            --max-font-size: 18px;
-            --min-viewport-width: 320px;
-            --max-viewport-width: 1800px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /*body {*/
-        /*    font-size: clamp(*/
-        /*            var(--min-font-size),*/
-        /*            calc(14px + 4 * ((100vw - var(--min-viewport-width)) / (var(--max-viewport-width) - var(--min-viewport-width)))),*/
-        /*            var(--max-font-size)*/
-        /*    );*/
-        /*}*/
-
-        .scroll-container {
-            height: 100vh;
-            overflow-y: scroll;
-            scroll-snap-type: y mandatory;
-        }
-
-        .scroll-section {
-            scroll-snap-align: start;
-            min-height: 90vh;
-            height: auto;
-            overflow: visible;
-        }
-
-        .scroll-section > div {
-            padding: 3rem 1.5rem;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        img {
-            max-width: 90%;
-            height: auto;
-            object-fit: contain;
-        }
-
-        .md\:w-1\/2 img {
-            width: 90%;
-            max-height: 70vh;
-        }
-
-        .navigation {
-            position: fixed;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 100;
-        }
-
-        .nav-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            margin: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .nav-dot:hover {
-            transform: scale(1.2);
-            background: rgba(255, 255, 255, 0.8);
-        }
-
-        .nav-dot.active {
-            background: rgba(255, 255, 255, 0.8);
-            transform: scale(1.2);
-        }
-
-        @media screen and (max-width: 1024px) {
-            .flex-col-lg {
-                flex-direction: column;
-            }
-
-            .md\:w-1\/2 {
-                width: 100%;
-                padding: 0.75rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            .scroll-section > div {
-                padding: 1.5rem 0.75rem;
-            }
-
-            h2 {
-                font-size: 1.75rem;
-            }
-
-            .space-y-4 {
-                margin-bottom: 0.75rem;
-            }
-        }
-    </style>
-
-
 </head>
 <body>
+<!-- Load SVG Sprites Component -->
+<div x-data x-html="fetch('svg-sprites.html').then(r => r.text())"></div>
 
-<svg style="display: none;">
-    <symbol id="shopify-icon" viewBox="0 0 48 48">
-        <path fill="#7cb342" d="M37.216,11.78c-0.023-0.211-0.211-0.305-0.351-0.305s-3.21-0.234-3.21-0.234s-2.132-2.132-2.39-2.343	c-0.234-0.234-0.68-0.164-0.867-0.117c-0.023,0-0.469,0.141-1.195,0.375c-0.726-2.086-1.968-3.984-4.194-3.984h-0.211	C24.187,4.375,23.391,4,22.735,4c-5.155,0-7.639,6.444-8.412,9.725c-2.015,0.633-3.445,1.054-3.609,1.125	c-1.125,0.351-1.148,0.375-1.289,1.429c-0.117,0.797-3.046,23.456-3.046,23.456L29.179,44l12.373-2.671	C41.575,41.282,37.24,11.991,37.216,11.78z M27.937,9.483c-0.562,0.164-1.242,0.375-1.921,0.609V9.671	c0-1.265-0.164-2.296-0.469-3.117C26.718,6.695,27.445,7.984,27.937,9.483L27.937,9.483z M24.117,6.812	c0.305,0.797,0.516,1.922,0.516,3.468v0.234c-1.265,0.398-2.601,0.797-3.984,1.242C21.422,8.804,22.899,7.351,24.117,6.812	L24.117,6.812z M22.617,5.359c0.234,0,0.469,0.094,0.656,0.234c-1.664,0.773-3.421,2.718-4.148,6.655	c-1.101,0.351-2.156,0.656-3.163,0.984C16.806,10.233,18.915,5.359,22.617,5.359z"></path>
-        <path fill="#558b2f" d="M36.865,11.428c-0.141,0-3.21-0.234-3.21-0.234s-2.132-2.132-2.39-2.343	C31.17,8.757,31.053,8.71,30.96,8.71L29.249,44l12.373-2.671c0,0-4.335-29.338-4.359-29.549	C37.169,11.569,37.005,11.475,36.865,11.428z"></path>
-        <path fill="#fff" d="M24.792,18.593l-1.475,4.449c0,0-1.337-0.715-2.927-0.715c-2.374,0-2.489,1.498-2.489,1.867	c0,2.028,5.301,2.812,5.301,7.583c0,3.757-2.374,6.177-5.578,6.177c-3.872,0-5.808-2.397-5.808-2.397l1.037-3.411	c0,0,2.028,1.752,3.734,1.752c1.129,0,1.59-0.876,1.59-1.521c0-2.651-4.333-2.766-4.333-7.145c0-3.665,2.628-7.214,7.952-7.214	C23.777,17.994,24.792,18.593,24.792,18.593z"></path>
-    </symbol>
-</svg>
 
 <div class="scroll-container">
 
@@ -236,19 +108,19 @@
 
 <script>
     lucide.createIcons();
-    
+
     // Global variables for sections and dots
     let sections = [];
     let dots = [];
-    
+
     // Initialize navigation after Alpine.js renders
     function initializeNavigation() {
         sections = document.querySelectorAll('.scroll-section');
         dots = document.querySelectorAll('.nav-dot');
-        
+
         // Add scroll event listener
         document.querySelector('.scroll-container').addEventListener('scroll', updateActiveDot);
-        
+
         // Initialize active state
         updateActiveDot();
     }
@@ -267,7 +139,7 @@
         const currentDots = document.querySelectorAll('.nav-dot');
         const scrollPosition = document.querySelector('.scroll-container').scrollTop;
         const windowHeight = window.innerHeight;
-        
+
         currentSections.forEach((section, index) => {
             const sectionTop = section.offsetTop;
             const sectionBottom = sectionTop + section.offsetHeight;
@@ -285,7 +157,7 @@
         // Wait a bit more to ensure all sections are fully rendered
         setTimeout(initializeNavigation, 100);
     });
-    
+
     // Fallback initialization in case alpine:rendered doesn't fire
     setTimeout(initializeNavigation, 1000);
 </script>
@@ -319,7 +191,7 @@
                     });
                 }
             });
-            
+
             if (shouldUpdateIcons && typeof lucide !== 'undefined') {
                 setTimeout(() => {
                     lucide.createIcons();
@@ -338,7 +210,7 @@
         const burgerButton = document.querySelector('[data-lucide="menu"]')?.parentElement;
         const mobileMenu = document.getElementById('mobileMenu');
         const closeButton = document.getElementById('closeMenu');
-        
+
         if (burgerButton && mobileMenu && closeButton) {
             // Open menu
             burgerButton.addEventListener('click', () => {
@@ -374,27 +246,26 @@
 </script>
 
 <script>
-    // Alpine.js data for feature sections
     document.addEventListener('alpine:init', () => {
         Alpine.data('featureSections', () => ({
             sections: [
                 {
                     gradient: 'from-[#0A0500] via-[#1A0800] to-[#2A1500]',
                     badge: {
-                        text: 'GLOBAL REVIEWS',
+                        get text() { return Alpine.store('translations').t('globalReviews'); },
                         color: 'text-[#FF9933]'
                     },
-                    title: 'Import 1000+ Global Reviews in Minutes',
-                    description: 'Multi-platform imports with photos & videos in one click. Build trust with verified reviews from global marketplaces.',
+                    get title() { return Alpine.store('translations').t('importGlobalTitle'); },
+                    get description() { return Alpine.store('translations').t('importGlobalDesc'); },
                     buttons: {
                         primary: {
-                            text: 'Start Importing',
+                            get text() { return Alpine.store('translations').t('startImporting'); },
                             bg: 'bg-[#FF9933]',
                             hover: 'hover:bg-[#FFB366]',
                             url: 'https://apps.shopify.com/revunova'
                         },
                         secondary: {
-                            text: 'Watch Demo',
+                            get text() { return Alpine.store('translations').t('watchDemo'); },
                             border: 'border-[#FF9933]',
                             hover: 'hover:bg-[#FF9933]/10',
                             url: 'https://youtu.be/xqM0eRYo_r8?t=35'
@@ -405,20 +276,20 @@
                 {
                     gradient: 'from-[#1A0B4E] via-[#2B1B7E] to-[#0BC7F0]',
                     badge: {
-                        text: 'GLOBAL TRANSLATION',
+                        get text() { return Alpine.store('translations').t('globalTranslation'); },
                         color: 'text-[#0BC7F0]'
                     },
-                    title: 'Reviews That Speak Every Language',
-                    description: 'Automatic translation based on your markets and customers. Let customers read reviews in their preferred language, breaking down barriers for global engagement.',
+                    get title() { return Alpine.store('translations').t('reviewsLanguageTitle'); },
+                    get description() { return Alpine.store('translations').t('reviewsLanguageDesc'); },
                     buttons: {
                         primary: {
-                            text: 'Get Started',
+                            get text() { return Alpine.store('translations').t('getStarted'); },
                             bg: 'bg-[#0BC7F0]',
                             hover: 'hover:bg-[#1AD7FF]',
                             url: 'https://apps.shopify.com/revunova'
                         },
                         secondary: {
-                            text: 'Watch Demo',
+                            get text() { return Alpine.store('translations').t('watchDemo'); },
                             border: 'border-[#0BC7F0]',
                             hover: 'hover:bg-[#0BC7F0]/10',
                             url: 'https://youtu.be/xqM0eRYo_r8?t=133'
@@ -429,20 +300,20 @@
                 {
                     gradient: 'from-black via-[#1A0505] to-[#3B0808]',
                     badge: {
-                        text: 'PRODUCT REVIEWS',
+                        get text() { return Alpine.store('translations').t('productReviews'); },
                         color: 'text-[#FF6B6B]'
                     },
-                    title: 'Unite Your Product Reviews',
-                    description: 'Connect similar products, combine their reviews and boost your sales with unified product feedback.',
+                    get title() { return Alpine.store('translations').t('uniteReviewsTitle'); },
+                    get description() { return Alpine.store('translations').t('uniteReviewsDesc'); },
                     buttons: {
                         primary: {
-                            text: 'Get Started',
+                            get text() { return Alpine.store('translations').t('getStarted'); },
                             bg: 'bg-[#FF6B6B]',
                             hover: 'hover:bg-[#FF8585]',
                             url: 'https://apps.shopify.com/revunova'
                         },
                         secondary: {
-                            text: 'Watch Demo',
+                            get text() { return Alpine.store('translations').t('watchDemo'); },
                             border: 'border-[#FF6B6B]',
                             hover: 'hover:bg-[#FF6B6B]/10',
                             url: 'https://www.youtube.com/watch?v=V3Vfe3aWOMQ'
@@ -453,20 +324,20 @@
                 {
                     gradient: 'from-[#1A0B2E] via-[#2B1B4E] to-[#0B1B3E]',
                     badge: {
-                        text: 'INSTANT RATINGS',
+                        get text() { return Alpine.store('translations').t('instantRatings'); },
                         color: 'text-[#FF1B8D]'
                     },
-                    title: 'Zero Delay,<br>Instant Ratings',
-                    description: 'Display product ratings instantly with no loading time. Stars appear immediately on your product, collection, and home pages.',
+                    get title() { return Alpine.store('translations').t('zeroDelayTitle'); },
+                    get description() { return Alpine.store('translations').t('zeroDelayDesc'); },
                     buttons: {
                         primary: {
-                            text: 'Get Started',
+                            get text() { return Alpine.store('translations').t('getStarted'); },
                             bg: 'bg-[#FF1B8D]',
                             hover: 'hover:bg-[#FF4DA6]',
                             url: 'https://apps.shopify.com/revunova'
                         },
                         secondary: {
-                            text: 'Live Demo',
+                            get text() { return Alpine.store('translations').t('liveDemo'); },
                             border: 'border-[#FF1B8D]',
                             hover: 'hover:bg-[#FF1B8D]/10',
                             url: 'https://revunova.myshopify.com/products/bose-soundlink-flex-bluetooth-speaker-stone-blue?_bt=BAh7BkkiC19yYWlscwY6BkVUewhJIglkYXRhBjsAVEkiG3JldnVub3ZhLm15c2hvcGlmeS5jb20GOwBGSSIIZXhwBjsAVEkiHTIwMjUtMDEtMjdUMjE6MTE6NTcuNzk5WgY7AFRJIghwdXIGOwBUSSIecGVybWFuZW50X3Bhc3N3b3JkX2J5cGFzcwY7AEY%3D--6b2c69346d557a126fbd50439c92960e4874d342'
@@ -478,14 +349,14 @@
                 {
                     gradient: 'from-[#050303] via-[#2E0B0B] to-[#4E1B2B]',
                     badge: {
-                        text: 'GOOGLE INTEGRATION',
+                        get text() { return Alpine.store('translations').t('googleIntegration'); },
                         color: 'text-[#FF7676]'
                     },
-                    title: 'Your Reviews, Now on Google',
-                    description: 'Get more clicks with review-rich Google listings. Boost your visibility and attract more customers by showcasing your reviews directly in search results.',
+                    get title() { return Alpine.store('translations').t('reviewsGoogleTitle'); },
+                    get description() { return Alpine.store('translations').t('reviewsGoogleDesc'); },
                     buttons: {
                         primary: {
-                            text: 'Connect Google',
+                            get text() { return Alpine.store('translations').t('connectGoogle'); },
                             bg: 'bg-[#FF7676]',
                             hover: 'hover:bg-[#FF9494]',
                             url: 'https://apps.shopify.com/revunova'
@@ -497,14 +368,14 @@
                 {
                     gradient: 'from-[#1B0311] via-[#350C25] to-[#7F2276]',
                     badge: {
-                        text: 'ANALYTICS',
+                        get text() { return Alpine.store('translations').t('analytics'); },
                         color: 'text-[#FF69B4]'
                     },
-                    title: 'Data-Driven Review Power',
-                    description: 'Track sources, languages, and impact in real-time. Make informed decisions with comprehensive analytics and insights from your customer reviews.',
+                    get title() { return Alpine.store('translations').t('dataDrivenTitle'); },
+                    get description() { return Alpine.store('translations').t('dataDrivenDesc'); },
                     buttons: {
                         primary: {
-                            text: 'View Analytics',
+                            get text() { return Alpine.store('translations').t('viewAnalytics'); },
                             bg: 'bg-[#FF69B4]',
                             hover: 'hover:bg-[#FF85C2]',
                             url: 'https://apps.shopify.com/revunova'
@@ -517,6 +388,327 @@
         }))
     });
 </script>
+
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.store('translations', {
+            currentLang: 'en',
+
+            texts: {
+                en: {
+                    // Hero & Navigation
+                    trustedCommerce: 'TRUSTED COMMERCE',
+                    buildTrust: 'Build Trust,<br>Boost Sales',
+                    scaleBusinessDesc: 'Scale your business with confidence by showcasing authentic customer experiences',
+                    getStarted: 'Get Started',
+                    pricing: 'Pricing',
+                    contactUs: 'Contact us',
+                    howTo: 'How to',
+                    demoGen: 'Demo Gen',
+                    shopify: 'Shopify',
+                    startFreeTrial: 'Start free trial',
+                    demoStore: 'Demo Store',
+
+                    // Language switcher keys
+                    language: 'Language',
+                    english: 'English',
+                    arabic: 'العربية',
+
+                    // Feature Sections (Existing)
+                    globalReviews: 'GLOBAL REVIEWS',
+                    importGlobalTitle: 'Import 1000+ Global Reviews in Minutes',
+                    importGlobalDesc: 'Multi-platform imports with photos & videos in one click. Build trust with verified reviews from global marketplaces.',
+                    startImporting: 'Start Importing',
+                    watchDemo: 'Watch Demo',
+                    globalTranslation: 'GLOBAL TRANSLATION',
+                    reviewsLanguageTitle: 'Reviews That Speak Every Language',
+                    reviewsLanguageDesc: 'Automatic translation based on your markets and customers. Let customers read reviews in their preferred language, breaking down barriers for global engagement.',
+                    productReviews: 'PRODUCT REVIEWS',
+                    uniteReviewsTitle: 'Unite Your Product Reviews',
+                    uniteReviewsDesc: 'Connect similar products, combine their reviews and boost your sales with unified product feedback.',
+                    instantRatings: 'INSTANT RATINGS',
+                    zeroDelayTitle: 'Zero Delay,<br>Instant Ratings',
+                    zeroDelayDesc: 'Display product ratings instantly with no loading time. Stars appear immediately on your product, collection, and home pages.',
+                    liveDemo: 'Live Demo',
+                    googleIntegration: 'GOOGLE INTEGRATION',
+                    reviewsGoogleTitle: 'Your Reviews, Now on Google',
+                    reviewsGoogleDesc: 'Get more clicks with review-rich Google listings. Boost your visibility and attract more customers by showcasing your reviews directly in search results.',
+                    connectGoogle: 'Connect Google',
+                    analytics: 'ANALYTICS',
+                    dataDrivenTitle: 'Data-Driven Review Power',
+                    dataDrivenDesc: 'Track sources, languages, and impact in real-time. Make informed decisions with comprehensive analytics and insights from your customer reviews.',
+                    viewAnalytics: 'View Analytics',
+                    easyIntegration: 'EASY INTEGRATION',
+                    oneClickTitle: 'One Click, All Templates',
+                    oneClickDesc: 'Reviews Everywhere in Seconds. Instant setup across product, collection & home pages with seamless template integration.',
+                    installNow: 'Install Now',
+
+                    // Pricing Section
+                    pricingTitle: "Boost Your Store's Trust & Sales",
+                    pricingDescription: 'Start your 16-day free premium trial today',
+                    priceMonth: '/month',
+
+                    // Plans
+                    planExplorer: 'Explorer',
+                    planStarter: 'Starter',
+                    planGrowth: 'Growth',
+                    planGlobal: 'Global Seller',
+                    mostValuable: 'Most valuable',
+
+                    // Features
+                    planExplorerFeature1: 'AliExpress reviews',
+                    planExplorerFeature2: 'Original language only',
+                    planExplorerFeature3: 'Basic review moderation',
+                    planExplorerFeature4: 'CSV import (10 published)',
+                    planExplorerFeature5: 'Automatic + Manual review request',
+
+                    planStarterFeature1: 'AliExpress, Shopee, Amazon reviews',
+                    planStarterFeature2: '1 extra language',
+                    planStarterFeature3: '5 groups, 10 products each',
+                    planStarterFeature4: 'Review synchronization',
+                    planStarterFeature5: 'Unlimited CSV import',
+
+                    planGrowthFeature1: 'All supported platforms',
+                    planGrowthFeature2: '2 extra languages + Live Translation',
+                    planGrowthFeature3: '10 groups, unlimited products',
+                    planGrowthFeature4: '100,000 review limit',
+                    planGrowthFeature5: 'Review synchronization',
+
+                    planGlobalFeature1: 'All supported platforms',
+                    planGlobalFeature2: '4 extra languages + Live Translation',
+                    planGlobalFeature3: '50 groups, unlimited products',
+                    planGlobalFeature4: '500,000 review limit',
+                    planGlobalFeature5: 'Review synchronization',
+
+                    // Buttons
+                    getStarted16DayTrial: 'Get Started - 16 Days Trial',
+
+                    // Comparison
+                    showComparison: 'Show full comparison',
+                    hideComparison: 'Hide comparison',
+
+                    // Comparison Table Headers
+                    comparisonFeature: 'Feature',
+                    comparisonExplorer: 'Explorer',
+                    comparisonStarter: 'Starter',
+                    comparisonGrowth: 'Growth',
+                    comparisonGlobal: 'Global Seller',
+
+                    // Comparison Table Features
+                    reviewImport: 'Review Import',
+                    reviewTranslation: 'Review Translation',
+                    productGrouping: 'Product Grouping',
+                    reviewSynchronization: 'Review Synchronization',
+                    reviewModeration: 'Review Moderation',
+                    csvImport: 'CSV Import',
+                    reviewRequest: 'Review Request',
+                    designCustomization: 'Design Customization',
+                    reviewLimit: 'Review Limit',
+                    advancedStats: 'Advanced Statistics',
+
+                    // Comparison Table Values
+                    aliExpress: 'AliExpress',
+                    aliExpressShopeeAmazon: 'AliExpress, Shopee, Amazon',
+                    allPlatforms: 'All supported platforms',
+                    originalLanguageOnly: 'Translate original language only',
+                    oneExtraLanguage: '1 extra language',
+                    twoExtraLanguagesLive: '2 extra languages + Live Translation',
+                    fourExtraLanguagesLive: '4 extra languages + Live Translation',
+                    fiveGroupsTenProducts: '5 groups, 10 products each',
+                    tenGroupsUnlimited: '10 groups, unlimited products',
+                    fiftyGroupsUnlimited: '50 groups, unlimited products',
+                    unlimitedTenPublished: 'Unlimited (10 published)',
+                    unlimited: 'Unlimited',
+                    automaticManual: 'Automatic + Manual',
+                    reviewLimit500: '500',
+                    reviewLimit40k: '40,000',
+                    reviewLimit100k: '100,000',
+                    reviewLimit500k: '500,000',
+
+                    // Footer keys
+                    footerDescription: 'Amplify Your Store\'s Credibility and Sales',
+                    quickLinks: 'Quick Links',
+                    revuNovaOnShopify: 'RevuNova on Shopify',
+                    youTubeChannel: 'YouTube Channel',
+                    contact: 'Contact',
+                    stayUpdated: 'Stay Updated',
+                    enterEmail: 'Enter your email',
+                    subscribe: 'Subscribe',
+                    allRightsReserved: 'RevuNova. All rights reserved.'
+                },
+                ar: {
+                    // Hero & Navigation
+                    trustedCommerce: 'تجارة موثوقة',
+                    buildTrust: 'ابنِ الثقة،<br>عزز مبيعاتك',
+                    scaleBusinessDesc: 'وسّع نطاق عملك بثقة من خلال عرض تجارب العملاء الحقيقية',
+                    getStarted: 'ابدأ الآن',
+                    pricing: 'الأسعار',
+                    contactUs: 'تواصل معنا',
+                    howTo: 'كيفية الاستخدام',
+                    demoGen: 'إنشاء عرض',
+                    shopify: 'شوبيفاي',
+                    startFreeTrial: 'ابدأ التجربة المجانية',
+                    demoStore: 'متجر تجريبي',
+
+                    // Language switcher keys
+                    language: 'اللغة',
+                    english: 'الإنجليزية',
+                    arabic: 'العربية',
+
+                    // Feature Sections (Existing)
+                    globalReviews: 'مراجعات عالمية',
+                    importGlobalTitle: 'استورد أكثر من 1000 مراجعة عالمية في دقائق',
+                    importGlobalDesc: 'استيراد من منصات متعددة مع الصور ومقاطع الفيديو بنقرة واحدة. ابنِ الثقة بمراجعات موثوقة من الأسواق العالمية.',
+                    startImporting: 'ابدأ الاستيراد',
+                    watchDemo: 'شاهد العرض',
+                    globalTranslation: 'ترجمة عالمية',
+                    reviewsLanguageTitle: 'مراجعات تتحدث كل اللغات',
+                    reviewsLanguageDesc: 'ترجمة تلقائية بناءً على أسواقك وعملائك. دع العملاء يقرؤون المراجعات بلغتهم المفضلة.',
+                    productReviews: 'مراجعات المنتجات',
+                    uniteReviewsTitle: 'وحّد مراجعات منتجاتك',
+                    uniteReviewsDesc: 'اربط المنتجات المتشابهة، واجمع مراجعاتها، وعزز مبيعاتك بتعليقات موحدة.',
+                    instantRatings: 'تقييمات فورية',
+                    zeroDelayTitle: 'بدون تأخير،<br>تقييمات فورية',
+                    zeroDelayDesc: 'اعرض تقييمات المنتج على الفور دون أي وقت تحميل. تظهر النجوم فورًا.',
+                    liveDemo: 'عرض حي',
+                    googleIntegration: 'تكامل مع جوجل',
+                    reviewsGoogleTitle: 'مراجعاتك، الآن على جوجل',
+                    reviewsGoogleDesc: 'احصل على المزيد من النقرات مع قوائم جوجل الغنية بالمراجعات. عزز ظهورك.',
+                    connectGoogle: 'ربط مع جوجل',
+                    analytics: 'التحليلات',
+                    dataDrivenTitle: 'قوة المراجعات المبنية على البيانات',
+                    dataDrivenDesc: 'تتبع المصادر واللغات والتأثير في الوقت الفعلي. اتخذ قرارات مستنيرة.',
+                    viewAnalytics: 'عرض التحليلات',
+                    easyIntegration: 'تكامل سهل',
+                    oneClickTitle: 'نقرة واحدة، كل القوالب',
+                    oneClickDesc: 'مراجعات في كل مكان في ثوانٍ. إعداد فوري عبر صفحات المنتج والمجموعة.',
+                    installNow: 'ثبّت الآن',
+
+                    // Pricing Section
+                    pricingTitle: 'عزز ثقة ومبيعات متجرك',
+                    pricingDescription: 'ابدأ تجربتك المميزة المجانية لمدة 16 يومًا اليوم',
+                    priceMonth: '/شهر',
+
+                    // Plans
+                    planExplorer: 'المستكشف',
+                    planStarter: 'المبتدئ',
+                    planGrowth: 'النمو',
+                    planGlobal: 'البائع العالمي',
+                    mostValuable: 'الأكثر قيمة',
+
+                    // Features
+                    planExplorerFeature1: 'مراجعات AliExpress',
+                    planExplorerFeature2: 'اللغة الأصلية فقط',
+                    planExplorerFeature3: 'إدارة أساسية للمراجعات',
+                    planExplorerFeature4: 'استيراد CSV (10 منشورة)',
+                    planExplorerFeature5: 'طلب مراجعة تلقائي + يدوي',
+
+                    planStarterFeature1: 'مراجعات AliExpress, Shopee, Amazon',
+                    planStarterFeature2: 'لغة إضافية واحدة',
+                    planStarterFeature3: '5 مجموعات، 10 منتجات لكل منها',
+                    planStarterFeature4: 'مزامنة المراجعات',
+                    planStarterFeature5: 'استيراد CSV غير محدود',
+
+                    planGrowthFeature1: 'جميع المنصات المدعومة',
+                    planGrowthFeature2: 'لغتان إضافيتان + ترجمة حية',
+                    planGrowthFeature3: '10 مجموعات، منتجات غير محدودة',
+                    planGrowthFeature4: 'حد 100,000 مراجعة',
+                    planGrowthFeature5: 'مزامنة المراجعات',
+
+                    planGlobalFeature1: 'جميع المنصات المدعومة',
+                    planGlobalFeature2: '4 لغات إضافية + ترجمة حية',
+                    planGlobalFeature3: '50 مجموعة، منتجات غير محدودة',
+                    planGlobalFeature4: 'حد 500,000 مراجعة',
+                    planGlobalFeature5: 'مزامنة المراجعات',
+
+                    // Buttons
+                    getStarted16DayTrial: 'ابدأ - تجربة 16 يومًا',
+
+                    // Comparison
+                    showComparison: 'عرض المقارنة الكاملة',
+                    hideComparison: 'إخفاء المقارنة',
+
+                    // Comparison Table Headers
+                    comparisonFeature: 'الميزة',
+                    comparisonExplorer: 'المستكشف',
+                    comparisonStarter: 'المبتدئ',
+                    comparisonGrowth: 'النمو',
+                    comparisonGlobal: 'البائع العالمي',
+
+                    // Comparison Table Features
+                    reviewImport: 'استيراد المراجعات',
+                    reviewTranslation: 'ترجمة المراجعات',
+                    productGrouping: 'تجميع المنتجات',
+                    reviewSynchronization: 'مزامنة المراجعات',
+                    reviewModeration: 'إدارة المراجعات',
+                    csvImport: 'استيراد CSV',
+                    reviewRequest: 'طلب مراجعة',
+                    designCustomization: 'تخصيص التصميم',
+                    reviewLimit: 'حد المراجعات',
+                    advancedStats: 'إحصائيات متقدمة',
+
+                    // Comparison Table Values
+                    aliExpress: 'AliExpress',
+                    aliExpressShopeeAmazon: 'AliExpress, Shopee, Amazon',
+                    allPlatforms: 'جميع المنصات المدعومة',
+                    originalLanguageOnly: 'ترجمة اللغة الأصلية فقط',
+                    oneExtraLanguage: 'لغة إضافية واحدة',
+                    twoExtraLanguagesLive: 'لغتان إضافيتان + ترجمة حية',
+                    fourExtraLanguagesLive: '4 لغات إضافية + ترجمة حية',
+                    fiveGroupsTenProducts: '5 مجموعات، 10 منتجات لكل منها',
+                    tenGroupsUnlimited: '10 مجموعات، منتجات غير محدودة',
+                    fiftyGroupsUnlimited: '50 مجموعة، منتجات غير محدودة',
+                    unlimitedTenPublished: 'غير محدود (10 منشورة)',
+                    unlimited: 'غير محدود',
+                    automaticManual: 'تلقائي + يدوي',
+                    reviewLimit500: '500',
+                    reviewLimit40k: '40,000',
+                    reviewLimit100k: '100,000',
+                    reviewLimit500k: '500,000',
+
+                    // Footer keys
+                    footerDescription: 'عزز مصداقية متجرك ومبيعاتك',
+                    quickLinks: 'روابط سريعة',
+                    revuNovaOnShopify: 'RevuNova على شوبيفاي',
+                    youTubeChannel: 'قناة يوتيوب',
+                    contact: 'اتصل بنا',
+                    stayUpdated: 'ابق محدثاً',
+                    enterEmail: 'أدخل بريدك الإلكتروني',
+                    subscribe: 'اشتراك',
+                    allRightsReserved: 'RevuNova. جميع الحقوق محفوظة.'
+                }
+            },
+
+            t(key) {
+                return this.texts[this.currentLang]?.[key] || this.texts.en[key] || key;
+            },
+
+            setLanguage(lang) {
+                this.currentLang = lang;
+                const url = new URL(window.location);
+                url.searchParams.set('lang', lang);
+                window.history.replaceState({}, '', url);
+
+                if (lang === 'ar') {
+                    document.documentElement.setAttribute('dir', 'rtl');
+                } else {
+                    document.documentElement.setAttribute('dir', 'ltr');
+                }
+            },
+
+            init() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const langFromUrl = urlParams.get('lang');
+                if (langFromUrl && this.texts[langFromUrl]) {
+                    this.setLanguage(langFromUrl);
+                } else {
+                    this.setLanguage(this.currentLang);
+                }
+            }
+        });
+    });
+</script>
+
 
 </body>
 </html>

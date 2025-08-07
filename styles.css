@@ -1,4 +1,124 @@
-.perspective-container {
+/*from the root moved into here starts*/
+:root {
+    --min-font-size: 14px;
+    --max-font-size: 18px;
+    --min-viewport-width: 320px;
+    --max-viewport-width: 1800px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*body {*/
+/*    font-size: clamp(*/
+/*            var(--min-font-size),*/
+/*            calc(14px + 4 * ((100vw - var(--min-viewport-width)) / (var(--max-viewport-width) - var(--min-viewport-width)))),*/
+/*            var(--max-font-size)*/
+/*    );*/
+/*}*/
+
+.scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.scroll-section {
+    scroll-snap-align: start;
+    min-height: 90vh;
+    height: auto;
+    overflow: visible;
+}
+
+.scroll-section > div {
+    padding: 3rem 1.5rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+img {
+    max-width: 90%;
+    height: auto;
+    object-fit: contain;
+}
+
+.md\:w-1\/2 img {
+    width: 90%;
+    max-height: 70vh;
+}
+
+.navigation {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.nav-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-dot:hover {
+    transform: scale(1.2);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.nav-dot.active {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 1024px) {
+    .flex-col-lg {
+        flex-direction: column;
+    }
+
+    .md\:w-1\/2 {
+        width: 100%;
+        padding: 0.75rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .scroll-section > div {
+        padding: 1.5rem 0.75rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .space-y-4 {
+        margin-bottom: 0.75rem;
+    }
+}
+/*from the root moved into here ends*/
+    .perspective-container {
     perspective: 1000px;
     perspective-origin: 50% 50%;
 }

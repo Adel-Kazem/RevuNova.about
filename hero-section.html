@@ -1,27 +1,24 @@
 <!-- hero-section.html -->
 <div class="container mx-auto">
-    <!-- Navigation Component -->
+    <!-- Navigation Component (This will fetch your updated navigation) -->
     <div x-data x-html="fetch('navigation.html').then(r => r.text())"></div>
 
     <!-- Hero Content -->
     <div class="container mx-auto px-3 py-16">
         <div class="flex flex-col md:flex-row items-center justify-between flex-col-lg">
             <div class="md:w-1/2 mb-8 md:mb-0">
-                <div class="text-white/80 uppercase tracking-wide font-semibold mb-3">
-                    TRUSTED COMMERCE
+                <div class="text-white/80 uppercase tracking-wide font-semibold mb-3" x-text="$store.translations.t('trustedCommerce')">
                 </div>
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
-                    Build Trust,<br>Boost Sales
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4" x-html="$store.translations.t('buildTrust')">
                 </h2>
-                <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg">
-                    Scale your business with confidence by showcasing authentic customer experiences
+                <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg" x-text="$store.translations.t('scaleBusinessDesc')">
                 </p>
                 <div class="space-y-3 md:space-y-0 md:space-x-3">
                     <a href="https://apps.shopify.com/revunova" target="_blank" class="inline-flex items-center w-full md:w-auto bg-white text-purple-950 px-6 py-2.5 rounded-md font-medium hover:bg-white/90 transition-colors">
-                        <svg class="w-5 h-5 mr-2">
+                        <svg class="w-5 h-5 mr-2 rtl:ml-2 rtl:mr-0">
                             <use href="#shopify-icon"/>
                         </svg>
-                        Get Started
+                        <span x-text="$store.translations.t('getStarted')"></span>
                     </a>
                 </div>
             </div>
@@ -31,7 +28,8 @@
         </div>
     </div>
 </div>
-
 <script>
-    lucide.createIcons();
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
 </script>
