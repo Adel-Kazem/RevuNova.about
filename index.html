@@ -22,22 +22,52 @@
     
     <!-- Custom styles for platform icons -->
     <style>
-        /* Make Salla icons larger to match Shopify icon visibility */
+        /* Salla brand green color */
+        :root {
+            --salla-green: #062930;  /* Salla's primary green */
+        }
+        
+        /* Make Salla icons larger and green */
         svg use[href="#sallaIcon"] {
             transform: scale(1.5);
             transform-origin: center;
+        }
+        
+        /* Salla icon color - override inherit */
+        svg use[href="#sallaIcon"] {
+            fill: var(--salla-green) !important;
+            color: var(--salla-green) !important;
+        }
+        
+        /* Target the parent SVG for Salla icons */
+        svg:has(use[href="#sallaIcon"]) {
+            color: var(--salla-green) !important;
         }
         
         /* Specifically for navigation icons */
         .nav-platform-icon use[href="#sallaIcon"] {
             transform: scale(2);
             transform-origin: center;
+            fill: var(--salla-green) !important;
+            color: var(--salla-green) !important;
         }
         
         /* For button icons in features and hero */
         .btn-platform-icon use[href="#sallaIcon"] {
             transform: scale(1.8);
             transform-origin: center;
+            fill: var(--salla-green) !important;
+            color: var(--salla-green) !important;
+        }
+        
+        /* Navigation icon containers */
+        .nav-platform-icon:has(use[href="#sallaIcon"]) {
+            color: var(--salla-green) !important;
+        }
+        
+        /* Button icon containers */
+        .btn-platform-icon:has(use[href="#sallaIcon"]) {
+            color: var(--salla-green) !important;
         }
     </style>
     

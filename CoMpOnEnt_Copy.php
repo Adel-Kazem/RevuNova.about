@@ -20,10 +20,11 @@ $outputFile = 'Components_content.txt';
 $additionalFiles = [
     'C:\xampp\htdocs\RevuNova.about\index.html',
     'C:\xampp\htdocs\RevuNova.about\styles.css',
-//    'C:\xampp\htdocs\RevuNova.about\hero-section.html',
+    'C:\xampp\htdocs\RevuNova.about\hero-section.html',
     'C:\xampp\htdocs\RevuNova.about\navigation.html',
-//    'C:\xampp\htdocs\RevuNova.about\reviews-demo-section.html',
-//    'C:\xampp\htdocs\RevuNova.about\footer-section.html',
+    'C:\xampp\htdocs\RevuNova.about\reviews-demo-section.html',
+    'C:\xampp\htdocs\RevuNova.about\footer-section.html',
+    'C:\xampp\htdocs\RevuNova.about\app.js',
 ];
 
 // Initialize array to store all file paths
