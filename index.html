@@ -165,201 +165,41 @@
         <div x-data x-html="fetch('hero-section.html').then(r => r.text())"></div>
     </div>
 
-    <div class="scroll-section min-h-screen bg-gradient-to-br from-[#0A0500] via-[#1A0800] to-[#2A1500]">
-        <div class="container mx-auto px-3 py-16 min-h-screen flex flex-col">
-            <div class="flex flex-col md:flex-row items-center md:justify-between h-full space-y-[10vh] md:space-y-0">
-                <div class="md:w-1/2 mt-[10vh] md:mt-0">
-                    <div class="text-[#FF9933] uppercase tracking-wide font-semibold mb-3">
-                        GLOBAL REVIEWS
+    <!-- Feature Sections Loop -->
+    <div x-data="featureSections()">
+        <template x-for="(section, index) in sections" :key="index">
+            <div class="scroll-section min-h-screen bg-gradient-to-br" :class="section.gradient">
+                <div class="container mx-auto px-3 py-16 min-h-screen flex flex-col">
+                    <div class="flex flex-col md:flex-row items-center md:justify-between h-full space-y-[10vh] md:space-y-0">
+                        <div class="md:w-1/2 mt-[10vh] md:mt-0">
+                            <div class="uppercase tracking-wide font-semibold mb-3" :class="section.badge.color" x-text="section.badge.text">
+                            </div>
+                            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4" x-html="section.title">
+                            </h2>
+                            <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg" x-text="section.description">
+                            </p>
+                            <div class="space-y-3 md:space-y-0 md:space-x-3 flex flex-col md:flex-row">
+                                <!-- Primary Button -->
+                                <a :href="section.buttons.primary.url" target="_blank" class="inline-flex items-center w-full md:w-auto text-white px-6 py-2.5 rounded-md font-medium transition-colors" :class="`${section.buttons.primary.bg} ${section.buttons.primary.hover}`">
+                                    <svg class="w-5 h-5 mr-2">
+                                        <use href="#shopify-icon"/>
+                                    </svg>
+                                    <span x-text="section.buttons.primary.text"></span>
+                                </a>
+                                <!-- Secondary Button (if exists) -->
+                                <template x-if="section.buttons.secondary">
+                                    <a :href="section.buttons.secondary.url" target="_blank" class="inline-flex items-center w-full md:w-auto text-white border px-6 py-2.5 rounded-md font-medium transition-colors" :class="`${section.buttons.secondary.border} ${section.buttons.secondary.hover}`" x-text="section.buttons.secondary.text">
+                                    </a>
+                                </template>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 flex justify-center">
+                            <img :src="section.image" alt="Feature illustration" :class="section.imageClass || 'max-md:mb-12 w-full h-auto object-contain'"/>
+                        </div>
                     </div>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
-                        Import 1000+ Global Reviews in Minutes
-                    </h2>
-                    <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg">
-                        Multi-platform imports with photos & videos in one click. Build trust with verified reviews from
-                        global marketplaces.
-                    </p>
-                    <div class="space-y-3 md:space-y-0 md:space-x-3 flex flex-col md:flex-row">
-                        <a href="https://apps.shopify.com/revunova" target="_blank" class="inline-flex items-center w-full md:w-auto bg-[#FF9933] text-white px-6 py-2.5 rounded-md font-medium hover:bg-[#FFB366] transition-colors">
-                            <svg class="w-5 h-5 mr-2">
-                                <use href="#shopify-icon"/>
-                            </svg>
-                            Start Importing
-                        </a>
-                        <a href="https://youtu.be/xqM0eRYo_r8?t=35" target="_blank" class="inline-flex items-center w-full md:w-auto text-white border border-[#FF9933] px-6 py-2.5 rounded-md font-medium hover:bg-[#FF9933]/10 transition-colors">
-                            Watch Demo
-                        </a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <img src="s2.png" alt="Description" class="max-md:mb-12 w-full h-auto object-contain"/>
                 </div>
             </div>
-        </div>
-    </div>
-
-
-    <!-- Translation Section -->
-    <div class="scroll-section min-h-screen bg-gradient-to-br from-[#1A0B4E] via-[#2B1B7E] to-[#0BC7F0]">
-        <div class="container mx-auto px-3 py-16 min-h-screen flex flex-col">
-            <div class="flex flex-col md:flex-row items-center md:justify-between h-full space-y-[10vh] md:space-y-0">
-                <div class="md:w-1/2 mt-[10vh] md:mt-0">
-                    <div class="text-[#0BC7F0] uppercase tracking-wide font-semibold mb-3">
-                        GLOBAL TRANSLATION
-                    </div>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
-                        Reviews That Speak Every Language
-                    </h2>
-                    <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg">
-                        Automatic translation based on your markets and customers. Let customers read reviews in their preferred language, breaking down barriers for global engagement.
-                    </p>
-                    <div class="space-y-3 md:space-y-0 md:space-x-3 flex flex-col md:flex-row">
-                        <a href="https://apps.shopify.com/revunova" target="_blank" class="inline-flex items-center w-full md:w-auto bg-[#0BC7F0] text-white px-6 py-2.5 rounded-md font-medium hover:bg-[#1AD7FF] transition-colors">
-                            <svg class="w-5 h-5 mr-2">
-                                <use href="#shopify-icon"/>
-                            </svg>
-                            Get Started
-                        </a>
-                        <a href="https://youtu.be/xqM0eRYo_r8?t=133" target="_blank" class="inline-flex items-center w-full md:w-auto text-white border border-[#0BC7F0] px-6 py-2.5 rounded-md font-medium hover:bg-[#0BC7F0]/10 transition-colors">
-                            Watch Demo
-                        </a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <img src="s333333333.png" alt="Review Translation Dashboard" class="max-md:mb-12 w-full h-auto object-contain"/>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Product Reviews Section -->
-    <div class="scroll-section min-h-screen bg-gradient-to-br from-black via-[#1A0505] to-[#3B0808]">
-        <div class="container mx-auto px-3 py-16 min-h-screen flex flex-col">
-            <div class="flex flex-col md:flex-row items-center md:justify-between h-full space-y-[10vh] md:space-y-0">
-                <div class="md:w-1/2 mt-[10vh] md:mt-0">
-                    <div class="text-[#FF6B6B] uppercase tracking-wide font-semibold mb-3">
-                        PRODUCT REVIEWS
-                    </div>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
-                        Unite Your Product Reviews
-                    </h2>
-                    <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg">
-                        Connect similar products, combine their reviews and boost your sales with unified product feedback.
-                    </p>
-                    <div class="space-y-3 md:space-y-0 md:space-x-3 flex flex-col md:flex-row">
-                        <a href="https://apps.shopify.com/revunova" target="_blank" class="inline-flex items-center w-full md:w-auto bg-[#FF6B6B] text-white px-6 py-2.5 rounded-md font-medium hover:bg-[#FF8585] transition-colors">
-                            <svg class="w-5 h-5 mr-2">
-                                <use href="#shopify-icon"/>
-                            </svg>
-                            Get Started
-                        </a>
-                        <a href="https://www.youtube.com/watch?v=V3Vfe3aWOMQ" target="_blank" class="inline-flex items-center w-full md:w-auto text-white border border-[#FF6B6B] px-6 py-2.5 rounded-md font-medium hover:bg-[#FF6B6B]/10 transition-colors">
-                            Watch Demo
-                        </a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <img src="s5.png" alt="Description"/>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Instant Ratings Section -->
-    <div class="scroll-section min-h-screen bg-gradient-to-br from-[#1A0B2E] via-[#2B1B4E] to-[#0B1B3E]">
-        <div class="container mx-auto px-3 py-16 min-h-screen flex flex-col">
-            <div class="flex flex-col md:flex-row items-center md:justify-between h-full space-y-[10vh] md:space-y-0">
-                <div class="md:w-1/2 mt-[10vh] md:mt-0">
-                    <div class="text-[#FF1B8D] uppercase tracking-wide font-semibold mb-3">
-                        INSTANT RATINGS
-                    </div>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
-                        Zero Delay,<br>Instant Ratings
-                    </h2>
-                    <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg">
-                        Display product ratings instantly with no loading time. Stars appear immediately on your product, collection, and home pages.
-                    </p>
-                    <div class="space-y-3 md:space-y-0 md:space-x-3 flex flex-col md:flex-row">
-                        <a href="https://apps.shopify.com/revunova" target="_blank" class="inline-flex items-center w-full md:w-auto bg-[#FF1B8D] text-white px-6 py-2.5 rounded-md font-medium hover:bg-[#FF4DA6] transition-colors">
-                            <svg class="w-5 h-5 mr-2">
-                                <use href="#shopify-icon"/>
-                            </svg>
-                            Get Started
-                        </a>
-                        <a  href="https://revunova.myshopify.com/products/bose-soundlink-flex-bluetooth-speaker-stone-blue?_bt=BAh7BkkiC19yYWlscwY6BkVUewhJIglkYXRhBjsAVEkiG3JldnVub3ZhLm15c2hvcGlmeS5jb20GOwBGSSIIZXhwBjsAVEkiHTIwMjUtMDEtMjdUMjE6MTE6NTcuNzk5WgY7AFRJIghwdXIGOwBUSSIecGVybWFuZW50X3Bhc3N3b3JkX2J5cGFzcwY7AEY%3D--6b2c69346d557a126fbd50439c92960e4874d342"
-                            target="_blank"
-                            rel="noopener noreferrer" class="inline-flex items-center w-full md:w-auto text-white border border-[#FF1B8D] px-6 py-2.5 rounded-md font-medium hover:bg-[#FF1B8D]/10 transition-colors">
-                            Live Demo
-                        </a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <img src="s6.png" alt="Description" class="w-90 max-md:mb-12 object-contain"/>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="scroll-section min-h-screen bg-gradient-to-br from-[#050303] via-[#2E0B0B] to-[#4E1B2B]">
-        <div class="container mx-auto px-3 py-16 min-h-screen flex flex-col">
-            <div class="flex flex-col md:flex-row items-center md:justify-between h-full space-y-[10vh] md:space-y-0">
-                <div class="md:w-1/2 mt-[10vh] md:mt-0">
-                    <div class="text-[#FF7676] uppercase tracking-wide font-semibold mb-3">
-                        GOOGLE INTEGRATION
-                    </div>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
-                        Your Reviews, Now on Google
-                    </h2>
-                    <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg">
-                        Get more clicks with review-rich Google listings. Boost your visibility and attract more
-                        customers by showcasing your reviews directly in search results.
-                    </p>
-                    <div class="space-y-3 md:space-y-0 md:space-x-3">
-                        <a href="https://apps.shopify.com/revunova" target="_blank" class="inline-flex items-center w-full md:w-auto bg-[#FF7676] text-white px-6 py-2.5 rounded-md font-medium hover:bg-[#FF9494] transition-colors">
-                            <svg class="w-5 h-5 mr-2">
-                                <use href="#shopify-icon"/>
-                            </svg>
-                            Connect Google
-                        </a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <img src="s7777.png" alt="Google Reviews Integration" class="max-md:mb-12 w-90 max-h-[70vh] object-contain"/>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="scroll-section min-h-screen bg-gradient-to-br from-[#1B0311] via-[#350C25] to-[#7F2276]">
-        <div class="container mx-auto px-3 py-16 min-h-screen flex flex-col">
-            <div class="flex flex-col md:flex-row items-center md:justify-between h-full space-y-[10vh] md:space-y-0">
-                <div class="md:w-1/2 mt-[10vh] md:mt-0">
-                    <div class="text-[#FF69B4] uppercase tracking-wide font-semibold mb-3">
-                        ANALYTICS
-                    </div>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
-                        Data-Driven Review Power
-                    </h2>
-                    <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg">
-                        Track sources, languages, and impact in real-time. Make informed decisions with comprehensive
-                        analytics and insights from your customer reviews.
-                    </p>
-                    <div class="space-y-3 md:space-y-0 md:space-x-3">
-                        <a href="https://apps.shopify.com/revunova" target="_blank" class="inline-flex items-center w-full md:w-auto bg-[#FF69B4] text-white px-6 py-2.5 rounded-md font-medium hover:bg-[#FF85C2] transition-colors">
-                            <svg class="w-5 h-5 mr-2">
-                                <use href="#shopify-icon"/>
-                            </svg>
-                            View Analytics
-                        </a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <img src="s4.png" alt="Analytics Dashboard" class="max-md:mb-12 w-90 max-h-[70vh] object-contain"/>
-                </div>
-            </div>
-        </div>
+        </template>
     </div>
 
     <div class="scroll-section min-h-screen bg-gradient-to-br from-[#020B1C] via-[#0A192F] to-[#1E3A8A] overflow-x-hidden overflow-y-clip">
@@ -379,51 +219,75 @@
 
 <!-- Navigation Dots -->
 <div class="navigation">
-    <div class="nav-dot" onclick="scrollToSection(0)"></div>
-    <div class="nav-dot" onclick="scrollToSection(1)"></div>
-    <div class="nav-dot" onclick="scrollToSection(2)"></div>
-    <div class="nav-dot" onclick="scrollToSection(3)"></div>
-    <div class="nav-dot" onclick="scrollToSection(4)"></div>
-    <div class="nav-dot" onclick="scrollToSection(5)"></div>
-    <div class="nav-dot" onclick="scrollToSection(6)"></div>
-    <div class="nav-dot" onclick="scrollToSection(7)"></div>
-    <div class="nav-dot" onclick="scrollToSection(8)"></div>
-    <div class="nav-dot" onclick="scrollToSection(9)"></div>
+    <div class="nav-dot" onclick="scrollToSection(0)"></div> <!-- Hero -->
+    <div class="nav-dot" onclick="scrollToSection(1)"></div> <!-- Global Reviews -->
+    <div class="nav-dot" onclick="scrollToSection(2)"></div> <!-- Translation -->
+    <div class="nav-dot" onclick="scrollToSection(3)"></div> <!-- Product Reviews -->
+    <div class="nav-dot" onclick="scrollToSection(4)"></div> <!-- Instant Ratings -->
+    <div class="nav-dot" onclick="scrollToSection(5)"></div> <!-- Google Integration -->
+    <div class="nav-dot" onclick="scrollToSection(6)"></div> <!-- Analytics -->
+    <div class="nav-dot" onclick="scrollToSection(7)"></div> <!-- Reviews Demo -->
+    <div class="nav-dot" onclick="scrollToSection(8)"></div> <!-- Pricing -->
+    <div class="nav-dot" onclick="scrollToSection(9)"></div> <!-- Footer -->
 </div>
 
 
 <script src="script.js"></script>
 
 <script>
-     lucide.createIcons();
-    // Get all sections and navigation dot
-    const sections = document.querySelectorAll('.scroll-section');
-    const dots = document.querySelectorAll('.nav-dot');
+    lucide.createIcons();
+    
+    // Global variables for sections and dots
+    let sections = [];
+    let dots = [];
+    
+    // Initialize navigation after Alpine.js renders
+    function initializeNavigation() {
+        sections = document.querySelectorAll('.scroll-section');
+        dots = document.querySelectorAll('.nav-dot');
+        
+        // Add scroll event listener
+        document.querySelector('.scroll-container').addEventListener('scroll', updateActiveDot);
+        
+        // Initialize active state
+        updateActiveDot();
+    }
 
     /*// Scroll to section function*/
     function scrollToSection(index) {
-        sections[index].scrollIntoView({behavior: 'smooth'});
+        const currentSections = document.querySelectorAll('.scroll-section');
+        if (currentSections[index]) {
+            currentSections[index].scrollIntoView({behavior: 'smooth'});
+        }
     }
 
     /*// Update active dot based on scroll position*/
     function updateActiveDot() {
+        const currentSections = document.querySelectorAll('.scroll-section');
+        const currentDots = document.querySelectorAll('.nav-dot');
         const scrollPosition = document.querySelector('.scroll-container').scrollTop;
         const windowHeight = window.innerHeight;
-        sections.forEach((section, index) => {
+        
+        currentSections.forEach((section, index) => {
             const sectionTop = section.offsetTop;
             const sectionBottom = sectionTop + section.offsetHeight;
             if (scrollPosition >= sectionTop - windowHeight / 2 && scrollPosition < sectionBottom - windowHeight / 2) {
-                dots.forEach(dot => dot.classList.remove('active'));
-                dots[index].classList.add('active');
+                currentDots.forEach(dot => dot.classList.remove('active'));
+                if (currentDots[index]) {
+                    currentDots[index].classList.add('active');
+                }
             }
         });
     }
 
-    /*// Add scroll event listener*/
-    document.querySelector('.scroll-container').addEventListener('scroll', updateActiveDot);
-
-    /*// Initialize active state*/
-    updateActiveDot();
+    // Wait for Alpine.js to render all content
+    document.addEventListener('alpine:rendered', () => {
+        // Wait a bit more to ensure all sections are fully rendered
+        setTimeout(initializeNavigation, 100);
+    });
+    
+    // Fallback initialization in case alpine:rendered doesn't fire
+    setTimeout(initializeNavigation, 1000);
 </script>
 
 
@@ -508,5 +372,151 @@
     });
 
 </script>
+
+<script>
+    // Alpine.js data for feature sections
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('featureSections', () => ({
+            sections: [
+                {
+                    gradient: 'from-[#0A0500] via-[#1A0800] to-[#2A1500]',
+                    badge: {
+                        text: 'GLOBAL REVIEWS',
+                        color: 'text-[#FF9933]'
+                    },
+                    title: 'Import 1000+ Global Reviews in Minutes',
+                    description: 'Multi-platform imports with photos & videos in one click. Build trust with verified reviews from global marketplaces.',
+                    buttons: {
+                        primary: {
+                            text: 'Start Importing',
+                            bg: 'bg-[#FF9933]',
+                            hover: 'hover:bg-[#FFB366]',
+                            url: 'https://apps.shopify.com/revunova'
+                        },
+                        secondary: {
+                            text: 'Watch Demo',
+                            border: 'border-[#FF9933]',
+                            hover: 'hover:bg-[#FF9933]/10',
+                            url: 'https://youtu.be/xqM0eRYo_r8?t=35'
+                        }
+                    },
+                    image: 's2.png'
+                },
+                {
+                    gradient: 'from-[#1A0B4E] via-[#2B1B7E] to-[#0BC7F0]',
+                    badge: {
+                        text: 'GLOBAL TRANSLATION',
+                        color: 'text-[#0BC7F0]'
+                    },
+                    title: 'Reviews That Speak Every Language',
+                    description: 'Automatic translation based on your markets and customers. Let customers read reviews in their preferred language, breaking down barriers for global engagement.',
+                    buttons: {
+                        primary: {
+                            text: 'Get Started',
+                            bg: 'bg-[#0BC7F0]',
+                            hover: 'hover:bg-[#1AD7FF]',
+                            url: 'https://apps.shopify.com/revunova'
+                        },
+                        secondary: {
+                            text: 'Watch Demo',
+                            border: 'border-[#0BC7F0]',
+                            hover: 'hover:bg-[#0BC7F0]/10',
+                            url: 'https://youtu.be/xqM0eRYo_r8?t=133'
+                        }
+                    },
+                    image: 's333333333.png'
+                },
+                {
+                    gradient: 'from-black via-[#1A0505] to-[#3B0808]',
+                    badge: {
+                        text: 'PRODUCT REVIEWS',
+                        color: 'text-[#FF6B6B]'
+                    },
+                    title: 'Unite Your Product Reviews',
+                    description: 'Connect similar products, combine their reviews and boost your sales with unified product feedback.',
+                    buttons: {
+                        primary: {
+                            text: 'Get Started',
+                            bg: 'bg-[#FF6B6B]',
+                            hover: 'hover:bg-[#FF8585]',
+                            url: 'https://apps.shopify.com/revunova'
+                        },
+                        secondary: {
+                            text: 'Watch Demo',
+                            border: 'border-[#FF6B6B]',
+                            hover: 'hover:bg-[#FF6B6B]/10',
+                            url: 'https://www.youtube.com/watch?v=V3Vfe3aWOMQ'
+                        }
+                    },
+                    image: 's5.png'
+                },
+                {
+                    gradient: 'from-[#1A0B2E] via-[#2B1B4E] to-[#0B1B3E]',
+                    badge: {
+                        text: 'INSTANT RATINGS',
+                        color: 'text-[#FF1B8D]'
+                    },
+                    title: 'Zero Delay,<br>Instant Ratings',
+                    description: 'Display product ratings instantly with no loading time. Stars appear immediately on your product, collection, and home pages.',
+                    buttons: {
+                        primary: {
+                            text: 'Get Started',
+                            bg: 'bg-[#FF1B8D]',
+                            hover: 'hover:bg-[#FF4DA6]',
+                            url: 'https://apps.shopify.com/revunova'
+                        },
+                        secondary: {
+                            text: 'Live Demo',
+                            border: 'border-[#FF1B8D]',
+                            hover: 'hover:bg-[#FF1B8D]/10',
+                            url: 'https://revunova.myshopify.com/products/bose-soundlink-flex-bluetooth-speaker-stone-blue?_bt=BAh7BkkiC19yYWlscwY6BkVUewhJIglkYXRhBjsAVEkiG3JldnVub3ZhLm15c2hvcGlmeS5jb20GOwBGSSIIZXhwBjsAVEkiHTIwMjUtMDEtMjdUMjE6MTE6NTcuNzk5WgY7AFRJIghwdXIGOwBUSSIecGVybWFuZW50X3Bhc3N3b3JkX2J5cGFzcwY7AEY%3D--6b2c69346d557a126fbd50439c92960e4874d342'
+                        }
+                    },
+                    image: 's6.png',
+                    imageClass: 'w-90 max-md:mb-12 object-contain'
+                },
+                {
+                    gradient: 'from-[#050303] via-[#2E0B0B] to-[#4E1B2B]',
+                    badge: {
+                        text: 'GOOGLE INTEGRATION',
+                        color: 'text-[#FF7676]'
+                    },
+                    title: 'Your Reviews, Now on Google',
+                    description: 'Get more clicks with review-rich Google listings. Boost your visibility and attract more customers by showcasing your reviews directly in search results.',
+                    buttons: {
+                        primary: {
+                            text: 'Connect Google',
+                            bg: 'bg-[#FF7676]',
+                            hover: 'hover:bg-[#FF9494]',
+                            url: 'https://apps.shopify.com/revunova'
+                        }
+                    },
+                    image: 's7777.png',
+                    imageClass: 'max-md:mb-12 w-90 max-h-[70vh] object-contain'
+                },
+                {
+                    gradient: 'from-[#1B0311] via-[#350C25] to-[#7F2276]',
+                    badge: {
+                        text: 'ANALYTICS',
+                        color: 'text-[#FF69B4]'
+                    },
+                    title: 'Data-Driven Review Power',
+                    description: 'Track sources, languages, and impact in real-time. Make informed decisions with comprehensive analytics and insights from your customer reviews.',
+                    buttons: {
+                        primary: {
+                            text: 'View Analytics',
+                            bg: 'bg-[#FF69B4]',
+                            hover: 'hover:bg-[#FF85C2]',
+                            url: 'https://apps.shopify.com/revunova'
+                        }
+                    },
+                    image: 's4.png',
+                    imageClass: 'max-md:mb-12 w-90 max-h-[70vh] object-contain'
+                }
+            ]
+        }))
+    });
+</script>
+
 </body>
 </html>
