@@ -1,27 +1,27 @@
 <!-- navigation.html -->
 <nav class="w-full px-4 flex items-center justify-between" x-data="{ mobileMenuOpen: false }">
-    <div class="flex items-center space-x-8">
+    <div class="flex items-center space-x-8 rtl:space-x-reverse">
         <div class="flex items-center">
             <a href="https://apps.shopify.com/revunova" target="_blank">
                 <img src="RevuNova-logo-wide-white.png" alt="RevuNova" class="h-8">
             </a>
         </div>
-        <div class="hidden md:flex items-center space-x-6">
-            <a href="https://apps.shopify.com/revunova" target="_blank" class="text-white/80 hover:text-white transition-colors flex items-center gap-1">
+        <div class="hidden md:flex items-center space-x-6 rtl:space-x-reverse">
+            <a href="https://apps.shopify.com/revunova" target="_blank" class="text-white/80 hover:text-white transition-colors flex items-center gap-1 rtl:gap-1">
                 <span x-text="$store.translations.t('shopify')"></span>
                 <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="7" y1="17" x2="17" y2="7"></line>
                     <polyline points="7 7 17 7 17 17"></polyline>
                 </svg>
             </a>
-            <a href="https://app.revunova.com/api/merchant-demo-form" target="_blank" class="text-white/80 hover:text-white transition-colors flex items-center gap-1">
+            <a href="https://app.revunova.com/api/merchant-demo-form" target="_blank" class="text-white/80 hover:text-white transition-colors flex items-center gap-1 rtl:gap-1">
                 <span x-text="$store.translations.t('demoGen')"></span>
                 <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="7" y1="17" x2="17" y2="7"></line>
                     <polyline points="7 7 17 7 17 17"></polyline>
                 </svg>
             </a>
-            <a href="https://www.youtube.com/watch?v=xqM0eRYo_r8" target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white transition-colors flex items-center gap-1">
+            <a href="https://www.youtube.com/watch?v=xqM0eRYo_r8" target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white transition-colors flex items-center gap-1 rtl:gap-1">
                 <span x-text="$store.translations.t('howTo')"></span>
                 <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="7" y1="17" x2="17" y2="7"></line>
@@ -32,31 +32,34 @@
             <span class="text-white/80 hover:text-white transition-colors cursor-pointer" onclick="scrollToSection(8)" x-text="$store.translations.t('pricing')"></span>
         </div>
     </div>
-    <div class="hidden md:flex items-center space-x-4">
+
+    <div class="hidden md:flex items-center space-x-4 rtl:space-x-reverse">
         <!-- Platform Switcher for Desktop -->
-        <div class="hidden md:flex items-center space-x-2" x-data>
+        <div class="hidden md:flex items-center space-x-2 rtl:space-x-reverse" x-data>
             <div class="flex bg-white/10 rounded-md p-1">
                 <button @click="$store.platform.setPlatform('shopify')" class="flex items-center px-3 py-1 rounded text-sm transition-colors" :class="$store.platform.currentPlatform === 'shopify' ? 'bg-white text-purple-950' : 'text-white/80 hover:text-white'">
-                    <svg class="w-4 h-4 mr-1 nav-platform-icon">
+                    <svg class="w-4 h-4 mr-1 rtl:ml-1 rtl:mr-0 nav-platform-icon">
                         <use href="#shopify-icon"/>
                     </svg>
                     <span x-text="$store.translations.t('platformShopify')"></span>
                 </button>
                 <button @click="$store.platform.setPlatform('salla')" class="flex items-center px-3 py-1 rounded text-sm transition-colors" :class="$store.platform.currentPlatform === 'salla' ? 'bg-white text-purple-950' : 'text-white/80 hover:text-white'">
-                    <svg class="w-4 h-4 mr-1 nav-platform-icon">
+                    <svg class="w-4 h-4 mr-1 rtl:ml-1 rtl:mr-0 nav-platform-icon">
                         <use href="#sallaIcon"/>
                     </svg>
                     <span x-text="$store.translations.t('platformSalla')"></span>
                 </button>
             </div>
         </div>
+
         <!-- Language Switcher for Desktop -->
-        <div class="hidden md:flex items-center space-x-2" x-data>
+        <div class="hidden md:flex items-center space-x-2 rtl:space-x-reverse" x-data>
             <select x-model="$store.translations.currentLang" @change="$store.translations.setLanguage($event.target.value)" class="bg-transparent text-white border border-white/20 rounded px-2 py-1 text-sm focus:outline-none focus:border-white/40">
                 <option value="en">🇺🇸 EN</option>
                 <option value="ar">🇸🇦 AR</option>
             </select>
         </div>
+
         <a :href="$store.platform.currentPlatform === 'salla' ? 'http://salla.revunova.com/login' : 'https://apps.shopify.com/revunova'" target="_blank" rel="noopener noreferrer" class="inline-flex items-center w-full md:w-auto bg-white text-purple-950 px-6 py-2 rounded-md font-medium hover:bg-white/90 transition-colors">
             <svg class="w-5 h-5 mr-2 rtl:ml-2 rtl:mr-0 btn-platform-icon">
                 <use :href="$store.platform.currentPlatform === 'salla' ? '#sallaIcon' : '#shopify-icon'"/>
@@ -64,27 +67,29 @@
             <span x-text="$store.platform.currentPlatform === 'salla' ? $store.translations.t('loginToSalla') : $store.translations.t('startFreeTrial')"></span>
         </a>
     </div>
+
     <!-- Mobile Menu Button -->
     <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden">
         <i data-lucide="menu" class="h-6 w-6 text-white"></i>
     </button>
+
     <!-- Mobile Menu -->
     <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" @click.away="mobileMenuOpen = false" class="fixed inset-0 bg-purple-950/95 z-50">
         <div class="container mx-auto px-4 py-6">
-            <div class="flex justify-end">
+            <div class="flex justify-end rtl:justify-start">
                 <button @click="mobileMenuOpen = false">
                     <i data-lucide="x" class="h-6 w-6 text-white"></i>
                 </button>
             </div>
             <div class="flex flex-col space-y-6 mt-8">
-                <a href="https://revunova.myshopify.com/products/bose-soundlink-flex-bluetooth-speaker-stone-blue?_bt=BAh7BkkiC19yYWlscwY6BkVUewhJIglkYXRhBjsAVEkiG3JldnVub3ZhLm15c2hvcGlmeS5jb20GOwBGSSIIZXhwBjsAVEkiHTIwMjUtMDEtMjdUMjE6MTE6NTcuNzk5WgY7AFRJIghwdXIGOwBUSSIecGVybWFuZW50X3Bhc3N3b3JkX2J5cGFzcwY7AEY%3D--6b2c69346d557a126fbd50439c92960e4874d342" target="_blank" rel="noopener noreferrer" @click="mobileMenuOpen = false" class="text-white/80 hover:text-white transition-colors flex items-center gap-1">
+                <a href="https://revunova.myshopify.com/products/bose-soundlink-flex-bluetooth-speaker-stone-blue?_bt=BAh7BkkiC19yYWlscwY6BkVUewhJIglkYXRhBjsAVEkiG3JldnVub3ZhLm15c2hvcGlmeS5jb20GOwBGSSIIZXhwBjsAVEkiHTIwMjUtMDEtMjdUMjE6MTE6NTcuNzk5WgY7AFRJIghwdXIGOwBUSSIecGVybWFuZW50X3Bhc3N3b3JkX2J5cGFzcwY7AEY%3D--6b2c69346d557a126fbd50439c92960e4874d342" target="_blank" rel="noopener noreferrer" @click="mobileMenuOpen = false" class="text-white/80 hover:text-white transition-colors flex items-center gap-1 rtl:gap-1">
                     <span x-text="$store.translations.t('demoStore')"></span>
                     <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="7" y1="17" x2="17" y2="7"></line>
                         <polyline points="7 7 17 7 17 17"></polyline>
                     </svg>
                 </a>
-                <a href="https://www.youtube.com/watch?v=xqM0eRYo_r8" target="_blank" @click="mobileMenuOpen = false" class="text-white/80 hover:text-white transition-colors flex items-center gap-1">
+                <a href="https://www.youtube.com/watch?v=xqM0eRYo_r8" target="_blank" @click="mobileMenuOpen = false" class="text-white/80 hover:text-white transition-colors flex items-center gap-1 rtl:gap-1">
                     <span x-text="$store.translations.t('howTo')"></span>
                     <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="7" y1="17" x2="17" y2="7"></line>
@@ -93,26 +98,26 @@
                 </a>
                 <span @click="scrollToSection(9); mobileMenuOpen = false" class="text-white/80 hover:text-white transition-colors cursor-pointer" x-text="$store.translations.t('contactUs')"></span>
                 <span @click="scrollToSection(8); mobileMenuOpen = false" class="text-white/80 hover:text-white transition-colors cursor-pointer" x-text="$store.translations.t('pricing')"></span>
-                
+
                 <!-- Platform Switcher for Mobile -->
                 <div class="flex flex-col space-y-2" x-data>
                     <span class="text-white/60 text-sm" x-text="$store.translations.t('platform')"></span>
                     <div class="flex bg-white/10 rounded-md p-1">
                         <button @click="$store.platform.setPlatform('shopify')" class="flex items-center px-3 py-2 rounded text-sm transition-colors flex-1 justify-center" :class="$store.platform.currentPlatform === 'shopify' ? 'bg-white text-purple-950' : 'text-white/80'">
-                            <svg class="w-4 h-4 mr-1 nav-platform-icon">
+                            <svg class="w-4 h-4 mr-1 rtl:ml-1 rtl:mr-0 nav-platform-icon">
                                 <use href="#shopify-icon"/>
                             </svg>
                             <span x-text="$store.translations.t('platformShopify')"></span>
                         </button>
                         <button @click="$store.platform.setPlatform('salla')" class="flex items-center px-3 py-2 rounded text-sm transition-colors flex-1 justify-center" :class="$store.platform.currentPlatform === 'salla' ? 'bg-white text-purple-950' : 'text-white/80'">
-                            <svg class="w-4 h-4 mr-1 nav-platform-icon">
+                            <svg class="w-4 h-4 mr-1 rtl:ml-1 rtl:mr-0 nav-platform-icon">
                                 <use href="#sallaIcon"/>
                             </svg>
                             <span x-text="$store.translations.t('platformSalla')"></span>
                         </button>
                     </div>
                 </div>
-                
+
                 <!-- Language Switcher for Mobile -->
                 <div class="flex flex-col space-y-2" x-data>
                     <span class="text-white/60 text-sm" x-text="$store.translations.t('language')"></span>
@@ -125,6 +130,7 @@
         </div>
     </div>
 </nav>
+
 <script>
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();

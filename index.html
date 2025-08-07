@@ -64,15 +64,15 @@
         <template x-for="(section, index) in sections" :key="index">
             <div class="scroll-section min-h-screen bg-gradient-to-br" :class="section.gradient">
                 <div class="container mx-auto px-3 py-16 min-h-screen flex flex-col">
-                    <div class="flex flex-col md:flex-row items-center md:justify-between h-full space-y-[10vh] md:space-y-0">
+                    <div class="flex flex-col md:flex-row items-center md:justify-between h-full space-y-[10vh] md:space-y-0 rtl:space-y-[10vh] rtl:md:space-y-0">
                         <div class="md:w-1/2 mt-[10vh] md:mt-0">
-                            <div class="uppercase tracking-wide font-semibold mb-3" :class="section.badge.color" x-text="section.badge.text">
+                            <div class="uppercase tracking-wide font-semibold mb-3 rtl:mb-3" :class="section.badge.color" x-text="section.badge.text">
                             </div>
-                            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4" x-html="section.title">
+                            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4 rtl:mb-4" x-html="section.title">
                             </h2>
-                            <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg" x-text="section.description">
+                            <p class="text-base md:text-lg text-white/80 mb-6 max-w-lg rtl:mb-6 rtl:max-w-lg" x-text="section.description">
                             </p>
-                            <div class="space-y-3 md:space-y-0 md:space-x-3 flex flex-col md:flex-row">
+                            <div class="space-y-3 md:space-y-0 md:space-x-3 flex flex-col md:flex-row rtl:space-y-3 rtl:md:space-y-0 rtl:md:space-x-reverse rtl:md:space-x-3">
                                 <!-- Primary Button -->
                                 <a :href="section.buttons.primary.url" target="_blank" class="inline-flex items-center w-full md:w-auto text-white px-6 py-2.5 rounded-md font-medium transition-colors" :class="`${section.buttons.primary.bg} ${section.buttons.primary.hover}`">
                                     <svg class="w-5 h-5 mr-2 rtl:ml-2 rtl:mr-0 btn-platform-icon">
@@ -87,7 +87,7 @@
                                 </template>
                             </div>
                         </div>
-                        <div class="md:w-1/2 flex justify-center">
+                        <div class="md:w-1/2 flex justify-center rtl:justify-center">
                             <img :src="section.image" alt="Feature illustration" :class="section.imageClass || 'max-md:mb-12 w-full h-auto object-contain'"/>
                         </div>
                     </div>
