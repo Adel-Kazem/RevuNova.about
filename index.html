@@ -19,6 +19,28 @@
     <meta property="og:description" content="Boost your store's credibility instantly. Import unlimited reviews, translate to any language, and watch your sales soar. Start free now!">
 
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Custom styles for platform icons -->
+    <style>
+        /* Make Salla icons larger to match Shopify icon visibility */
+        svg use[href="#sallaIcon"] {
+            transform: scale(1.5);
+            transform-origin: center;
+        }
+        
+        /* Specifically for navigation icons */
+        .nav-platform-icon use[href="#sallaIcon"] {
+            transform: scale(2);
+            transform-origin: center;
+        }
+        
+        /* For button icons in features and hero */
+        .btn-platform-icon use[href="#sallaIcon"] {
+            transform: scale(1.8);
+            transform-origin: center;
+        }
+    </style>
+    
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icon-css@3.4.6/css/flag-icon.min.css"/>
@@ -53,8 +75,8 @@
                             <div class="space-y-3 md:space-y-0 md:space-x-3 flex flex-col md:flex-row">
                                 <!-- Primary Button -->
                                 <a :href="section.buttons.primary.url" target="_blank" class="inline-flex items-center w-full md:w-auto text-white px-6 py-2.5 rounded-md font-medium transition-colors" :class="`${section.buttons.primary.bg} ${section.buttons.primary.hover}`">
-                                    <svg class="w-5 h-5 mr-2">
-                                        <use href="#shopify-icon"/>
+                                    <svg class="w-5 h-5 mr-2 rtl:ml-2 rtl:mr-0 btn-platform-icon">
+                                        <use :href="section.buttons.primary.icon"/>
                                     </svg>
                                     <span x-text="section.buttons.primary.text"></span>
                                 </a>
@@ -259,10 +281,23 @@
                     get description() { return Alpine.store('translations').t('importGlobalDesc'); },
                     buttons: {
                         primary: {
-                            get text() { return Alpine.store('translations').t('startImporting'); },
+                            get text() { 
+                                return Alpine.store('platform').currentPlatform === 'salla' 
+                                    ? Alpine.store('translations').t('loginToSalla') 
+                                    : Alpine.store('translations').t('startImporting'); 
+                            },
+                            get url() { 
+                                return Alpine.store('platform').currentPlatform === 'salla' 
+                                    ? 'http://salla.revunova.com/login' 
+                                    : 'https://apps.shopify.com/revunova'; 
+                            },
+                            get icon() { 
+                                return Alpine.store('platform').currentPlatform === 'salla' 
+                                    ? '#sallaIcon' 
+                                    : '#shopify-icon'; 
+                            },
                             bg: 'bg-[#FF9933]',
-                            hover: 'hover:bg-[#FFB366]',
-                            url: 'https://apps.shopify.com/revunova'
+                            hover: 'hover:bg-[#FFB366]'
                         },
                         secondary: {
                             get text() { return Alpine.store('translations').t('watchDemo'); },
@@ -283,10 +318,23 @@
                     get description() { return Alpine.store('translations').t('reviewsLanguageDesc'); },
                     buttons: {
                         primary: {
-                            get text() { return Alpine.store('translations').t('getStarted'); },
+                            get text() { 
+                                return Alpine.store('platform').currentPlatform === 'salla' 
+                                    ? Alpine.store('translations').t('loginToSalla') 
+                                    : Alpine.store('translations').t('getStarted'); 
+                            },
+                            get url() { 
+                                return Alpine.store('platform').currentPlatform === 'salla' 
+                                    ? 'http://salla.revunova.com/login' 
+                                    : 'https://apps.shopify.com/revunova'; 
+                            },
+                            get icon() { 
+                                return Alpine.store('platform').currentPlatform === 'salla' 
+                                    ? '#sallaIcon' 
+                                    : '#shopify-icon'; 
+                            },
                             bg: 'bg-[#0BC7F0]',
-                            hover: 'hover:bg-[#1AD7FF]',
-                            url: 'https://apps.shopify.com/revunova'
+                            hover: 'hover:bg-[#1AD7FF]'
                         },
                         secondary: {
                             get text() { return Alpine.store('translations').t('watchDemo'); },
@@ -307,10 +355,23 @@
                     get description() { return Alpine.store('translations').t('uniteReviewsDesc'); },
                     buttons: {
                         primary: {
-                            get text() { return Alpine.store('translations').t('getStarted'); },
+                            get text() { 
+                                return Alpine.store('platform').currentPlatform === 'salla' 
+                                    ? Alpine.store('translations').t('loginToSalla') 
+                                    : Alpine.store('translations').t('getStarted'); 
+                            },
+                            get url() { 
+                                return Alpine.store('platform').currentPlatform === 'salla' 
+                                    ? 'http://salla.revunova.com/login' 
+                                    : 'https://apps.shopify.com/revunova'; 
+                            },
+                            get icon() { 
+                                return Alpine.store('platform').currentPlatform === 'salla' 
+                                    ? '#sallaIcon' 
+                                    : '#shopify-icon'; 
+                            },
                             bg: 'bg-[#FF6B6B]',
-                            hover: 'hover:bg-[#FF8585]',
-                            url: 'https://apps.shopify.com/revunova'
+                            hover: 'hover:bg-[#FF8585]'
                         },
                         secondary: {
                             get text() { return Alpine.store('translations').t('watchDemo'); },
@@ -331,10 +392,23 @@
                     get description() { return Alpine.store('translations').t('zeroDelayDesc'); },
                     buttons: {
                         primary: {
-                            get text() { return Alpine.store('translations').t('getStarted'); },
+                            get text() { 
+                                return Alpine.store('platform').currentPlatform === 'salla' 
+                                    ? Alpine.store('translations').t('loginToSalla') 
+                                    : Alpine.store('translations').t('getStarted'); 
+                            },
+                            get url() { 
+                                return Alpine.store('platform').currentPlatform === 'salla' 
+                                    ? 'http://salla.revunova.com/login' 
+                                    : 'https://apps.shopify.com/revunova'; 
+                            },
+                            get icon() { 
+                                return Alpine.store('platform').currentPlatform === 'salla' 
+                                    ? '#sallaIcon' 
+                                    : '#shopify-icon'; 
+                            },
                             bg: 'bg-[#FF1B8D]',
-                            hover: 'hover:bg-[#FF4DA6]',
-                            url: 'https://apps.shopify.com/revunova'
+                            hover: 'hover:bg-[#FF4DA6]'
                         },
                         secondary: {
                             get text() { return Alpine.store('translations').t('liveDemo'); },
@@ -356,10 +430,23 @@
                     get description() { return Alpine.store('translations').t('reviewsGoogleDesc'); },
                     buttons: {
                         primary: {
-                            get text() { return Alpine.store('translations').t('connectGoogle'); },
+                            get text() { 
+                                return Alpine.store('platform').currentPlatform === 'salla' 
+                                    ? Alpine.store('translations').t('loginToSalla') 
+                                    : Alpine.store('translations').t('connectGoogle'); 
+                            },
+                            get url() { 
+                                return Alpine.store('platform').currentPlatform === 'salla' 
+                                    ? 'http://salla.revunova.com/login' 
+                                    : 'https://apps.shopify.com/revunova'; 
+                            },
+                            get icon() { 
+                                return Alpine.store('platform').currentPlatform === 'salla' 
+                                    ? '#sallaIcon' 
+                                    : '#shopify-icon'; 
+                            },
                             bg: 'bg-[#FF7676]',
-                            hover: 'hover:bg-[#FF9494]',
-                            url: 'https://apps.shopify.com/revunova'
+                            hover: 'hover:bg-[#FF9494]'
                         }
                     },
                     image: 's7777.png',
@@ -375,10 +462,23 @@
                     get description() { return Alpine.store('translations').t('dataDrivenDesc'); },
                     buttons: {
                         primary: {
-                            get text() { return Alpine.store('translations').t('viewAnalytics'); },
+                            get text() { 
+                                return Alpine.store('platform').currentPlatform === 'salla' 
+                                    ? Alpine.store('translations').t('loginToSalla') 
+                                    : Alpine.store('translations').t('viewAnalytics'); 
+                            },
+                            get url() { 
+                                return Alpine.store('platform').currentPlatform === 'salla' 
+                                    ? 'http://salla.revunova.com/login' 
+                                    : 'https://apps.shopify.com/revunova'; 
+                            },
+                            get icon() { 
+                                return Alpine.store('platform').currentPlatform === 'salla' 
+                                    ? '#sallaIcon' 
+                                    : '#shopify-icon'; 
+                            },
                             bg: 'bg-[#FF69B4]',
-                            hover: 'hover:bg-[#FF85C2]',
-                            url: 'https://apps.shopify.com/revunova'
+                            hover: 'hover:bg-[#FF85C2]'
                         }
                     },
                     image: 's4.png',
@@ -391,6 +491,26 @@
 
 <script>
     document.addEventListener('alpine:init', () => {
+        // Platform Store
+        Alpine.store('platform', {
+            currentPlatform: 'shopify',
+            
+            setPlatform(platform) {
+                this.currentPlatform = platform;
+                const url = new URL(window.location);
+                url.searchParams.set('platform', platform);
+                window.history.replaceState({}, '', url);
+            },
+            
+            init() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const platformFromUrl = urlParams.get('platform');
+                if (platformFromUrl && ['shopify', 'salla'].includes(platformFromUrl)) {
+                    this.currentPlatform = platformFromUrl;
+                }
+            }
+        });
+
         Alpine.store('translations', {
             currentLang: 'en',
 
@@ -413,6 +533,12 @@
                     language: 'Language',
                     english: 'English',
                     arabic: 'العربية',
+
+                    // Platform switcher keys
+                    platform: 'Platform',
+                    platformShopify: 'Shopify',
+                    platformSalla: 'Salla',
+                    loginToSalla: 'Login to Salla',
 
                     // Feature Sections (Existing)
                     globalReviews: 'GLOBAL REVIEWS',
@@ -554,6 +680,12 @@
                     language: 'اللغة',
                     english: 'الإنجليزية',
                     arabic: 'العربية',
+
+                    // Platform switcher keys
+                    platform: 'المنصة',
+                    platformShopify: 'شوبيفاي',
+                    platformSalla: 'سلة',
+                    loginToSalla: 'تسجيل الدخول إلى سلة',
 
                     // Feature Sections (Existing)
                     globalReviews: 'مراجعات عالمية',
@@ -706,6 +838,9 @@
                 }
             }
         });
+
+        // Initialize platform store
+        Alpine.store('platform').init();
     });
 </script>
 

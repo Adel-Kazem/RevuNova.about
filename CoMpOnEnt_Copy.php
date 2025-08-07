@@ -19,10 +19,10 @@ $outputFile = 'Components_content.txt';
 // Individual files to include (in addition to the directories)
 $additionalFiles = [
     'C:\xampp\htdocs\RevuNova.about\index.html',
-//    'C:\xampp\htdocs\RevuNova.about\pricing-section.html',
-//    'C:\xampp\htdocs\RevuNova.about\hero-section.html',
+    'C:\xampp\htdocs\RevuNova.about\pricing-section.html',
+    'C:\xampp\htdocs\RevuNova.about\hero-section.html',
     'C:\xampp\htdocs\RevuNova.about\navigation.html',
-//    'C:\xampp\htdocs\RevuNova.about\reviews-demo-section.html',
+    'C:\xampp\htdocs\RevuNova.about\reviews-demo-section.html',
     'C:\xampp\htdocs\RevuNova.about\footer-section.html',
 ];
 
