@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سياسة الخصوصية - RevuNova</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="dist/output.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <meta name="description" content="سياسة الخصوصية لتطبيق RevuNova - إدارة المراجعات لمتاجر شوبيفاي وسلة">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-950 via-purple-900 to-pink-900 min-h-screen">
+<div x-data="policyPage()" x-cloak>
+    <!-- Header -->
+    <header class="bg-black/20 backdrop-blur-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center">
+                <img src="RevuNova-logo-wide-white.png" alt="RevuNova" class="h-8">
+            </a>
+
+            <!-- Language Toggle -->
+            <button @click="toggleLanguage()"
+                    class="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-md transition-colors">
+                <span x-text="currentLang === 'ar' ? 'English' : 'العربية'"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 max-w-4xl">
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-8 text-white">
+            <!-- Arabic Content -->
+            <div x-show="currentLang === 'ar'" x-transition>
+                <h1 class="text-4xl font-bold mb-8 text-center">سياسة الخصوصية</h1>
+
+                <div class="space-y-6 text-right">
+                    <section>
+                        <h2 class="text-2xl font-semibold mb-4 text-purple-300">مقدمة</h2>
+                        <p class="leading-relaxed">
+                            نحن في RevuNova نقدر خصوصيتكم ونلتزم بحماية بياناتكم الشخصية. تشرح هذه السياسة كيفية جمعنا واستخدامنا وحماية المعلومات عند استخدام تطبيق RevuNova لإدارة المراجعات على منصات التجارة الإلكترونية.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold mb-4 text-purple-300">المعلومات التي نجمعها</h2>
+                        <ul class="list-disc list-inside space-y-2 mr-4">
+                            <li>معلومات الحساب: اسم المتجر، عنوان البريد الإلكتروني، ومعلومات التواصل</li>
+                            <li>بيانات المنتجات: أسماء المنتجات، الأوصاف، والصور</li>
+                            <li>المراجعات والتقييمات: محتوى المراجعات المستوردة والمنشورة</li>
+                            <li>بيانات الاستخدام: كيفية تفاعلكم مع التطبيق والميزات المستخدمة</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold mb-4 text-purple-300">كيفية استخدام المعلومات</h2>
+                        <ul class="list-disc list-inside space-y-2 mr-4">
+                            <li>تقديم خدمات إدارة وعرض المراجعات</li>
+                            <li>ترجمة المراجعات إلى لغات مختلفة</li>
+                            <li>تحسين وتطوير خدماتنا</li>
+                            <li>تقديم الدعم الفني والمساعدة</li>
+                            <li>إرسال تحديثات مهمة حول الخدمة</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold mb-4 text-purple-300">مشاركة المعلومات</h2>
+                        <p class="leading-relaxed">
+                            لن نقوم ببيع أو تأجير أو مشاركة معلوماتكم الشخصية مع أطراف ثالثة إلا في الحالات التالية:
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 mr-4 mt-4">
+                            <li>عند الحصول على موافقتكم الصريحة</li>
+                            <li>لتقديم الخدمات المطلوبة (مثل خدمات الترجمة)</li>
+                            <li>للامتثال للقوانين والأنظمة المعمول بها</li>
+                            <li>لحماية حقوقنا وسلامة خدماتنا</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold mb-4 text-purple-300">أمان البيانات</h2>
+                        <p class="leading-relaxed">
+                            نستخدم تقنيات التشفير المتقدمة وأفضل الممارسات الأمنية لحماية بياناتكم. جميع البيانات محمية بتشفير SSL/TLS أثناء النقل، ومحفوظة في خوادم آمنة مع تشفير قاعدة البيانات.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold mb-4 text-purple-300">حقوقكم</h2>
+                        <ul class="list-disc list-inside space-y-2 mr-4">
+                            <li>الوصول إلى بياناتكم الشخصية</li>
+                            <li>تصحيح أو تحديث المعلومات غير الصحيحة</li>
+                            <li>حذف بياناتكم الشخصية</li>
+                            <li>تقييد معالجة بياناتكم</li>
+                            <li>نقل بياناتكم إلى خدمة أخرى</li>
+                            <li>الاعتراض على معالجة بياناتكم</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold mb-4 text-purple-300">ملفات تعريف الارتباط</h2>
+                        <p class="leading-relaxed">
+                            نستخدم ملفات تعريف الارتباط لتحسين تجربتكم وفهم كيفية استخدام خدماتنا. يمكنكم التحكم في هذه الملفات من خلال إعدادات المتصفح.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold mb-4 text-purple-300">التغييرات على هذه السياسة</h2>
+                        <p class="leading-relaxed">
+                            قد نقوم بتحديث هذه السياسة من وقت لآخر. سنقوم بإشعاركم بأي تغييرات مهمة عبر البريد الإلكتروني أو إشعار في التطبيق.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold mb-4 text-purple-300">تواصل معنا</h2>
+                        <p class="leading-relaxed">
+                            إذا كان لديكم أي أسئلة حول سياسة الخصوصية هذه، يرجى التواصل معنا:
+                        </p>
+                        <div class="mt-4 space-y-2">
+                            <p><strong>البريد الإلكتروني:</strong> support@revunova.com</p>
+                            <p><strong>الموقع الإلكتروني:</strong> www.revunova.com</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- English Content -->
+            <div x-show="currentLang === 'en'" x-transition>
+                <h1 class="text-4xl font-bold mb-8 text-center">Privacy Policy</h1>
+
+                <div class="space-y-6 text-left">
+                    <section>
+                        <h2 class="text-2xl font-semibold mb-4 text-purple-300">Introduction</h2>
+                        <p class="leading-relaxed">
+                            At RevuNova, we value your privacy and are committed to protecting your personal data. This policy explains how we collect, use, and protect information when you use the RevuNova review management application for e-commerce platforms.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold mb-4 text-purple-300">Information We Collect</h2>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>Account information: store name, email address, and contact information</li>
+                            <li>Product data: product names, descriptions, and images</li>
+                            <li>Reviews and ratings: content of imported and published reviews</li>
+                            <li>Usage data: how you interact with the application and features used</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold mb-4 text-purple-300">How We Use Information</h2>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>Provide review management and display services</li>
+                            <li>Translate reviews into different languages</li>
+                            <li>Improve and develop our services</li>
+                            <li>Provide technical support and assistance</li>
+                            <li>Send important service updates</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold mb-4 text-purple-300">Information Sharing</h2>
+                        <p class="leading-relaxed">
+                            We will not sell, rent, or share your personal information with third parties except in the following cases:
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 ml-4 mt-4">
+                            <li>When we have your explicit consent</li>
+                            <li>To provide requested services (such as translation services)</li>
+                            <li>To comply with applicable laws and regulations</li>
+                            <li>To protect our rights and service security</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold mb-4 text-purple-300">Data Security</h2>
+                        <p class="leading-relaxed">
+                            We use advanced encryption technologies and security best practices to protect your data. All data is protected with SSL/TLS encryption during transmission and stored on secure servers with database encryption.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold mb-4 text-purple-300">Your Rights</h2>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>Access your personal data</li>
+                            <li>Correct or update incorrect information</li>
+                            <li>Delete your personal data</li>
+                            <li>Restrict processing of your data</li>
+                            <li>Transfer your data to another service</li>
+                            <li>Object to processing of your data</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold mb-4 text-purple-300">Cookies</h2>
+                        <p class="leading-relaxed">
+                            We use cookies to improve your experience and understand how you use our services. You can control these files through your browser settings.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold mb-4 text-purple-300">Changes to This Policy</h2>
+                        <p class="leading-relaxed">
+                            We may update this policy from time to time. We will notify you of any significant changes via email or in-app notification.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold mb-4 text-purple-300">Contact Us</h2>
+                        <p class="leading-relaxed">
+                            If you have any questions about this privacy policy, please contact us:
+                        </p>
+                        <div class="mt-4 space-y-2">
+                            <p><strong>Email:</strong> support@revunova.com</p>
+                            <p><strong>Website:</strong> www.revunova.com</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/20 backdrop-blur-sm mt-16">
+        <div class="container mx-auto px-4 py-6 text-center text-white/80">
+            <p>&copy; 2024 RevuNova. All rights reserved.</p>
+        </div>
+    </footer>
+</div>
+
+<script>
+    function policyPage() {
+        return {
+            currentLang: 'ar',
+
+            init() {
+                // Set initial direction
+                this.updateDirection();
+            },
+
+            toggleLanguage() {
+                this.currentLang = this.currentLang === 'ar' ? 'en' : 'ar';
+                this.updateDirection();
+                this.updatePageTitle();
+            },
+
+            updateDirection() {
+                if (this.currentLang === 'ar') {
+                    document.documentElement.setAttribute('dir', 'rtl');
+                    document.documentElement.setAttribute('lang', 'ar');
+                } else {
+                    document.documentElement.setAttribute('dir', 'ltr');
+                    document.documentElement.setAttribute('lang', 'en');
+                }
+            },
+
+            updatePageTitle() {
+                if (this.currentLang === 'ar') {
+                    document.title = 'سياسة الخصوصية - RevuNova';
+                } else {
+                    document.title = 'Privacy Policy - RevuNova';
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>
